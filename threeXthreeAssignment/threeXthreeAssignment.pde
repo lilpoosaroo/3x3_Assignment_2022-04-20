@@ -8,21 +8,24 @@ void setup() {
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
- String ls="Landscape or Square", p="portrait", DO="DisplayOrientation", instruction="turn your phone kiddo";
-   int appWidth=width;
-  int appHeight=height; 
+  String ls="Landscape or Square", p="portrait", DO="DisplayOrientation", instruction="turn your phone kiddo";
+  int appWidth=width;
+  int appHeight=height;
+  String orientation = (appWidth >= appHeight) ? ls:p; //Ternary operator
+  println(DO, orientation);
+  //CONTINUE TOMORROW: break out app if no landscape
   println(width, height, appWidth, appHeight);
   println();
   /*
   String landscape = "Yay you are in landscape mode";
-  String portrait = "Turn your phone kiddo";
-  String displayOrientation= (displayWidth >= displayHeight) ? landscape : portrait;
-  if (displayOrientation==portrait) println(displayOrientation);
-  if (displayOrientation==landscape) appDisplayWidth= displayWidth;
-  if (displayOrientation==landscape) appDisplayHeight = displayHeight;
-  println(appDisplayWidth, appDisplayHeight);
-  */
- 
+   String portrait = "Turn your phone kiddo";
+   String displayOrientation= (displayWidth >= displayHeight) ? landscape : portrait;
+   if (displayOrientation==portrait) println(displayOrientation);
+   if (displayOrientation==landscape) appDisplayWidth= displayWidth;
+   if (displayOrientation==landscape) appDisplayHeight = displayHeight;
+   println(appDisplayWidth, appDisplayHeight);
+   */
+
   //population
   /*
   button1X=displayWidth*3/8;
