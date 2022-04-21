@@ -4,16 +4,24 @@ float button2X, button2Y, button2Width, button2Height;
 //
 void setup() {
   //DisplayGeometry
-  size(600, 400); 
+  size(200, 400); 
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
-  String ls="Landscape or Square", p="portrait", DO="DisplayOrientation", instruction="turn your phone kiddo";
+  String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruction="turn your phone kiddo";
   int appWidth=width;
   int appHeight=height;
   String orientation = (appWidth >= appHeight) ? ls:p; //Ternary operator
   println(DO, orientation);
-  //CONTINUE TOMORROW: break out app if no landscape
+
+  if (orientation==ls) {
+    println("Good to go :)");
+  } else {
+    println(instruction);
+    appWidth= width*0;
+    appHeight=height*0;
+  }
+  println("App Geometry is:", "\t AppWidth:", appWidth, "\t AppHeight:", appHeight);
   println(width, height, appWidth, appHeight);
   println();
   /*
