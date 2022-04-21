@@ -3,6 +3,7 @@ float button1X, button1Y, button1Width, button1Height;
 float button2X, button2Y, button2Width, button2Height;
 float rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight;
 float ellipseX, ellipseY, ellipseWidth, ellipseHeight;
+float x, y, xDiameter, yDiameter;
 //
 void setup() {
   //DisplayGeometry
@@ -41,21 +42,27 @@ void setup() {
    rectDisplayY= appHeight*1/8;
    rectDisplayWidth=button1Width;
    rectDisplayHeight=button1Height;
-   ellipseX=appWidth*3/4;
+   ellipseX=appWidth*70/100;
    ellipseY=appHeight*1/4;
    ellipseWidth= button1Width; 
    ellipseHeight=appHeight*1/8;
+   float ellipseRectXCenter=ellipseX+(ellipseWidth*1/2);
+   float ellipseRectYCenter=ellipseY+(ellipseHeight*1/2);
+   x= ellipseRectXCenter;
+   y=ellipseRectYCenter;
+   xDiameter=ellipseWidth;
+   yDiameter=ellipseHeight;
    
    
 }//End setup
 //
 void draw () {
   
-  rect(button1X, button1Y, button1Width, button1Height); //click me
+   rect(button1X, button1Y, button1Width, button1Height); //click me
    rect(button2X, button2Y, button2Width, button2Height); // or me
    rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); // Display rectangle
-  ellipse(ellipseX, ellipseY, ellipseWidth, ellipseHeight);// will go around the  Circle
-   
+   rect(ellipseX, ellipseY, ellipseWidth, ellipseHeight);// will go around the  Circle
+   ellipse(x, y, xDiameter, yDiameter);
 }//End draw
 //
 void keyPressed () {
