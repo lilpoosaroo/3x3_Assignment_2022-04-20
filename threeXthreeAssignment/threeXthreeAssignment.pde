@@ -4,6 +4,12 @@ float button2X, button2Y, button2Width, button2Height;
 float rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight;
 float ellipseX, ellipseY, ellipseWidth, ellipseHeight;
 float x, y, xDiameter, yDiameter;
+color black=#000000;//good for night mode, blue is 00
+color white=#FFFFFF;
+Boolean rectON=false, ellipseON=false; 
+String rect1="Click Me";
+String rect2="Or meee";
+PFont rectFont;
 //
 void setup() {
   //DisplayGeometry
@@ -25,6 +31,9 @@ void setup() {
     appHeight=height*0;
   }
   println("App Geometry is:", "\t AppWidth:", appWidth, "\t AppHeight:", appHeight);
+  
+  String[] fontList = PFont.list(); //To list all fonts available on OS
+  printArray(fontList); //For listing all possible fonts to choose from, then createFont
  
 
 
@@ -52,17 +61,28 @@ void setup() {
    y=ellipseRectYCenter;
    xDiameter=ellipseWidth;
    yDiameter=ellipseHeight;
+   rectFont= createFont("Bahnschrift Regular", 25);
    
    
 }//End setup
 //
 void draw () {
-  
+   background(black);
+   fill(black);
+   textAlign(CENTER, CENTER);
+   textFont(rectFont,25);
+   text(rect1, button1X, button1Y, button1Width, button1Height);
+   text(rect2,button2X, button2Y, button2Width, button2Height);
+   fill(white);
    rect(button1X, button1Y, button1Width, button1Height); //click me
    rect(button2X, button2Y, button2Width, button2Height); // or me
-   rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); // Display rectangle
-   rect(ellipseX, ellipseY, ellipseWidth, ellipseHeight);// will go around the  Circle
-   ellipse(x, y, xDiameter, yDiameter);
+   //rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); // Display rectangle
+   fill(black);
+  // rect(ellipseX, ellipseY, ellipseWidth, ellipseHeight);// will go around the  Circle
+   fill(white);
+   //ellipse(x, y, xDiameter, yDiameter);
+   if (rectON==true && ellipseON==false) rect (rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight);   
+   if (rectON==false && ellipseON==true) ellipse(x, y, xDiameter, yDiameter);
 }//End draw
 //
 void keyPressed () {
@@ -70,6 +90,10 @@ void keyPressed () {
 }//End keyPressed
 // 
 void mousePressed () {
+  rectON=false;
+  ellipseON=false;
+  if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) rectON=true; 
+  if (mouseX>=button2X && mouseX<=button2X+button2Width && mouseY>=button2Y && mouseY<=button2Y+button2Height) ellipseON=true; 
 }//End mousePressed
 //
 //End main program
