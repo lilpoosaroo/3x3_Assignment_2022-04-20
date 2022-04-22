@@ -13,7 +13,7 @@ PFont rectFont;
 //
 void setup() {
   //DisplayGeometry
-  size(600, 400); 
+  size(900, 400); 
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
