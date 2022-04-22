@@ -1,4 +1,6 @@
 //Global Variables
+int appWidth=width;
+int appHeight=height;
 float button1X, button1Y, button1Width, button1Height;
 float button2X, button2Y, button2Width, button2Height;
 float rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight;
@@ -13,13 +15,11 @@ PFont rectFont;
 //
 void setup() {
   //DisplayGeometry
-  size(900, 400); 
+  size(900, 400); //CANT PUT IN A TAB 
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruction="turn your phone kiddo";
-  int appWidth=width;
-  int appHeight=height;
   String orientation = (appWidth >= appHeight) ? ls:p; //Ternary operator
   println(DO, orientation);
 
@@ -27,8 +27,8 @@ void setup() {
     println("Good to go :)");
   } else {
     println(instruction);
-    appWidth= width*0;
-    appHeight=height*0;
+    appWidth *=0; //this is called an assingment operator; this means appWidth=appWidth*0, thi
+    appHeight *=0;
   }
   println("App Geometry is:", "\t AppWidth:", appWidth, "\t AppHeight:", appHeight);
 
