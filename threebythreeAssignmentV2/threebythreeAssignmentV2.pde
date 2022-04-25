@@ -82,9 +82,15 @@ void keyPressed () {
 void mousePressed () {
   rectON=false; //Third button here
   ellipseON=false;
-  if () {} else {}
-  if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) rectON=true; 
-  
+
+  if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) rectON=true;
+     if (rectON==true) {
+        rectON=false;
+        ellipseON=true;
+     } else {
+       rectON=true;
+       ellipseON=false;
+  }
 }//End mousePressed
 //
 //End main program
