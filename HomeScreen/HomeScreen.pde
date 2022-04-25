@@ -1,12 +1,20 @@
 //Global Variables
+int appWidth=width;
+int appHeight=height;
 //
-void setup (){
+void setup ()
+{
  fullScreen();
+ display();
 }//End setup
 //
-void draw (){}//End draw
+void draw ()
+{
+
+}//End draw
 // 
-void keyPressed (){
+void keyPressed ()
+{
   if (keyCode=='/') exit();
 }//End Keypressed
 //
