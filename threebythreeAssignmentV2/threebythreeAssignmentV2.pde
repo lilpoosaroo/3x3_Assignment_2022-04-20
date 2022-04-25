@@ -81,7 +81,7 @@ void keyPressed () {
 // 
 void mousePressed () {
   
-  println("Before the button is pressed", "\tRect:", rectON, "\tEllipse:", ellipseON);
+  println("Button Pressed", "\tRect:", rectON, "\tEllipse:", ellipseON);
   if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height);
   if (rectON==true) {
     rectON=false;
