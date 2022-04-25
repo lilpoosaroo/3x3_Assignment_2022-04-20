@@ -30,8 +30,8 @@ void setup() {
   }
   println("App Geometry is:", "\t AppWidth:", appWidth, "\t AppHeight:", appHeight);
 
-  String[] fontList = PFont.list(); //To list all fonts available on OS
-  printArray(fontList); //For listing all possible fonts to choose from, then createFont
+  // String[] fontList = PFont.list(); //To list all fonts available on OS
+  //printArray(fontList); //For listing all possible fonts to choose from, then createFont
 
 
 
@@ -80,16 +80,15 @@ void keyPressed () {
 }//End keyPressed
 // 
 void mousePressed () {
-  rectON=false; //Third button here
-  ellipseON=false;
-
-  if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height) rectON=true;
-     if (rectON==true) {
-        rectON=false;
-        ellipseON=true;
-     } else {
-       rectON=true;
-       ellipseON=false;
+  
+  println("Before the button is pressed", "\tRect:", rectON, "\tEllipse:", ellipseON);
+  if (mouseX>=button1X && mouseX<=button1X+button1Width && mouseY>=button1Y && mouseY<=button1Y+button1Height);
+  if (rectON==true) {
+    rectON=false;
+    ellipseON=true;
+  } else {
+    rectON=true;
+    ellipseON=false;
   }
 }//End mousePressed
 //
