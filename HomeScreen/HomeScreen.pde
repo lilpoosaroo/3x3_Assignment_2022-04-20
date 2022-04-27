@@ -40,15 +40,37 @@ void setup ()
   rectWidth=appWidth*1/3;
   rectHeight=appHeight*1/3;
   
-  ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
-  ptX[5] = ptX[6] = ptX[7] = ptX[8] = rectWidth;
+  for (int i=1; i<5; i+=1){
+  ptX[i]= appWidth*0; //ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
+  }
+  for (int i=5; i<9; ){
+    //Which means ptX[5] = ptX[6] = ptX[7] = ptX[8] = rectWidth;
+  }
+  
   ptX[9] = ptX[10] = ptX[11]= ptX[12] = rectWidth*2;
   ptX[13] = ptX[14] = ptX[15] = ptX[16] = rectWidth*3;
   
-  ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
-  ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
-  ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
-  ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
+  for (int i=1; i<14; i+=4 ){
+       ptY[i] = appHeight*0;//Which means ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
+      }
+  //
+   for (int i=2; i<15; i+=4){
+   ptY[i]= rectHeight; //Which means ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
+       }
+  //
+  for (int i=3; i<16; i+=4){
+  ptY[i]=rectHeight*2;//Which means ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2;
+       }
+  //
+  for (int i=4; i<17; i+=4){
+    ptY[i]= appHeight;//Which means ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
+  }
+
+  
+ // ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
+  //ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
+  //ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
+  //ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
   
 }
 //End setup
