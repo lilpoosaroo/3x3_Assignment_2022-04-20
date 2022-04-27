@@ -73,6 +73,7 @@ void setup ()
 void draw ()
 {
   rect (ptX1, ptY1, rectWidth, rectHeight);
+  
   rect (ptX2, ptY2, rectWidth, rectHeight);
   rect (ptX3, ptY3, rectWidth, rectHeight);
   rect (ptX4, ptY4, rectWidth, rectHeight);
@@ -89,11 +90,13 @@ void draw ()
   rect (ptX14, ptY14, rectWidth, rectHeight);
   rect (ptX15, ptY15, rectWidth, rectHeight);
   rect (ptX16, ptY16, rectWidth, rectHeight);
+ 
   
   fill(black);
   ellipse(ptX1, ptY1, ptDiameter, ptDiameter);
   ellipse(ptX2, ptY2, ptDiameter, ptDiameter);
   ellipse(ptX3, ptY3, ptDiameter, ptDiameter);
+  fill(red);
   ellipse(ptX4, ptY4, ptDiameter, ptDiameter);
   fill(black);
   ellipse(ptX5, ptY5, ptDiameter, ptDiameter);
@@ -101,9 +104,11 @@ void draw ()
   ellipse(ptX7, ptY7, ptDiameter, ptDiameter);
   fill(red);
   ellipse(ptX8, ptY8, ptDiameter, ptDiameter);
+  fill(black);
   ellipse(ptX9, ptY9, ptDiameter, ptDiameter);
   ellipse(ptX10, ptY10, ptDiameter, ptDiameter);
   ellipse(ptX11, ptY11, ptDiameter, ptDiameter);
+  fill(red);
   ellipse(ptX12, ptY12, ptDiameter, ptDiameter);
   ellipse(ptX13, ptY13, ptDiameter, ptDiameter);
   ellipse(ptX14, ptY14, ptDiameter, ptDiameter);
