@@ -5,14 +5,7 @@ float rectWidth, rectHeight, ptDiameter;
 int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
-/*
-float ptX1, ptY1, ptX2, ptY2, ptX3, ptY3; 
- float ptX4, ptY4, ptX5, ptY5, ptX6, ptY6; 
- float ptX7, ptY7, ptX8, ptY8, ptX9, ptY9; 
- float ptX10, ptY10, ptX11, ptY11, ptX12, ptY12;
- float ptX13, ptY13, ptX14, ptY14, ptX15, ptY15;
- float ptX16, ptY16;
- */
+
 
 //
 void setup ()
@@ -100,7 +93,7 @@ void draw (){
     fill(whiteReset);
   }
 
-  for (int i=14; i<17; i+=1) {
+  for (int i=13; i<17; i+=1) {
     ptX[i]= rectWidth*3; //Which means ptX[13] = ptX[14] = ptX[15] = ptX[16] = rectWidth*3;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
     fill(red);

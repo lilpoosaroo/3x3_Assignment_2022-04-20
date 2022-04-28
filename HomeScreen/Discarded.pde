@@ -1,3 +1,13 @@
+/*
+float ptX1, ptY1, ptX2, ptY2, ptX3, ptY3; 
+ float ptX4, ptY4, ptX5, ptY5, ptX6, ptY6; 
+ float ptX7, ptY7, ptX8, ptY8, ptX9, ptY9; 
+ float ptX10, ptY10, ptX11, ptY11, ptX12, ptY12;
+ float ptX13, ptY13, ptX14, ptY14, ptX15, ptY15;
+ float ptX16, ptY16;
+ */
+ 
+ 
  // ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
   //ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
   //ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
