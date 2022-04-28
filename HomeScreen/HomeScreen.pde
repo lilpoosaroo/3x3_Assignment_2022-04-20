@@ -69,7 +69,9 @@ void draw (){
     ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
     fill(whiteReset);
   }
-
+//
+//
+//
   for (int i=1; i<5; i+=1) {
     ptX[i]= appWidth*0; //ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
