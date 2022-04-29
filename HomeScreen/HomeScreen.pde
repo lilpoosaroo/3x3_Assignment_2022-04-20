@@ -5,7 +5,7 @@ float rectWidth, rectHeight, ptDiameter;
 int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
-int numberOfButtons = 3; 
+int numberOfButtons = 4; 
 float [] buttonX = new float [numberOfButtons];
 float [] buttonY = new float [numberOfButtons];
 float [] buttonWidth = new float [numberOfButtons];
@@ -48,19 +48,19 @@ void setup ()
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
 
 
-  buttonX[1] = appWidth*2/9;
+  buttonX[1] = appWidth*1/9;
   buttonY[1] = appHeight*1/9;
   buttonWidth[1] = appWidth*1/9;
-  buttonHeight[1] = appHeight*1/3;
+  buttonHeight[1] = appHeight*1/9;
 
   buttonX[2] = appWidth*3/6;
   buttonY[2] = appHeight*2/6;
-  buttonWidth[2] = appWidth*3/6;
+  buttonWidth[2] = appWidth*1/6;
   buttonHeight[2] = appHeight*1/6;
 
 
   buttonX[3] = appWidth*11/15;
-  buttonY[3] = appHeight*14/15;
+  buttonY[3] = appHeight*13/15;
   buttonWidth[3] = appWidth*1/15;
   buttonHeight[2] = appHeight*1/15;
 }
