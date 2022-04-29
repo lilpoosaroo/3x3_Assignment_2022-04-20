@@ -32,13 +32,12 @@ void setup ()
   ptDiameter=appWidth*1/50;
   rectWidth=appWidth*1/3;
   rectHeight=appHeight*1/3;
-
 }
 //End setup
 //
-void draw (){
-  
-   for (int i=1; i<14; i+=4 ) {
+void draw () {
+
+  for (int i=1; i<14; i+=4 ) {
     ptY[i] = appHeight*0;//Which means ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
     fill(black);
@@ -62,16 +61,9 @@ void draw (){
     fill(whiteReset);
   }
   //
-  for (int i=4; i<17; i+=4) {
-    ptY[i]= appHeight;//Which means ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
-    rect(ptX[i], ptY[i], rectWidth, rectHeight);
-    fill(black);
-    ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
-    fill(whiteReset);
-  }
-//
-//
-//
+  //
+  //
+  //
   for (int i=1; i<5; i+=1) {
     ptX[i]= appWidth*0; //ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
@@ -102,7 +94,13 @@ void draw (){
     ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
     fill(whiteReset);
   }
-  
+  for (int i=4; i<17; i+=4) {
+    ptY[i]= appHeight;//Which means ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
+    rect(ptX[i], ptY[i], rectWidth, rectHeight);
+    fill(red);
+    ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
+    fill(whiteReset);
+  }
 }//End draw
 //
 void keyPressed ()
