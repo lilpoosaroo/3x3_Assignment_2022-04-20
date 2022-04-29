@@ -36,32 +36,33 @@ void setup ()
   ptDiameter=appWidth*1/50;
   rectWidth=appWidth*1/3;
   rectHeight=appHeight*1/3;
- 
+
   ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
   ptX[5] = ptX[6] = ptX[7] = ptX[8] = rectWidth;
   ptX[9] = ptX[10] = ptX[11]= ptX[12] = rectWidth*2;
   ptX[13] = ptX[14] = ptX[15] = ptX[16] = rectWidth*3;
-  
+
   ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
   ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
   ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
- 
-  
-  buttonX =;
-  buttonY=;
-  buttonWidth=;
-  buttonHeight=;
 
-  buttonX =;
-  buttonY=;
-  buttonWidth=;
-  buttonHeight=;
 
-  buttonX =;
-  buttonY=;
-  buttonWidth=;
-  buttonHeight=;
+  buttonX[1] = appWidth*2/9;
+  buttonY[1] = appHeight*1/9;
+  buttonWidth[1] = appWidth*1/9;
+  buttonHeight[1] = appHeight*1/3;
+
+  buttonX[2] = appWidth*3/6;
+  buttonY[2] = appHeight*2/6;
+  buttonWidth[2] = appWidth*3/6;
+  buttonHeight[2] = appHeight*1/6;
+
+
+  buttonX[3] = appWidth*11/15;
+  buttonY[3] = appHeight*14/15;
+  buttonWidth[3] = appWidth*1/15;
+  buttonHeight[2] = appHeight*1/15;
 }
 //End setup
 //
