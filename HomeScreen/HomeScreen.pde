@@ -62,7 +62,7 @@ void setup ()
   buttonX[3] = appWidth*11/15;
   buttonY[3] = appHeight*13/15;
   buttonWidth[3] = appWidth*1/15;
-  buttonHeight[2] = appHeight*1/15;
+  buttonHeight[3] = appHeight*1/15;
 }
 //End setup
 //
