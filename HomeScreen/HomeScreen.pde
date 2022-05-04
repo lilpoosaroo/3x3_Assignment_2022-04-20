@@ -1,7 +1,9 @@
 //Global Variables
 int appWidth, appHeight;
 color black=#000000, whiteReset=#FFFFFF, red=#831818, pink=#DBB3B3, blue=#B3C5DB, green=#B5DBB3;
-color buttonColor1, buttonColor2, buttonColor3;
+color purple=#AD7FD6;
+color buttonColor1, buttonColor2, buttonColor3, buttonColor4;
+boolean turnOnPink=false, turnOnBlue=false, turnOnGreen=false;
 float rectWidth, rectHeight, ptDiameter; 
 int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
@@ -67,7 +69,6 @@ void setup ()
   buttonY[3] = appHeight*13/15;
   buttonWidth[3] = appWidth*1/15;
   buttonHeight[3] = appHeight*1/15;
-  fill(whiteReset);
 }
 //End setup
 //
@@ -146,16 +147,22 @@ void draw () {
 
   rect (ptX[1], ptY[1], rectWidth, rectHeight);
   //
-  //fill();
+  if (turnOnPink==true) fill(pink);
   rect (ptX[2], ptY[2], rectWidth, rectHeight);
- // fill(whiteReset);
+  fill(whiteReset);
   //
+  if (turnOnBlue==true) fill(blue);
   rect (ptX[3], ptY[3], rectWidth, rectHeight);
+  fill(whiteReset);
   //
+  if (turnOnGreen==true) fill(green);
   rect (ptX[4], ptY[4], rectWidth, rectHeight);
+  fill(whiteReset);
   rect (ptX[5], ptY[5], rectWidth, rectHeight);
   rect (ptX[6], ptY[6], rectWidth, rectHeight);
+  if (turnOnGreen==true) fill(green);
   rect (ptX[7], ptY[7], rectWidth, rectHeight);
+  fill(whiteReset);
   rect (ptX[8], ptY[8], rectWidth, rectHeight);
   rect (ptX[9], ptY[9], rectWidth, rectHeight);
 
@@ -164,8 +171,9 @@ void draw () {
   rect (ptX[12], ptY[12], rectWidth, rectHeight);
   rect (ptX[13], ptY[13], rectWidth, rectHeight);
   rect (ptX[14], ptY[14], rectWidth, rectHeight);
-  rect (ptX[15], ptY[15], rectWidth, rectHeight);
+  rect (ptX[15], ptY[15], rectWidth, rectHeight);  
   rect (ptX[16], ptY[16], rectWidth, rectHeight);
+
   //
 
   if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
@@ -184,6 +192,12 @@ void draw () {
     buttonColor3=black;
   }
 
+  if (mouseX>=ptX[5] && mouseX<= ptX[5]+rectWidth && mouseY>=ptY[5] && mouseY<=ptY[5]+rectHeight) {
+    buttonColor4=#AD7FD6;
+  } else {
+    buttonColor4=black;
+  }
+
   //Hover over is light pink
   fill(buttonColor1);
   rect(buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1]);
@@ -194,6 +208,10 @@ void draw () {
   fill(buttonColor3);
   rect(buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3]);
   fill(whiteReset);
+  fill(buttonColor4);
+  rect(ptX[5], ptY[5], rectWidth, rectHeight);
+  fill(whiteReset);
+
   //
 
 
@@ -231,9 +249,43 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
-  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {println("Button 1 activated");};
-  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) {println("Button 2 activated");};
-  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) {println("Button 3 activated");};
+  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
+    println("Button 1 activated");
+    if (turnOnPink==true) {
+      turnOnPink=false;
+    } else {
+      turnOnPink=true;
+    }
+  }
+  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) {
+    println("Button 2 activated");
+    if (turnOnBlue==true) {
+      turnOnBlue=false;
+    } else {
+      turnOnBlue=true;
+    }
+  }
+  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) {
+    println("Button 3 activated");
+    if (turnOnGreen==true) {
+      turnOnGreen=false;
+    } else {
+      turnOnGreen=true;
+    }
+  }
+
+  if (mouseX>=ptX[5] && mouseX<= ptX[5]+rectWidth && mouseY>=ptY[5] && mouseY<=ptY[5]+rectHeight) {
+    println("Button 4 activated");
+    if (turnOnPink==true || turnOnBlue==true || turnOnGreen==true) {
+      turnOnPink=false;
+      turnOnBlue=false;
+      turnOnGreen=false;
+    } else {
+      turnOnPink=true;
+      turnOnBlue=true;
+      turnOnGreen=true;
+    }
+  }
 }//End mousePressed
 //
 //End MAIN program 
