@@ -47,29 +47,27 @@ void setup ()
   ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
   ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
-  
-  
+
+
   buttonX[1] = appWidth*1/9;
   buttonY[1] = appHeight*1/9;
   buttonWidth[1] = appWidth*1/9;
   buttonHeight[1] = appHeight*1/9;
-  
+
   //Hover over is light blue
-  
+
   buttonX[2] = appWidth*3/6;
   buttonY[2] = appHeight*2/6;
   buttonWidth[2] = appWidth*1/6;
   buttonHeight[2] = appHeight*1/6;
 
 
-  
+
   buttonX[3] = appWidth*11/15;
   buttonY[3] = appHeight*13/15;
   buttonWidth[3] = appWidth*1/15;
   buttonHeight[3] = appHeight*1/15;
   fill(whiteReset);
-  
- 
 }
 //End setup
 //
@@ -139,17 +137,21 @@ void draw () {
     ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
     fill(whiteReset);
   }
-  
- 
-  
+
+
+
   //
   //
   //
 
   rect (ptX[1], ptY[1], rectWidth, rectHeight);
-
+  //
+  //fill();
   rect (ptX[2], ptY[2], rectWidth, rectHeight);
+ // fill(whiteReset);
+  //
   rect (ptX[3], ptY[3], rectWidth, rectHeight);
+  //
   rect (ptX[4], ptY[4], rectWidth, rectHeight);
   rect (ptX[5], ptY[5], rectWidth, rectHeight);
   rect (ptX[6], ptY[6], rectWidth, rectHeight);
@@ -165,25 +167,24 @@ void draw () {
   rect (ptX[15], ptY[15], rectWidth, rectHeight);
   rect (ptX[16], ptY[16], rectWidth, rectHeight);
   //
-  
-     if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]){
-  buttonColor1=pink;
+
+  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
+    buttonColor1=pink;
   } else {
-  buttonColor1=black;
+    buttonColor1=black;
   }
-  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]){
-  buttonColor2=blue;
+  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) {
+    buttonColor2=blue;
   } else {
-  buttonColor2=black;
+    buttonColor2=black;
   }
-  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]){
-   buttonColor3=green;
- 
+  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) {
+    buttonColor3=green;
   } else {
-  buttonColor3=black; 
+    buttonColor3=black;
   }
- 
-    //Hover over is light pink
+
+  //Hover over is light pink
   fill(buttonColor1);
   rect(buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1]);
   //Hover over is light blue 
@@ -194,8 +195,8 @@ void draw () {
   rect(buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3]);
   fill(whiteReset);
   //
- 
-  
+
+
 
 
 
@@ -222,8 +223,6 @@ void draw () {
   ellipse(ptX[15], ptY[15], ptDiameter, ptDiameter);
   ellipse(ptX[16], ptY[16], ptDiameter, ptDiameter);
   fill(whiteReset);
-  
- 
 }//End draw
 //
 void keyPressed ()
@@ -232,6 +231,9 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
+  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) println("Button 1 activated");
+  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) println("Button 2 activated");
+  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) println("Button 3 activated");
 }//End mousePressed
 //
 //End MAIN program 
