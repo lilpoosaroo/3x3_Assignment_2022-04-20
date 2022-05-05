@@ -13,6 +13,7 @@ float [] buttonX = new float [numberOfButtons];
 float [] buttonY = new float [numberOfButtons];
 float [] buttonWidth = new float [numberOfButtons];
 float [] buttonHeight = new float [numberOfButtons];
+PImage=Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 
 //
 void setup ()
@@ -35,7 +36,7 @@ void setup ()
     appHeight *=0;
   }
   println("App Geometry is:", "\t AppWidth:", appWidth, "\t AppHeight:", appHeight);
-  //Population
+  //Populating Variables For Rectangles
   ptDiameter=appWidth*1/50;
   rectWidth=appWidth*1/3;
   rectHeight=appHeight*1/3;
@@ -50,7 +51,7 @@ void setup ()
   ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
 
-
+//Populating Variables for Buttons
   buttonX[1] = appWidth*1/9;
   buttonY[1] = appHeight*1/9;
   buttonWidth[1] = appWidth*1/9;
@@ -69,12 +70,22 @@ void setup ()
   buttonY[3] = appHeight*13/15;
   buttonWidth[3] = appWidth*1/15;
   buttonHeight[3] = appHeight*1/15;
-}
-//End setup
-//
-void draw () {
-
-  for (int i=1; i<14; i+=4 ) {
+  
+  //Populating Photo Variables
+  Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
+  Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
+  Pic3= loadImage("1920x1217-Where's-Waldo-Image#3.jpg");
+  Pic4= loadImage("3000x1975-Where's-Waldo-Image#4.jpg");
+  Pic5= loadImage("2040x1260-Where's-Waldo-Image#5.jpg");
+  Pic6= loadImage("3000x1899-Where's-Waldo-Image#6.jpg");
+  Pic7= loadImage("564x564-Where's-Waldo-Image#7.jpg");
+  Pic8= loadImage("564x631-Where's-Waldo-Image#8.jpg");
+  Pic9= loadImage("1200x650-Where's-Waldo-Image-#9.jpg");
+ 
+  
+  
+  //Making Photos
+   for (int i=1; i<14; i+=4 ) {
     ptY[i] = appHeight*0;//Which means ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
     fill(black);
@@ -138,14 +149,8 @@ void draw () {
     ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
     fill(whiteReset);
   }
-
-
-
-  //
-  //
-  //
-
-  rect (ptX[1], ptY[1], rectWidth, rectHeight);
+  
+    rect (ptX[1], ptY[1], rectWidth, rectHeight);
   //
   if (turnOnPink==true) fill(pink);
   rect (ptX[2], ptY[2], rectWidth, rectHeight);
@@ -173,8 +178,10 @@ void draw () {
   rect (ptX[14], ptY[14], rectWidth, rectHeight);
   rect (ptX[15], ptY[15], rectWidth, rectHeight);  
   rect (ptX[16], ptY[16], rectWidth, rectHeight);
-
-  //
+}
+//End setup
+//
+void draw () {
 
   if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
     buttonColor1=pink;
