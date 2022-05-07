@@ -9,23 +9,27 @@ int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
 /*
-int numberOfButtons = 4; 
-float [] buttonX = new float [numberOfButtons];
-float [] buttonY = new float [numberOfButtons];
-float [] buttonWidth = new float [numberOfButtons];
-float [] buttonHeight = new float [numberOfButtons];
-*/
-/*
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
-float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
-float rectXPic3, rectYPic3, rectWidthPic3, rectHeightPic3;
-float rectXPic4, rectYPic4, rectWidthPic4, rectHeightPic4;
-float rectXPic5, rectYPic5, rectWidthPic5, rectHeightPic5;
-float rectXPic6, rectYPic6, rectWidthPic6, rectHeightPic6;
-float rectXPic7, rectYPic7, rectWidthPic7, rectHeightPic7;
-float rectXPic8, rectYPic8, rectWidthPic8, rectHeightPic8;
-float rectXPic9, rectYPic9, rectWidthPic9, rectHeightPic9;
-*/
+ float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
+ float rectXPic3, rectYPic3, rectWidthPic3, rectHeightPic3;
+ float rectXPic4, rectYPic4, rectWidthPic4, rectHeightPic4;
+ float rectXPic5, rectYPic5, rectWidthPic5, rectHeightPic5;
+ float rectXPic6, rectYPic6, rectWidthPic6, rectHeightPic6;
+ float rectXPic7, rectYPic7, rectWidthPic7, rectHeightPic7;
+ float rectXPic8, rectYPic8, rectWidthPic8, rectHeightPic8;
+ float rectXPic9, rectYPic9, rectWidthPic9, rectHeightPic9;
+ */
+int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Width, Pic4Height;
+int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
+int Pic9Width, Pic9Height;
+Boolean widthPic1Larger= false, heightPic1Larger = false, widthPic2Larger = false, heightPic2Larger = false;
+Boolean widthPic3Larger= false, heightPic3Larger = false, widthPic4Larger = false, heightPic4Larger = false;
+int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension, largerPic3Dimension, smallerPic3Dimension, largerPic4Dimension, smallerPic4Dimension;
+int largerPic5Dimension, smallerPic5Dimension, largerPic6Dimension, smallerPic6Dimension, largerPic7Dimension, smallerPic7Dimension, largerPic8Dimension, smallerPic8Dimension;
+int largerPic9Dimension, smallerPic9Dimension;
+float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0, imageWidthRatioPic3=0.0, imageHeightRatioPic3=0.0, imageWidthRatioPic4=0.0, imageHeightRatioPic4=0.0;
+float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
+float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9=0.0, imageHeightRatioPic9=0.0;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 //
 void setup ()
@@ -62,30 +66,9 @@ void setup ()
   ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
   ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
-
-//Populating Variables for Buttons
-/*
-  buttonX[1] = appWidth*1/9;
-  buttonY[1] = appHeight*1/9;
-  buttonWidth[1] = appWidth*1/9;
-  buttonHeight[1] = appHeight*1/9;
-
-  //Hover over is light blue
-
-  buttonX[2] = appWidth*3/6;
-  buttonY[2] = appHeight*2/6;
-  buttonWidth[2] = appWidth*1/6;
-  buttonHeight[2] = appHeight*1/6;
-
-
-
-  buttonX[3] = appWidth*11/15;
-  buttonY[3] = appHeight*13/15;
-  buttonWidth[3] = appWidth*1/15;
-  buttonHeight[3] = appHeight*1/15;
-  */
-  //Populating Photo Variables
   
+  ChoosingLargerDimension ();  
+
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
   Pic3= loadImage("1920x1217-Where's-Waldo-Image#3.jpg");
@@ -95,11 +78,11 @@ void setup ()
   Pic7= loadImage("564x564-Where's-Waldo-Image#7.jpg");
   Pic8= loadImage("564x631-Where's-Waldo-Image#8.jpg");
   Pic9= loadImage("1200x650-Where's-Waldo-Image-#9.jpg");
- 
-  
-  
+
+
+
   //Making Photos
-   for (int i=1; i<14; i+=4 ) {
+  for (int i=1; i<14; i+=4 ) {
     ptY[i] = appHeight*0;//Which means ptY[1] = ptY[5] = ptY[9] = ptY[13] = appHeight*0;
     rect(ptX[i], ptY[i], rectWidth, rectHeight);
     fill(black);
@@ -163,25 +146,14 @@ void setup ()
     ellipse(ptX[i], ptY[i], ptDiameter, ptDiameter);
     fill(whiteReset);
   }
-  
-    rect (ptX[1], ptY[1], rectWidth, rectHeight);
-  //
-  //if (turnOnPink==true) fill(pink);
+
+  rect (ptX[1], ptY[1], rectWidth, rectHeight);
   rect (ptX[2], ptY[2], rectWidth, rectHeight);
-  fill(whiteReset);
-  //
- // if (turnOnBlue==true) fill(blue);
   rect (ptX[3], ptY[3], rectWidth, rectHeight);
-  fill(whiteReset);
-  //
- // if (turnOnGreen==true) fill(green);
   rect (ptX[4], ptY[4], rectWidth, rectHeight);
-  fill(whiteReset);
   rect (ptX[5], ptY[5], rectWidth, rectHeight);
   rect (ptX[6], ptY[6], rectWidth, rectHeight);
- // if (turnOnGreen==true) fill(green);
   rect (ptX[7], ptY[7], rectWidth, rectHeight);
-  fill(whiteReset);
   rect (ptX[8], ptY[8], rectWidth, rectHeight);
   rect (ptX[9], ptY[9], rectWidth, rectHeight);
 
@@ -192,67 +164,20 @@ void setup ()
   rect (ptX[14], ptY[14], rectWidth, rectHeight);
   rect (ptX[15], ptY[15], rectWidth, rectHeight);  
   rect (ptX[16], ptY[16], rectWidth, rectHeight);
-  
+
   image(Pic1, ptX[1], ptY[1], rectWidth, rectHeight);
-   image(Pic2, ptX[2], ptY[2], rectWidth, rectHeight);
-    image(Pic3, ptX[3], ptY[3], rectWidth, rectHeight );
-     image(Pic4, ptX[5], ptY[5], rectWidth, rectHeight);
-      image(Pic5, ptX[6], ptY[6], rectWidth, rectHeight );
-       image(Pic6, ptX[7], ptY[7], rectWidth, rectHeight);
-        image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight );
-         image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight );
-          image(Pic9, ptX[11], ptY[11], rectWidth, rectHeight);
-           
+  image(Pic2, ptX[2], ptY[2], rectWidth, rectHeight);
+  image(Pic3, ptX[3], ptY[3], rectWidth, rectHeight );
+  image(Pic4, ptX[5], ptY[5], rectWidth, rectHeight);
+  image(Pic5, ptX[6], ptY[6], rectWidth, rectHeight );
+  image(Pic6, ptX[7], ptY[7], rectWidth, rectHeight);
+  image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight );
+  image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight );
+  image(Pic9, ptX[11], ptY[11], rectWidth, rectHeight);
 }
 //End setup
 //
 void draw () {
-  
-  /*
-
-  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
-    buttonColor1=pink;
-  } else {
-    buttonColor1=black;
-  }
-  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) {
-    buttonColor2=blue;
-  } else {
-    buttonColor2=black;
-  }
-  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) {
-    buttonColor3=green;
-  } else {
-    buttonColor3=black;
-  }
-
-  if (mouseX>=ptX[5] && mouseX<= ptX[5]+rectWidth && mouseY>=ptY[5] && mouseY<=ptY[5]+rectHeight) {
-    buttonColor4=#AD7FD6;
-  } else {
-    buttonColor4=black;
-  }
-
-  //Hover over is light pink
-  fill(buttonColor1);
-  rect(buttonX[1], buttonY[1], buttonWidth[1], buttonHeight[1]);
-  //Hover over is light blue 
-  fill(buttonColor2);
-  rect(buttonX[2], buttonY[2], buttonWidth[2], buttonHeight[2]);
-  //Hover over is light green 
-  fill(buttonColor3);
-  rect(buttonX[3], buttonY[3], buttonWidth[3], buttonHeight[3]);
-  fill(whiteReset);
-  fill(buttonColor4);
-  rect(ptX[5], ptY[5], rectWidth, rectHeight);
-  fill(whiteReset);
-  
-  */
-
-  //
-
-
-
-
 
   fill(black);
   ellipse(ptX[1], ptY[1], ptDiameter, ptDiameter);
@@ -285,45 +210,6 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
-  /*
-  if (mouseX>=buttonX[1] && mouseX<= buttonX[1]+buttonWidth[1] && mouseY>=buttonY[1] && mouseY<=buttonY[1]+buttonHeight[1]) {
-    println("Button 1 activated");
-    if (turnOnPink==true) {
-      turnOnPink=false;
-    } else {
-      turnOnPink=true;
-    }
-  }
-  if (mouseX>=buttonX[2] && mouseX<= buttonX[2]+buttonWidth[2] && mouseY>=buttonY[2] && mouseY<=buttonY[2]+buttonHeight[2]) {
-    println("Button 2 activated");
-    if (turnOnBlue==true) {
-      turnOnBlue=false;
-    } else {
-      turnOnBlue=true;
-    }
-  }
-  if (mouseX>=buttonX[3] && mouseX<= buttonX[3]+buttonWidth[3] && mouseY>=buttonY[3] && mouseY<=buttonY[3]+buttonHeight[3]) {
-    println("Button 3 activated");
-    if (turnOnGreen==true) {
-      turnOnGreen=false;
-    } else {
-      turnOnGreen=true;
-    }
-  }
-
-  if (mouseX>=ptX[5] && mouseX<= ptX[5]+rectWidth && mouseY>=ptY[5] && mouseY<=ptY[5]+rectHeight) {
-    println("Button 4 activated");
-    if (turnOnPink==true || turnOnBlue==true || turnOnGreen==true) {
-      turnOnPink=false;
-      turnOnBlue=false;
-      turnOnGreen=false;
-    } else {
-      turnOnPink=true;
-      turnOnBlue=true;
-      turnOnGreen=true;
-    }
-  }
-  */
 }//End mousePressed
 //
 //End MAIN program 
