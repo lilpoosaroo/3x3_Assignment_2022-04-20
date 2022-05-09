@@ -39,5 +39,55 @@ void ChoosingLargerDimension (){
     smallerPic4Dimension = Pic4Width;
     heightPic4Larger = true;
   } 
-
+  //END PIC 4 LARGER DIMENSION VERIFICATION
+   if (Pic5Width >= Pic5Height) { //Identify Larger Dimension, if 1920 is larger than 1080
+    largerPic5Dimension = Pic5Width; 
+    smallerPic5Dimension = Pic5Height;
+    widthPic5Larger = true;
+  } else {//Identify Larger Dimension Portrait
+    largerPic5Dimension = Pic5Height; 
+    smallerPic5Dimension = Pic5Width;
+    heightPic5Larger = true;
+  }  
+  // End Pic 5 larger dimension verification
+  if (Pic6Width >= Pic6Height) { //Identify Larger Dimension, if 1200 is larger than 650
+    largerPic6Dimension = Pic6Width; 
+    smallerPic6Dimension = Pic6Height;
+    widthPic6Larger = true;
+  } else {//Identify Larger Dimension Portrait
+    largerPic6Dimension = Pic6Height; 
+    smallerPic6Dimension = Pic6Width;
+    heightPic6Larger = true;
+  } 
+  //END PIC 6 LARGER DIMENSION VERIFICATION
+  if (Pic7Width >= Pic7Height) { //Identify Larger Dimension, if 1920 is larger than 1217
+    largerPic7Dimension = Pic7Width; 
+    smallerPic7Dimension = Pic7Height;
+    widthPic7Larger = true;
+  } else {//Identify Larger Dimension Portrait
+    largerPic7Dimension = Pic7Height;
+    smallerPic7Dimension = Pic7Width;
+    heightPic7Larger = true ;
+  } 
+  //END PIC 7 LARGER DIMENSION VERIFICATION
+  if (Pic8Width >= Pic8Height) { //Identify Larger Dimension, if 3000 is larger than 1975
+    largerPic8Dimension = Pic8Width; 
+    smallerPic8Dimension = Pic8Height;
+    widthPic8Larger = true;
+  } else {//Identify Larger Dimension Portrait
+    largerPic8Dimension = Pic8Height; 
+    smallerPic8Dimension = Pic8Width;
+    heightPic8Larger = true;
+  } 
+  //END PIC 8 LARGER DIMENSION VERIFICATION
+  if (Pic9Width >= Pic9Height) { //Identify Larger Dimension, if 1200 is larger than 650
+    largerPic9Dimension = Pic9Width; 
+    smallerPic9Dimension = Pic9Height;
+    widthPic9Larger = true;
+  } else {//Identify Larger Dimension Portrait
+    largerPic9Dimension = Pic9Height; 
+    smallerPic9Dimension = Pic9Width;
+    heightPic9Larger = true;
+  } 
+  //END PIC 9 LARGER DIMENSION VERIFICATION
 }//End choosing larger dimension 
