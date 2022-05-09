@@ -22,6 +22,9 @@ float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Width, Pic4Height;
 int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
 int Pic9Width, Pic9Height;
+float Pic1WidthAdjusted, Pic1HeightAdjusted, Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
+float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjusted, Pic7WidthAdjusted, Pic7HeightAdjusted, Pic8WidthAdjusted, Pic8HeightAdjusted;
+float Pic9WidthAdjusted, Pic9HeightAdjusted;
 Boolean widthPic1Larger= false, heightPic1Larger = false, widthPic2Larger = false, heightPic2Larger = false;
 Boolean widthPic3Larger= false, heightPic3Larger = false, widthPic4Larger = false, heightPic4Larger = false;
 Boolean widthPic5Larger= false, heightPic5Larger = false, widthPic6Larger = false, heightPic6Larger = false;
@@ -69,10 +72,39 @@ void setup ()
   ptY[2] = ptY[6] = ptY[10] = ptY[14] = rectHeight;
   ptY[3] = ptY[7] = ptY[11] = ptY[15] = rectHeight*2; 
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
-  
+
   RectangleCode();
-  
-    
+  ChoosingLargerDimension ();
+  CalculatingAspectRatios();
+
+  Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
+  Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
+  //
+  Pic2WidthAdjusted = rectWidth * imageWidthRatioPic2;
+  Pic2HeightAdjusted = rectHeight * imageHeightRatioPic2;
+  //
+  Pic3WidthAdjusted = rectWidth * imageWidthRatioPic3;
+  Pic3HeightAdjusted = rectHeight * imageHeightRatioPic3;
+  //
+  Pic4WidthAdjusted = rectWidth * imageWidthRatioPic4;
+  Pic4HeightAdjusted = rectHeight * imageHeightRatioPic4;
+  //
+  Pic5WidthAdjusted = rectWidth * imageWidthRatioPic5;
+  Pic5HeightAdjusted = rectHeight * imageHeightRatioPic5;
+  //
+  Pic6WidthAdjusted = rectWidth * imageWidthRatioPic6;
+  Pic6HeightAdjusted = rectHeight * imageHeightRatioPic6;
+  //
+  Pic7WidthAdjusted = rectWidth * imageWidthRatioPic7;
+  Pic7HeightAdjusted = rectHeight * imageHeightRatioPic7;
+  //
+  Pic8WidthAdjusted = rectWidth * imageWidthRatioPic8;
+  Pic8HeightAdjusted = rectHeight * imageHeightRatioPic8;
+  //
+  Pic9WidthAdjusted = rectWidth * imageWidthRatioPic9;
+  Pic9HeightAdjusted = rectHeight * imageHeightRatioPic9;
+
+
 
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
@@ -83,20 +115,17 @@ void setup ()
   Pic7= loadImage("564x564-Where's-Waldo-Image#7.jpg");
   Pic8= loadImage("564x631-Where's-Waldo-Image#8.jpg");
   Pic9= loadImage("1200x650-Where's-Waldo-Image-#9.jpg");
- 
- ChoosingLargerDimension ();
- CalculatingAspectRatios();
 
 
-  image(Pic1, ptX[1], ptY[1], rectWidth, rectHeight);
-  image(Pic2, ptX[2], ptY[2], rectWidth, rectHeight);
-  image(Pic3, ptX[3], ptY[3], rectWidth, rectHeight );
-  image(Pic4, ptX[5], ptY[5], rectWidth, rectHeight);
-  image(Pic5, ptX[6], ptY[6], rectWidth, rectHeight );
-  image(Pic6, ptX[7], ptY[7], rectWidth, rectHeight);
-  image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight );
-  image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight );
-  image(Pic9, ptX[11], ptY[11], rectWidth, rectHeight);
+  image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, Pic1HeightAdjusted);
+  image(Pic2, ptX[2], ptY[2],  Pic2WidthAdjusted, Pic2HeightAdjusted);
+  image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, Pic3HeightAdjusted);
+  image(Pic4, ptX[5], ptY[5], Pic4WidthAdjusted, Pic4HeightAdjusted);
+  image(Pic5, ptX[6], ptY[6], Pic5WidthAdjusted, Pic5HeightAdjusted);
+  image(Pic6, ptX[7], ptY[7], Pic6WidthAdjusted, Pic6HeightAdjusted);
+  image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
+  image(Pic8, ptX[10], ptY[10], Pic8WidthAdjusted, Pic8HeightAdjusted );
+  image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
 }
 //End setup
 //
