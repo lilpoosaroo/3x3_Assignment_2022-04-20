@@ -30,7 +30,7 @@ void ChoosingLargerDimension (){
     heightPic3Larger = true ;
   } 
   //END PIC 3 LARGER DIMENSION VERIFICATION
-  if (Pic4Width >= Pic4Height) { //Identify Larger Dimension, if 3000 is larger than 1975
+  if (Pic4Width >= Pic4Height) { //Identify Larger Dimension, if 3000x1975 is larger than 1975
     largerPic4Dimension = Pic4Width; 
     smallerPic4Dimension = Pic4Height;
     widthPic4Larger = true;
@@ -40,7 +40,7 @@ void ChoosingLargerDimension (){
     heightPic4Larger = true;
   } 
   //END PIC 4 LARGER DIMENSION VERIFICATION
-   if (Pic5Width >= Pic5Height) { //Identify Larger Dimension, if 1920 is larger than 1080
+   if (Pic5Width >= Pic5Height) { //Identify Larger Dimension, if 2040 is larger than 1260
     largerPic5Dimension = Pic5Width; 
     smallerPic5Dimension = Pic5Height;
     widthPic5Larger = true;
@@ -50,7 +50,7 @@ void ChoosingLargerDimension (){
     heightPic5Larger = true;
   }  
   // End Pic 5 larger dimension verification
-  if (Pic6Width >= Pic6Height) { //Identify Larger Dimension, if 1200 is larger than 650
+  if (Pic6Width >= Pic6Height) { //Identify Larger Dimension, if 3000 is larger than 1899
     largerPic6Dimension = Pic6Width; 
     smallerPic6Dimension = Pic6Height;
     widthPic6Larger = true;
@@ -60,7 +60,7 @@ void ChoosingLargerDimension (){
     heightPic6Larger = true;
   } 
   //END PIC 6 LARGER DIMENSION VERIFICATION
-  if (Pic7Width >= Pic7Height) { //Identify Larger Dimension, if 1920 is larger than 1217
+  if (Pic7Width >= Pic7Height || Pic7Width == Pic7Height) { //Identify Larger Dimension, if 564 is larger than 564
     largerPic7Dimension = Pic7Width; 
     smallerPic7Dimension = Pic7Height;
     widthPic7Larger = true;
@@ -70,7 +70,7 @@ void ChoosingLargerDimension (){
     heightPic7Larger = true ;
   } 
   //END PIC 7 LARGER DIMENSION VERIFICATION
-  if (Pic8Width >= Pic8Height) { //Identify Larger Dimension, if 3000 is larger than 1975
+  if (Pic8Width >= Pic8Height) { //Identify Larger Dimension, if 564 is larger than 631
     largerPic8Dimension = Pic8Width; 
     smallerPic8Dimension = Pic8Height;
     widthPic8Larger = true;
