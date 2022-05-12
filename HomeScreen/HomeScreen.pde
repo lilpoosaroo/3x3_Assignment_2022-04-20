@@ -136,14 +136,14 @@ void setup ()
 
 
 
-  image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, Pic1HeightAdjusted);
-  image(Pic2, ptX[2], ptY[2], Pic2WidthAdjusted, Pic2HeightAdjusted);
-  image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, Pic3HeightAdjusted);
-  image(Pic4, ptX[5], ptY[5], Pic4WidthAdjusted, Pic4HeightAdjusted);
-  image(Pic5, ptX[6], ptY[6], Pic5WidthAdjusted, Pic5HeightAdjusted);
-  image(Pic6, ptX[7], ptY[7], Pic6WidthAdjusted, Pic6HeightAdjusted);
+  image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
+  image(Pic2, ptX[2], ptY[2], Pic2WidthAdjusted, rectHeight);
+  image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, rectHeight);
+  image(Pic4, ptX[5], ptY[5], Pic4WidthAdjusted, rectHeight);
+  image(Pic5, ptX[6], ptY[6], Pic5WidthAdjusted, rectHeight);
+  image(Pic6, ptX[7], ptY[7], Pic6WidthAdjusted, rectHeight);
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
-  image(Pic8, ptX[10], ptY[10], Pic8WidthAdjusted, Pic8HeightAdjusted);
+  image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
   image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
 }
 //End setup
