@@ -38,9 +38,9 @@ float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 
-float buttonX, buttonY, buttonWidth, buttonHeight;
+float button1X, button1Y, buttonWidth, buttonHeight;
 color buttonColor; 
-String buttonText= "Enlarge Puzzle";
+String buttonText= "Enlarge Picture";
 //
 void setup ()
 {
@@ -78,6 +78,7 @@ void setup ()
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
 
   RectangleCode();
+  //Image Code
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
   Pic3= loadImage("1920x1217-Where's-Waldo-Image#3.jpg");
@@ -145,6 +146,15 @@ void setup ()
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
   image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
   image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
+  
+  //Button Code
+  button1X=rectWidth*2/3;
+  button1Y=rectHeight*3/4;
+  buttonWidth=rectWidth*1/3;
+  buttonHeight=rectHeight*1/4;
+  
+  rect(button1X, button1Y, buttonWidth, buttonHeight);
+  text(buttonText, button1X, button1Y, buttonWidth, buttonHeight);
 }
 //End setup
 //
