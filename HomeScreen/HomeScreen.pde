@@ -38,23 +38,19 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-//Button 
-float button1X, button1Y, buttonWidth, buttonHeight;
-String buttonText="Enlarge Pic";
-color yellow=#FAF99C; 
-PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-//Boolean enlargePic1=false;
-//String [] fontList = PFont.list();
-//printArray(fontList);
+
+Boolean enlargePic1=false;
+
+
 void setup ()
 {
   size(900, 400); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
   /* 
-  Xorigin=appWidth*0;
-  Yorigin=appHeight*0;
-  */
+   Xorigin=appWidth*0;
+   Yorigin=appHeight*0;
+   */
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
@@ -149,19 +145,7 @@ void setup ()
   Pic9WidthAdjusted = rectWidth * imageWidthRatioPic9;
   Pic9HeightAdjusted = rectHeight * imageHeightRatioPic8;
 
-
- /* if (enlargePic1==true) {
-    rect(Xorigin, Yorigin, appWidth, appHeight);
-    Pic1WidthAdjusted=appWidth*imageWidthRatioPic1;
-    Pic1HeightAdjusted=appHeight*imageHeightRatioPic1;
-    ptX[1]=(appWidth*1/2)-(Pic1WidthAdjusted*1/2);
-  } else {
-    Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
-    Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
-    ptX[1] = appWidth*0;
-  }
-  */
-  image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
+  //image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
   image(Pic2, ptX[2], ptY[2], Pic2WidthAdjusted, rectHeight);
   image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, rectHeight);
   image(Pic4, ptX[5], ptY[5], Pic4WidthAdjusted, rectHeight);
@@ -170,8 +154,29 @@ void setup ()
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
   image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
   image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
+}
+//End setup
+//
+void draw () {
 
+
+  if (enlargePic1==true) {
+    Pic1WidthAdjusted=appWidth*imageWidthRatioPic1;
+    ptX[1]=(appWidth*1/2)-(Pic1WidthAdjusted*1/2);
+    ptY[1]=appHeight*0;
+    image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, appHeight);
+  } else {
+    Pic1WidthAdjusted=rectWidth*imageWidthRatioPic1;
+    ptX[1]=appWidth*0;
+    ptY[1]=appHeight*0;
+    image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
+  }
+  
   //Button Code
+  float button1X, button1Y, buttonWidth, buttonHeight;
+  String buttonText="Enlarge Pic";
+  color yellow=#FAF99C; 
+  PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
   button1X=rectWidth*2/3;
   button1Y=rectHeight*3/4;
   buttonWidth=rectWidth*1/3;
@@ -184,10 +189,7 @@ void setup ()
   textFont(buttonEnlargeFont, 17);
   text(buttonText, button1X, button1Y, buttonWidth, buttonHeight);
   fill(whiteReset);
-}
-//End setup
-//
-void draw () {
+    
 
   fill(black);
   ellipse(ptX[1], ptY[1], ptDiameter, ptDiameter);
@@ -220,17 +222,20 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
-
- /* if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
+  float button1X, button1Y, buttonWidth, buttonHeight;
+  button1X=rectWidth*2/3;
+  button1Y=rectHeight*3/4;
+  buttonWidth=rectWidth*1/3;
+  buttonHeight=rectHeight*1/4;
+  if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
     if (enlargePic1==true) {
       enlargePic1=false;
-       println("Button off");
+      println("Button off");
     } else {
       enlargePic1=true;
-       println("Button on");
+      println("Button on");
     }
   }
-  */
 }//End mousePressed
 //
 //End MAIN program 
