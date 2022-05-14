@@ -1,6 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
-float Xorigin, Yorigin;
+//float Xorigin, Yorigin;
 color black=#000000, whiteReset=#FFFFFF, red=#831818;
 //color pink=#DBB3B3, blue=#B3C5DB, green=#B5DBB3, purple=#AD7FD6;
 //color buttonColor1, buttonColor2, buttonColor3, buttonColor4;
@@ -43,7 +43,7 @@ float button1X, button1Y, buttonWidth, buttonHeight;
 String buttonText="Enlarge Pic";
 color yellow=#FAF99C; 
 PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-Boolean enlargePic1=false;
+//Boolean enlargePic1=false;
 //String [] fontList = PFont.list();
 //printArray(fontList);
 void setup ()
@@ -51,8 +51,10 @@ void setup ()
   size(900, 400); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
+  /* 
   Xorigin=appWidth*0;
   Yorigin=appHeight*0;
+  */
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
@@ -219,7 +221,7 @@ void keyPressed ()
 //
 void mousePressed () {
 
-  if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
+ /* if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
     if (enlargePic1==true) {
       enlargePic1=false;
        println("Button off");
@@ -228,6 +230,7 @@ void mousePressed () {
        println("Button on");
     }
   }
+  */
 }//End mousePressed
 //
 //End MAIN program 
