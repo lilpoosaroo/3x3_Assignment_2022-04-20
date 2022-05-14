@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+float Xorigin, Yorigin;
 color black=#000000, whiteReset=#FFFFFF, red=#831818;
 //color pink=#DBB3B3, blue=#B3C5DB, green=#B5DBB3, purple=#AD7FD6;
 //color buttonColor1, buttonColor2, buttonColor3, buttonColor4;
@@ -37,16 +38,21 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-
+//Button 
 float button1X, button1Y, buttonWidth, buttonHeight;
-color buttonColor; 
-String buttonText= "Enlarge Picture";
-//
+String buttonText="Enlarge Pic";
+color yellow=#FAF99C; 
+PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
+Boolean enlargePic1=false;
+//String [] fontList = PFont.list();
+//printArray(fontList);
 void setup ()
 {
   size(900, 400); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
+  Xorigin=appWidth*0;
+  Yorigin=appHeight*0;
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
@@ -67,7 +73,8 @@ void setup ()
   rectWidth=appWidth*1/3;
   rectHeight=appHeight*1/3;
 
-  ptX[1] = ptX[2] = ptX[3] = ptX[4] = appWidth*0;
+  ptX[1]  = appWidth*0;
+  ptX[2] = ptX[3] = ptX[4] = appWidth*0;
   ptX[5] = ptX[6] = ptX[7] = ptX[8] = rectWidth;
   ptX[9] = ptX[10] = ptX[11]= ptX[12] = rectWidth*2;
   ptX[13] = ptX[14] = ptX[15] = ptX[16] = rectWidth*3;
@@ -78,6 +85,9 @@ void setup ()
   ptY[4] = ptY[8] = ptY[12] =  ptY[16] = appHeight;
 
   RectangleCode();
+
+
+
   //Image Code
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
@@ -106,6 +116,8 @@ void setup ()
   Pic8Height=631;
   Pic9Width=950;
   Pic9Height=713;
+
+
   ChoosingLargerDimensionCalculatingAspectRatios();
 
   Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
@@ -136,7 +148,17 @@ void setup ()
   Pic9HeightAdjusted = rectHeight * imageHeightRatioPic8;
 
 
-
+ /* if (enlargePic1==true) {
+    rect(Xorigin, Yorigin, appWidth, appHeight);
+    Pic1WidthAdjusted=appWidth*imageWidthRatioPic1;
+    Pic1HeightAdjusted=appHeight*imageHeightRatioPic1;
+    ptX[1]=(appWidth*1/2)-(Pic1WidthAdjusted*1/2);
+  } else {
+    Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
+    Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
+    ptX[1] = appWidth*0;
+  }
+  */
   image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
   image(Pic2, ptX[2], ptY[2], Pic2WidthAdjusted, rectHeight);
   image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, rectHeight);
@@ -146,15 +168,20 @@ void setup ()
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
   image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
   image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
-  
+
   //Button Code
   button1X=rectWidth*2/3;
   button1Y=rectHeight*3/4;
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
-  
+
+  fill(yellow);
   rect(button1X, button1Y, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 17);
   text(buttonText, button1X, button1Y, buttonWidth, buttonHeight);
+  fill(whiteReset);
 }
 //End setup
 //
@@ -191,6 +218,16 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
+
+  if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
+    if (enlargePic1==true) {
+      enlargePic1=false;
+       println("Button off");
+    } else {
+      enlargePic1=true;
+       println("Button on");
+    }
+  }
 }//End mousePressed
 //
 //End MAIN program 
