@@ -67,7 +67,7 @@ void draw () {
   textFont(rectFont, 25);
   text(rect1Text, button1X, button1Y, button1Width, button1Height);
   //rect(rectDisplayX, rectDisplayY, rectDisplayWidth, rectDisplayHeight); // Display rectangle
-  fill(black);
+ // fill(black);
   // rect(ellipseX, ellipseY, ellipseWidth, ellipseHeight);// will go around the  Circle
   fill(white);
   //ellipse(x, y, xDiameter, yDiameter);
