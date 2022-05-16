@@ -9,6 +9,7 @@ float rectWidth, rectHeight, ptDiameter;
 int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
+float ptX1Enlarged;
 /*
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
  float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
@@ -23,7 +24,10 @@ float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Width, Pic4Height;
 int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
 int Pic9Width, Pic9Height;
-float Pic1WidthAdjusted, Pic1HeightAdjusted, Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
+//float Pic1WidthAdjusted
+float  Pic1WidthEnlargedAdjusted, Pic1WidthMinimizedAdjusted;
+float Pic1HeightAdjusted; 
+float Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
 float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjusted, Pic7WidthAdjusted, Pic7HeightAdjusted, Pic8WidthAdjusted, Pic8HeightAdjusted;
 float Pic9WidthAdjusted, Pic9HeightAdjusted;
 Boolean widthPic1Larger= false, heightPic1Larger = false, widthPic2Larger = false, heightPic2Larger = false;
@@ -38,8 +42,8 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-
-Boolean enlargePic1=false;
+//Button Code
+Boolean enlargePic1=false, minimizePic1=true;
 
 
 void setup ()
@@ -118,8 +122,8 @@ void setup ()
 
   ChoosingLargerDimensionCalculatingAspectRatios();
 
-  Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
-  Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
+  //Pic1WidthAdjusted = rectWidth * imageWidthRatioPic1;
+  //Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
   //
   Pic2WidthAdjusted = rectWidth * imageWidthRatioPic2;
   Pic2HeightAdjusted = rectHeight * imageHeightRatioPic2;
@@ -154,42 +158,58 @@ void setup ()
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
   image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
   image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
+  //  String [] fontList=PFont.list();
+  //  printArray(fontList);
+  
+  Pic1WidthEnlargedAdjusted =appWidth*imageWidthRatioPic1;
+  Pic1WidthMinimizedAdjusted=rectWidth*imageWidthRatioPic1;
+  Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
+  ptX1Enlarged=((appWidth*1/2)-(Pic1WidthEnlargedAdjusted*1/2));
 }
 //End setup
 //
 void draw () {
+  if (enlargePic1==false && minimizePic1==true)  image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
+  if (enlargePic1==true && minimizePic1==false) image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
 
 
-  if (enlargePic1==true) {
-    Pic1WidthAdjusted=appWidth*imageWidthRatioPic1;
-    ptX[1]=(appWidth*1/2)-(Pic1WidthAdjusted*1/2);
-    ptY[1]=appHeight*0;
-    image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, appHeight);
-  } else {
-    Pic1WidthAdjusted=rectWidth*imageWidthRatioPic1;
-    ptX[1]=appWidth*0;
-    ptY[1]=appHeight*0;
-    image(Pic1, ptX[1], ptY[1], Pic1WidthAdjusted, rectHeight);
-  }
-  
-  //Button Code
-  float button1X, button1Y, buttonWidth, buttonHeight;
-  String buttonText="Enlarge Pic";
-  color yellow=#FAF99C; 
+  //Button Code, 
+
+  float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
+  String buttonEnlargeText="Enlarge Pic";
+  String buttonMinimizeText="Minimize Pic";
+  color yellow=#FAF99C;
+  color blue=#A7DFEE;
   PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-  button1X=rectWidth*2/3;
-  button1Y=rectHeight*3/4;
+  PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+  //
+
+
+
+  button1EX=rectWidth*2/3;
+  button1EY=rectHeight*3/4;
+  button1MX=button1EX;
+  button1MY=rectHeight*1/2;
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
-
+  //Enlarge Button For Pic 1
   fill(yellow);
-  rect(button1X, button1Y, buttonWidth, buttonHeight);
+  rect(button1EX, button1EY, buttonWidth, buttonHeight);
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(buttonEnlargeFont, 17);
-  text(buttonText, button1X, button1Y, buttonWidth, buttonHeight);
+  text(buttonEnlargeText, button1EX, button1EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-    
+
+  //Minimize Button For Pic 1
+  fill(blue);
+  rect(button1MX, button1MY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonMinimizeFont, 13);
+  text (buttonMinimizeText, button1MX, button1MY, buttonWidth, buttonHeight);
+  fill(whiteReset);
+
 
   fill(black);
   ellipse(ptX[1], ptY[1], ptDiameter, ptDiameter);
@@ -222,20 +242,46 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
-  float button1X, button1Y, buttonWidth, buttonHeight;
-  button1X=rectWidth*2/3;
-  button1Y=rectHeight*3/4;
+  float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
+  /*
+String buttonEnlargeText="Enlarge Pic";
+   String buttonMinimizeText="Minimize Pic";
+   color yellow=#FAF99C;
+   color blue=#A7DFEE;
+   PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
+   PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+   */
+  //
+  button1EX=rectWidth*2/3;
+  button1EY=rectHeight*3/4;
+  button1MX=button1EX;
+  button1MY=rectHeight*1/2;
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
-  if (mouseX>=button1X && mouseX<= button1X+buttonWidth && mouseY>=button1Y && mouseY<=button1Y+buttonHeight) {
-    if (enlargePic1==true) {
-      enlargePic1=false;
-      println("Button off");
-    } else {
-      enlargePic1=true;
-      println("Button on");
-    }
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
+  if (enlargePic1==true) {
+    enlargePic1=false;
+    minimizePic1=true;
+    println("Enlarge Off");
+  } else {
+    enlargePic1=true;
+    minimizePic1=false;
+    println("Enlarge On");
   }
+  }
+
+
+  /*
+  if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight); {
+  if (minimizePic1==true) {
+    minimizePic1=false;
+    enlargePic1=true;
+  } else {
+    minimizePic1=true;
+    enlargePic1=false;
+  }
+  }
+  */
 }//End mousePressed
 //
 //End MAIN program 
