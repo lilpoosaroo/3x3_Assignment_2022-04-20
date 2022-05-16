@@ -169,19 +169,28 @@ void setup ()
 //End setup
 //
 void draw () {
-  if (enlargePic1==false && minimizePic1==true)  image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
+  if (enlargePic1==false && minimizePic1==true)  
+  image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
+  image(Pic2, ptX[2], ptY[2], Pic2WidthAdjusted, rectHeight);
+  image(Pic3, ptX[3], ptY[3], Pic3WidthAdjusted, rectHeight);
+  image(Pic4, ptX[5], ptY[5], Pic4WidthAdjusted, rectHeight);
+  image(Pic5, ptX[6], ptY[6], Pic5WidthAdjusted, rectHeight);
+  image(Pic6, ptX[7], ptY[7], Pic6WidthAdjusted, rectHeight);
+  image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, Pic7HeightAdjusted);
+  image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
+  image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
   if (enlargePic1==true && minimizePic1==false) image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
 
 
   //Button Code, 
 
   float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
-  String buttonEnlargeText="Enlarge Pic";
-  String buttonMinimizeText="Minimize Pic";
+  String buttonEnlargeText="Change Size";
+ // String buttonMinimizeText="Minimize Pic";
   color yellow=#FAF99C;
   color blue=#A7DFEE;
   PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-  PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+ // PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
   //
 
 
@@ -201,6 +210,7 @@ void draw () {
   text(buttonEnlargeText, button1EX, button1EY, buttonWidth, buttonHeight);
   fill(whiteReset);
 
+/*
   //Minimize Button For Pic 1
   fill(blue);
   rect(button1MX, button1MY, buttonWidth, buttonHeight);
@@ -209,6 +219,7 @@ void draw () {
   textFont(buttonMinimizeFont, 13);
   text (buttonMinimizeText, button1MX, button1MY, buttonWidth, buttonHeight);
   fill(whiteReset);
+  */
 
 
   fill(black);
@@ -259,7 +270,7 @@ String buttonEnlargeText="Enlarge Pic";
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
   if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
-  if (enlargePic1==true) {
+  if (enlargePic1==true && minimizePic1==false) {
     enlargePic1=false;
     minimizePic1=true;
     println("Enlarge Off");
