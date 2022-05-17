@@ -43,7 +43,18 @@ float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 //Button Code
+float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true;
+String buttonEnlargeText="Enlarge Pic";
+String buttonMinimizeText="Minimize Pic";
+color yellow=#FAF99C;
+color blue=#A7DFEE;
+PFont buttonEnlargeFont;
+String buttonText= "Enlarge Pic";
+PFont buttonMinimizeFont;
+
+
+//
 
 
 void setup ()
@@ -165,6 +176,16 @@ void setup ()
   Pic1WidthMinimizedAdjusted=rectWidth*imageWidthRatioPic1;
   Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
   ptX1Enlarged=((appWidth*1/2)-(Pic1WidthEnlargedAdjusted*1/2));
+  
+  //Button Population
+  buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
+  buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+  button1EX=rectWidth*2/3;
+  button1EY=rectHeight*3/4;
+  button1MX=button1EX;
+  button1MY=rectHeight*1/2;
+  buttonWidth=rectWidth*1/3;
+  buttonHeight=rectHeight*1/4;
 }
 //End setup
 //
@@ -183,22 +204,7 @@ void keyPressed ()
 }//End keyPressed
 //
 void mousePressed () {
-  float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
-  /*
-String buttonEnlargeText="Enlarge Pic";
-   String buttonMinimizeText="Minimize Pic";
-   color yellow=#FAF99C;
-   color blue=#A7DFEE;
-   PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-   PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
-   */
-  //
-  button1EX=rectWidth*2/3;
-  button1EY=rectHeight*3/4;
-  button1MX=button1EX;
-  button1MY=rectHeight*1/2;
-  buttonWidth=rectWidth*1/3;
-  buttonHeight=rectHeight*1/4;
+
   if (enlargePic1==false && minimizePic1==true) {
     if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
       if (enlargePic1==true && minimizePic1==false) {
@@ -213,17 +219,18 @@ String buttonEnlargeText="Enlarge Pic";
     }
   }
 
-//
-  
-  if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight); {
-   if (minimizePic1==true) {
-   minimizePic1=false;
-   enlargePic1=true;
-   } else {
-   minimizePic1=true;
-   enlargePic1=false;
-   }
-   }
+  //
+
+  if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight); 
+  {
+    if (minimizePic1==true) {
+      minimizePic1=false;
+      enlargePic1=true;
+    } else {
+      minimizePic1=true;
+      enlargePic1=false;
+    }
+  }
 }//End mousePressed
 //
 //End MAIN program 

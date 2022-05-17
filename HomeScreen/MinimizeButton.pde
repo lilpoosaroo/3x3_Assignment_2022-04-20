@@ -1,8 +1,4 @@
-void MinimizeButton () {
-  float button1MX, button1MY, buttonWidth, buttonHeight;
-  String buttonMinimizeText="Minimize Pic";
-  color blue=#A7DFEE;
-  PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+void MinimizeButton () {  
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
   button1MX=appWidth*0;
