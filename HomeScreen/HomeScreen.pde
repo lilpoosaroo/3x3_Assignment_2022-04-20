@@ -211,6 +211,7 @@ void draw () {
       ellipse(red1smallX, red1smallY, redCircleDiameter, redCircleDiameter);
       stroke(black);
     }
+
   }
 
   if (enlargePic1==true && minimizePic1==false) {
@@ -221,6 +222,7 @@ void draw () {
       stroke(black);
     }
     MinimizeButton ();
+   
   }
 }//End draw
 //
@@ -233,7 +235,7 @@ void mousePressed () {
 
 
   if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight || mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight ) {
-    if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false  && minimizePic1==false)) {
+    if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false && minimizePic1==false)) {
       enlargePic1=false;
       minimizePic1=true;
       println("Enlarge Off");
@@ -243,10 +245,8 @@ void mousePressed () {
       println("Enlarge On");
     }
   }
-  
-
-  if (mouseX>=red1smallX-redCircleRadius && mouseX<=red1smallX+redCircleRadius && mouseY>=red1smallY-redCircleRadius && mouseY<=red1smallY+redCircleRadius) redCircleSmall=true;
-  if (mouseX>=red1LARGEX-redCircleRadius && mouseX<=red1LARGEX+redCircleRadius && mouseY>=red1LARGEY-redCircleRadius && mouseY<=red1LARGEY+redCircleRadius) redCircleLarge=true;
+  if (mouseX>=red1LARGEX-redCircleRadius && mouseX<=red1LARGEX+redCircleRadius && mouseY>=red1LARGEY-redCircleRadius && mouseY<=red1LARGEY+redCircleRadius) redCircleLarge=true; redCircleSmall=true;
+  if (mouseX>=red1smallX-redCircleRadius && mouseX<=red1smallX+redCircleRadius && mouseY>=red1smallY-redCircleRadius && mouseY<=red1smallY+redCircleRadius) redCircleLarge=true; redCircleSmall=true;
 }//End mousePressed
 //
 //End MAIN program 
