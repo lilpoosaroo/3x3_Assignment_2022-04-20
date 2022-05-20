@@ -35,13 +35,7 @@ void  backToGameGallery () {
   ellipse(ptX[15], ptY[15], ptDiameter, ptDiameter);
   ellipse(ptX[16], ptY[16], ptDiameter, ptDiameter);
   fill(whiteReset);
-  float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
-  String buttonEnlargeText="Enlarge Size";
-  // String buttonMinimizeText="Minimize Pic";
-  color yellow=#FAF99C;
-  color blue=#A7DFEE;
-  PFont buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits  String buttonText= "Enlarge Pic";
-  // PFont buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+
   button1EX=rectWidth*2/3;
   button1EY=rectHeight*3/4;
   button1MX=button1EX;

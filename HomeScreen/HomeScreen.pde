@@ -1,7 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
+
 //float Xorigin, Yorigin;
-color black=#000000, whiteReset=#FFFFFF, red=#831818;
+color black=#000000, whiteReset=#FFFFFF;
 //color pink=#DBB3B3, blue=#B3C5DB, green=#B5DBB3, purple=#AD7FD6;
 //color buttonColor1, buttonColor2, buttonColor3, buttonColor4;
 //boolean turnOnPink=false, turnOnBlue=false, turnOnGreen=false;
@@ -42,7 +43,7 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-//Button Code
+//Button Code For Pic 1
 float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true;
 String buttonEnlargeText="Enlarge Pic";
@@ -52,8 +53,11 @@ color blue=#A7DFEE;
 PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
-
-
+//Red circle code for pic 1, transparent circle with red outline
+float red1smallX, red1smallY, red1LARGEX, red1LARGEY, redCircleDiameter, redCircleRadius;
+color red=#D10808;
+Boolean redCircleSmall=false;
+Boolean redCircleLarge=false;
 //
 
 
@@ -176,7 +180,7 @@ void setup ()
   Pic1WidthMinimizedAdjusted=rectWidth*imageWidthRatioPic1;
   Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
   ptX1Enlarged=((appWidth*1/2)-(Pic1WidthEnlargedAdjusted*1/2));
-  
+
   //Button Population
   buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
   buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
@@ -186,14 +190,36 @@ void setup ()
   button1MY=rectHeight*1/2;
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
+
+  //Red Circle population
+ 
+    red1smallX=Pic1WidthMinimizedAdjusted*54/100;
+    red1smallY=rectHeight*44/100;
+    red1LARGEX=Pic1WidthEnlargedAdjusted*55/100;
+    red1LARGEY=appHeight*1/2;
+    redCircleDiameter=Pic1WidthMinimizedAdjusted*1/20; 
+    redCircleRadius=redCircleDiameter*1/2;
+  
 }
 //End setup
 //
 void draw () {
-  if (enlargePic1==false && minimizePic1==true)  
+  if (enlargePic1==false && minimizePic1==true) {
     backToGameGallery ();
+    if (redCircleSmall==true) {
+      stroke(red);
+      ellipse(red1smallX, red1smallY, redCircleDiameter, redCircleDiameter);
+      stroke(black);
+    }
+  }
+
   if (enlargePic1==true && minimizePic1==false) {
     image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
+    if (redCircleLarge==true) {
+      stroke(red);
+      ellipse(red1LARGEX, red1LARGEY, redCircleDiameter, redCircleDiameter);
+      stroke(black);
+    }
     MinimizeButton ();
   }
 }//End draw
@@ -205,32 +231,22 @@ void keyPressed ()
 //
 void mousePressed () {
 
-  if (enlargePic1==false && minimizePic1==true) {
-    if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
-      if (enlargePic1==true && minimizePic1==false) {
-        enlargePic1=false;
-        minimizePic1=true;
-        println("Enlarge Off");
-      } else {
-        enlargePic1=true;
-        minimizePic1=false;
-        println("Enlarge On");
-      }
-    }
-  }
 
-  //
-
-  if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight); 
-  {
-    if (minimizePic1==true) {
-      minimizePic1=false;
-      enlargePic1=true;
-    } else {
-      minimizePic1=true;
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight || mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight ) {
+    if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false  && minimizePic1==false)) {
       enlargePic1=false;
+      minimizePic1=true;
+      println("Enlarge Off");
+    } else {
+      enlargePic1=true;
+      minimizePic1=false;
+      println("Enlarge On");
     }
   }
+  
+
+  if (mouseX>=red1smallX-redCircleRadius && mouseX<=red1smallX+redCircleRadius && mouseY>=red1smallY-redCircleRadius && mouseY<=red1smallY+redCircleRadius) redCircleSmall=true;
+  if (mouseX>=red1LARGEX-redCircleRadius && mouseX<=red1LARGEX+redCircleRadius && mouseY>=red1LARGEY-redCircleRadius && mouseY<=red1LARGEY+redCircleRadius) redCircleLarge=true;
 }//End mousePressed
 //
 //End MAIN program 
