@@ -1,5 +1,6 @@
 //Global Variables
 int appWidth, appHeight;
+int reset=1;
 
 //float Xorigin, Yorigin;
 color black=#000000, whiteReset=#FFFFFF;
@@ -54,8 +55,12 @@ PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
 //Red circle code for pic 1, transparent circle with red outline
-float red1smallX, red1smallY, red1LARGEX, red1LARGEY, redCircleDiameter, redCircleRadius;
+float red1smallX, red1smallY, red1LARGEX, red1LARGEY;
+float redPic1smallCircleDiameter, redPic1LARGECircleDiameter;
+float redPic1smallCircleRadius, redPic1LARGECircleRadius;
 color red=#D10808;
+int LARGEredCircleBorderWeight;
+int smallredCircleBorderWeight;
 Boolean redCircleSmall=false;
 Boolean redCircleLarge=false;
 //
@@ -191,16 +196,23 @@ void setup ()
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
 
-  //Red Circle population
- 
-    red1smallX=Pic1WidthMinimizedAdjusted*54/100;
-    red1smallY=rectHeight*44/100;
-    red1LARGEX=Pic1WidthEnlargedAdjusted*55/100;
-    red1LARGEY=appHeight*1/2;
-    redCircleDiameter=Pic1WidthMinimizedAdjusted*1/20; 
-    redCircleRadius=redCircleDiameter*1/2;
+  //Red Circle population Diameter and radius for Pic 1
+  redPic1smallCircleDiameter=Pic1WidthMinimizedAdjusted*1/20; 
+  redPic1smallCircleRadius=redPic1smallCircleDiameter*1/2;
+  redPic1LARGECircleDiameter=redPic1smallCircleDiameter*3;
+  redPic1LARGECircleRadius=redPic1LARGECircleDiameter*1/2;
+  //X and Y red circle population For Pic 1
+  red1smallX=Pic1WidthMinimizedAdjusted*54/100;
+  red1smallY=rectHeight*44/100;
+  red1LARGEX=(Pic1WidthEnlargedAdjusted*1/2)+(redPic1LARGECircleRadius*6/4);
+  red1LARGEY=(appHeight*1/2)-redPic1LARGECircleRadius;
+  //Red Circle Border Weight
+  LARGEredCircleBorderWeight=appHeight*1/100;
+  smallredCircleBorderWeight=appHeight*1/150;
   
 }
+
+
 //End setup
 //
 void draw () {
@@ -208,21 +220,25 @@ void draw () {
     backToGameGallery ();
     if (redCircleSmall==true) {
       stroke(red);
-      ellipse(red1smallX, red1smallY, redCircleDiameter, redCircleDiameter);
+      strokeWeight(smallredCircleBorderWeight);
+      noFill();
+      ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
       stroke(black);
+      strokeWeight(reset);
     }
-
   }
 
   if (enlargePic1==true && minimizePic1==false) {
     image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
     if (redCircleLarge==true) {
       stroke(red);
-      ellipse(red1LARGEX, red1LARGEY, redCircleDiameter, redCircleDiameter);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red1LARGEX, red1LARGEY, redPic1LARGECircleDiameter, redPic1LARGECircleDiameter);
       stroke(black);
+      strokeWeight(reset);
     }
     MinimizeButton ();
-   
   }
 }//End draw
 //
@@ -245,8 +261,15 @@ void mousePressed () {
       println("Enlarge On");
     }
   }
-  if (mouseX>=red1LARGEX-redCircleRadius && mouseX<=red1LARGEX+redCircleRadius && mouseY>=red1LARGEY-redCircleRadius && mouseY<=red1LARGEY+redCircleRadius) redCircleLarge=true; redCircleSmall=true;
-  if (mouseX>=red1smallX-redCircleRadius && mouseX<=red1smallX+redCircleRadius && mouseY>=red1smallY-redCircleRadius && mouseY<=red1smallY+redCircleRadius) redCircleLarge=true; redCircleSmall=true;
+  //
+  if (mouseX>=red1smallX-redPic1smallCircleRadius && mouseX<=red1smallX+redPic1smallCircleRadius && mouseY>=red1smallY-redPic1smallCircleRadius && mouseY<=red1smallY+redPic1smallCircleRadius) { 
+    redCircleLarge=true; 
+    redCircleSmall=true;
+  }
+  if (mouseX>=red1LARGEX-redPic1LARGECircleRadius && mouseX<=red1LARGEX+redPic1LARGECircleRadius&& mouseY>=red1LARGEY-redPic1LARGECircleRadius && mouseY<=red1LARGEY+redPic1LARGECircleRadius) {
+    redCircleLarge=true;
+    redCircleSmall=true;
+  }
 }//End mousePressed
 //
 //End MAIN program 
