@@ -12,6 +12,7 @@ int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
 float ptX1Enlarged;
+float ptX2Enlarged, ptY2Enlarged;
 /*
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
  float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
@@ -27,8 +28,8 @@ int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Wid
 int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
 int Pic9Width, Pic9Height;
 //float Pic1WidthAdjusted
-float  Pic1WidthEnlargedAdjusted, Pic1WidthMinimizedAdjusted;
-float Pic1HeightAdjusted; 
+float  Pic1WidthEnlargedAdjusted, Pic1WidthMinimizedAdjusted, Pic1HeightEnlargedAdjusted, Pic1HeightMinimizedAdjusted;
+float  Pic2WidthEnlargedAdjusted, Pic2WidthMinimizedAdjusted, Pic2HeightEnlargedAdjusted, Pic2HeightMinimizedAdjusted; 
 float Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
 float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjusted, Pic7WidthAdjusted, Pic7HeightAdjusted, Pic8WidthAdjusted, Pic8HeightAdjusted;
 float Pic9WidthAdjusted, Pic9HeightAdjusted;
@@ -44,18 +45,20 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-//Button Code For Pic 1 - Pic 2 - Pic 3
+//Button Code For Pic 1 - Pic 2 - Pic 3 - Pic 4 - Pic 5 - Pic 6 - Pic 7 - Pic 8 - Pic 9
 float button1EX, button1EY, button2EX, button2EY, button3EX, button3EY; 
 float button4EX, button4EY, button5EX, button5EY, button6EX, button6EY;
 float button7EX, button7EY, button8EX, button8EY, button9EX, button9EY;
 float button1MX, button1MY, button2MX, button2MY, button3MX, button3MY;
+float button4MX, button4MY, button5MX, button5MY, button6MX, button6MY;
+float button7MX, button7MY, button8MX, button8MY, button9MX, button9MY;
 float buttonWidth, buttonHeight;
-Boolean enlargePic1=false, minimizePic1=true;
+Boolean enlargePic1=false, minimizePic1=true, enlargePic2=false, minimizePic2=true;
 String buttonEnlargeText="Enlarge Pic";
 String buttonMinimizeText="Minimize Pic";
 color Pic1buttonEnlargeColor, Pic2buttonEnlargeColor, Pic3buttonEnlargeColor, Pic4buttonEnlargeColor, Pic5buttonEnlargeColor, Pic6buttonEnlargeColor, Pic7buttonEnlargeColor;
 color Pic8buttonEnlargeColor, Pic9buttonEnlargeColor;
-color buttonMinimizeColor;
+color Pic1buttonMinimizeColor;
 color yellow=#FAF99C;
 color blue=#A7DFEE;
 PFont buttonEnlargeFont;
@@ -68,8 +71,8 @@ float redPic1smallCircleRadius, redPic1LARGECircleRadius;
 color red=#D10808;
 int LARGEredCircleBorderWeight;
 int smallredCircleBorderWeight;
-Boolean redCircleSmall=false;
-Boolean redCircleLarge=false;
+Boolean Pic1redCircleSmall=false;
+Boolean Pic1redCircleLarge=false;
 //
 
 
@@ -190,8 +193,19 @@ void setup ()
 
   Pic1WidthEnlargedAdjusted =appWidth*imageWidthRatioPic1;
   Pic1WidthMinimizedAdjusted=rectWidth*imageWidthRatioPic1;
-  Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
+  Pic1HeightEnlargedAdjusted=appHeight;
+  Pic1HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic1;
   ptX1Enlarged=((appWidth*1/2)-(Pic1WidthEnlargedAdjusted*1/2));
+
+
+  Pic2WidthEnlargedAdjusted =appWidth*imageWidthRatioPic2;
+  Pic2WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic2;
+  Pic2HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic2)*2;
+  Pic2HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic2;
+  ptX2Enlarged=((appWidth*1/2)-(Pic2WidthEnlargedAdjusted*1/2));
+  ptY2Enlarged=appHeight*0;
+
+
 
   //Buttons Population
   buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
@@ -209,19 +223,19 @@ void setup ()
   //Buttons for Pic 1 Population
   button1MX=button1EX;
   button1MY=rectHeight*1/2;
-  
+
   //Buttons for Pic 2 Population
   // button2MX=button2EX;
   //  button2MY=rectHeight*1/2;
-  
+
   //Buttons for Pic 3 Populatio
   //  button3MX=button3EX;
   // button3MY=;
-  
+
   //Buttons for Pic 4 Population
-  
+
   //Buttons for Pic 5 Population
- 
+
   //Buttons for Pic 6 Population
 
   //Red Circle population Diameter and radius for Pic 1
@@ -243,9 +257,10 @@ void setup ()
 //End setup
 //
 void draw () {
-  if (enlargePic1==false && minimizePic1==true) {
+
+  if (enlargePic1==false && minimizePic1==true) { 
     backToGameGallery ();
-    if (redCircleSmall==true) {
+    if (Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(smallredCircleBorderWeight);
       noFill();
@@ -253,11 +268,9 @@ void draw () {
       stroke(black);
       strokeWeight(reset);
     }
-  }
-
-  if (enlargePic1==true && minimizePic1==false) {
-    image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
-    if (redCircleLarge==true) {
+  } else {
+    image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, Pic1HeightEnlargedAdjusted);
+    if (Pic1redCircleLarge==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -266,6 +279,13 @@ void draw () {
       strokeWeight(reset);
     }
     MinimizeButton ();
+  }
+
+  //
+  if (enlargePic2==true && minimizePic2==false) {
+    image(Pic2, ptX2Enlarged, ptY2Enlarged, Pic2WidthEnlargedAdjusted, Pic2HeightEnlargedAdjusted);
+    MinimizeButton ();
+  } else {
   }
 }//End draw
 //
@@ -291,13 +311,27 @@ void mousePressed () {
     }
   }
   //
+  if (mouseX>=button2EX && mouseX<= button2EX+buttonWidth && mouseY>=button2EY && mouseY<=button2EY+buttonHeight) {
+
+
+    if (enlargePic1==true  && minimizePic1==false) {
+      enlargePic2=false;
+      minimizePic2=true;
+      println("Enlarge Pic 2 Off");
+    } else {
+      enlargePic2=true;
+      minimizePic2=false;
+      println("Enlarge Pic 2 On");
+    }
+  }
+  //
   if (mouseX>=red1smallX-redPic1smallCircleRadius && mouseX<=red1smallX+redPic1smallCircleRadius && mouseY>=red1smallY-redPic1smallCircleRadius && mouseY<=red1smallY+redPic1smallCircleRadius) { 
-    redCircleLarge=true; 
-    redCircleSmall=true;
+    Pic1redCircleLarge=true; 
+    Pic1redCircleSmall=true;
   }
   if (mouseX>=red1LARGEX-redPic1LARGECircleRadius && mouseX<=red1LARGEX+redPic1LARGECircleRadius&& mouseY>=red1LARGEY-redPic1LARGECircleRadius && mouseY<=red1LARGEY+redPic1LARGECircleRadius) {
-    redCircleLarge=true;
-    redCircleSmall=true;
+    Pic1redCircleLarge=true;
+    Pic1redCircleSmall=true;
   }
 }//End mousePressed
 //

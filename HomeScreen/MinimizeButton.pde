@@ -6,12 +6,12 @@ void MinimizeButton () {
   
   
   if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight) {
-    buttonMinimizeColor=blue;
+    Pic1buttonMinimizeColor=blue;
   } else {
-    buttonMinimizeColor=yellow;
+    Pic1buttonMinimizeColor=yellow;
   }
 
-  fill(buttonMinimizeColor);
+  fill(Pic1buttonMinimizeColor);
   rect(button1MX, button1MY, buttonWidth, buttonHeight);
   fill(black);
   textAlign(CENTER, CENTER);

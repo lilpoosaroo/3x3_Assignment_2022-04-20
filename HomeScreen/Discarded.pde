@@ -80,6 +80,36 @@ float ptX1, ptY1, ptX2, ptY2, ptX3, ptY3;
  rect(ptX[5], ptY[5], rectWidth, rectHeight);
  fill(whiteReset);
  
+ 
+ 
+ 
+  
+  if (enlargePic1==false && minimizePic1==true) {
+   backToGameGallery ();
+   if (Pic1redCircleSmall==true) {
+   stroke(red);
+   strokeWeight(smallredCircleBorderWeight);
+   noFill();
+   ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
+   stroke(black);
+   strokeWeight(reset);
+   }
+   }
+   
+   if (enlargePic1==true && minimizePic1==false) {
+   image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, appHeight);
+   if (Pic1redCircleLarge==true) {
+   stroke(red);
+   strokeWeight(LARGEredCircleBorderWeight);
+   noFill();
+   ellipse(red1LARGEX, red1LARGEY, redPic1LARGECircleDiameter, redPic1LARGECircleDiameter);
+   stroke(black);
+   strokeWeight(reset);
+   }
+   MinimizeButton ();
+   }
+  
+ 
  */
 
 //MOUSE PRESSED
