@@ -283,11 +283,11 @@ void mousePressed () {
     if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false && minimizePic1==false)) {
       enlargePic1=false;
       minimizePic1=true;
-      println("Enlarge Off");
+      println("Enlarge Pic 1 Off");
     } else {
       enlargePic1=true;
       minimizePic1=false;
-      println("Enlarge On");
+      println("Enlarge Pic 1 On");
     }
   }
   //
