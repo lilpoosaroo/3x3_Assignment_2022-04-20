@@ -3,13 +3,16 @@ void MinimizeButton () {
   buttonHeight=rectHeight*1/4;
   button1MX=appWidth*0;
   button1MY=appHeight -(buttonHeight);
-  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
-    buttonEnlargeColor=yellow;
+  
+  
+  if (mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight) {
+    buttonMinimizeColor=blue;
   } else {
-    buttonEnlargeColor=blue;
+    buttonMinimizeColor=yellow;
   }
+
   fill(buttonMinimizeColor);
-  rect( button1MX, button1MY, buttonWidth, buttonHeight);
+  rect(button1MX, button1MY, buttonWidth, buttonHeight);
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(buttonMinimizeFont, 13);

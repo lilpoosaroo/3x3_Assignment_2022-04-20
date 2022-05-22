@@ -44,13 +44,20 @@ float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageH
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
-//Button Code For Pic 1
-float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
+//Button Code For Pic 1 - Pic 2 - Pic 3
+float button1EX, button1EY, button2EX, button2EY, button3EX, button3EY; 
+float button4EX, button4EY, button5EX, button5EY, button6EX, button6EY;
+float button7EX, button7EY, button8EX, button8EY, button9EX, button9EY;
+float button1MX, button1MY, button2MX, button2MY, button3MX, button3MY;
+float buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true;
 String buttonEnlargeText="Enlarge Pic";
 String buttonMinimizeText="Minimize Pic";
-color buttonEnlargeColor, buttonMinimizeColor;
-color yellow=#FAF99C, blue=#A7DFEE;
+color Pic1buttonEnlargeColor, Pic2buttonEnlargeColor, Pic3buttonEnlargeColor, Pic4buttonEnlargeColor, Pic5buttonEnlargeColor, Pic6buttonEnlargeColor, Pic7buttonEnlargeColor;
+color Pic8buttonEnlargeColor, Pic9buttonEnlargeColor;
+color buttonMinimizeColor;
+color yellow=#FAF99C;
+color blue=#A7DFEE;
 PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
@@ -186,15 +193,36 @@ void setup ()
   Pic1HeightAdjusted = rectHeight * imageHeightRatioPic1;
   ptX1Enlarged=((appWidth*1/2)-(Pic1WidthEnlargedAdjusted*1/2));
 
-  //Button Population
+  //Buttons Population
   buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
   buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
-  button1EX=rectWidth*2/3;
-  button1EY=rectHeight*3/4;
-  button1MX=button1EX;
-  button1MY=rectHeight*1/2;
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
+  button1EX = button2EX = button3EX = rectWidth*2/3;
+  button4EX = button5EX = button6EX = appWidth*5/9;
+  button7EX = button8EX = button9EX = appWidth*8/9;
+  button1EY =  button4EY = button7EY = rectHeight*3/4;
+  button2EY = button5EY = button8EY = rectHeight*7/4;
+  button3EY = button6EY = button9EY = appHeight-buttonHeight;
+
+
+  //Buttons for Pic 1 Population
+  button1MX=button1EX;
+  button1MY=rectHeight*1/2;
+  
+  //Buttons for Pic 2 Population
+  // button2MX=button2EX;
+  //  button2MY=rectHeight*1/2;
+  
+  //Buttons for Pic 3 Populatio
+  //  button3MX=button3EX;
+  // button3MY=;
+  
+  //Buttons for Pic 4 Population
+  
+  //Buttons for Pic 5 Population
+ 
+  //Buttons for Pic 6 Population
 
   //Red Circle population Diameter and radius for Pic 1
   redPic1smallCircleDiameter=Pic1WidthMinimizedAdjusted*1/20; 
