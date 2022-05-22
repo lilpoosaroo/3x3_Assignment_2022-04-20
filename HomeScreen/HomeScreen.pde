@@ -49,8 +49,8 @@ float button1EX, button1EY, button1MX, button1MY, buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true;
 String buttonEnlargeText="Enlarge Pic";
 String buttonMinimizeText="Minimize Pic";
-color yellow=#FAF99C;
-color blue=#A7DFEE;
+color buttonEnlargeColor, buttonMinimizeColor;
+color yellow=#FAF99C, blue=#A7DFEE;
 PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
@@ -209,7 +209,6 @@ void setup ()
   //Red Circle Border Weight
   LARGEredCircleBorderWeight=appHeight*1/100;
   smallredCircleBorderWeight=appHeight*1/150;
-  
 }
 
 
@@ -247,10 +246,12 @@ void keyPressed ()
   if (keyCode=='/') exit();
 }//End keyPressed
 //
-void mousePressed () {
+void mousePressed () { 
 
 
-  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight || mouseX>=button1MX && mouseX<= button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight ) {
+
+
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight || mouseX>=button1MX && mouseX<=button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight ) {
     if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false && minimizePic1==false)) {
       enlargePic1=false;
       minimizePic1=true;

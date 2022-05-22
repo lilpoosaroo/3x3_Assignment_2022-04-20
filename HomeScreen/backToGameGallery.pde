@@ -43,8 +43,14 @@ void  backToGameGallery () {
   buttonWidth=rectWidth*1/3;
   buttonHeight=rectHeight*1/4;
 
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
+    buttonEnlargeColor=yellow;
+  } else {
+    buttonEnlargeColor=blue;
+  }
+
   //Enlarge Button For Pic 1
-  fill(yellow);
+  fill(buttonEnlargeColor);
   rect(button1EX, button1EY, buttonWidth, buttonHeight);
   fill(black);
   textAlign(CENTER, CENTER);
