@@ -176,4 +176,14 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
+    
+    
+     if (Pic2redCircleSmall==true) {
+      stroke(yellow);
+      strokeWeight(smallredCircleBorderWeight);
+      noFill();
+      ellipse(red2smallX, red2smallY, redPic2smallCircleDiameter, redPic2smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
 }//End back to game gallery

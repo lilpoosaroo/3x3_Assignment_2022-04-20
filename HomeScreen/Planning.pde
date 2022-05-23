@@ -1,6 +1,6 @@
 /*
 
- 
+ Mistakes we have mde
  
  
  For Minimize Button
