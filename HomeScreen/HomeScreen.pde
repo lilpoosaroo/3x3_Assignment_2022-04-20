@@ -72,15 +72,19 @@ PFont buttonMinimizeFont;
 //Red circle code for pic 1, transparent circle with red outline
 float red1smallX, red1smallY, red1LARGEX, red1LARGEY;
 float red2smallX, red2smallY, red2LARGEX, red2LARGEY;
+float red3smallX, red3smallY, red3LARGEX, red3LARGEY;
 float redPic1smallCircleDiameter, redPic1LARGECircleDiameter;
 float redPic1smallCircleRadius, redPic1LARGECircleRadius;
 float redPic2smallCircleDiameter, redPic2LARGECircleDiameter;
 float redPic2smallCircleRadius, redPic2LARGECircleRadius;
+float redPic3smallCircleDiameter, redPic3LARGECircleDiameter;
+float redPic3smallCircleRadius, redPic3LARGECircleRadius;
 color red=#D10808;
 int LARGEredCircleBorderWeight;
 int smallredCircleBorderWeight;
 Boolean Pic1redCircleSmall=false, Pic1redCircleLarge=false;
 Boolean Pic2redCircleSmall=false, Pic2redCircleLarge=false;
+Boolean Pic3redCircleSmall=false, Pic3redCircleLarge=false;
 //
 
 
@@ -263,6 +267,11 @@ void setup ()
   redPic2smallCircleRadius=redPic2smallCircleDiameter*1/2;
   redPic2LARGECircleDiameter=redPic2smallCircleDiameter*3;
   redPic2LARGECircleRadius=redPic2LARGECircleDiameter*1/2;
+   //Red Circle population Diameter and radius for Pic 3
+  redPic3smallCircleDiameter=Pic3WidthMinimizedAdjusted*1/20; 
+  redPic3smallCircleRadius=redPic3smallCircleDiameter*1/2;
+  redPic3LARGECircleDiameter=redPic3smallCircleDiameter*5/2;
+  redPic3LARGECircleRadius=redPic3LARGECircleDiameter*1/2;
   //X and Y red circle population For Pic 1
   red1smallX=Pic1WidthMinimizedAdjusted*54/100;
   red1smallY=rectHeight*44/100;
@@ -273,6 +282,11 @@ void setup ()
   red2smallY=rectHeight*56/50;
   red2LARGEX=Pic2WidthEnlargedAdjusted*86/100;
   red2LARGEY=appHeight*15/100;
+    //X and Y red circle population For Pic 3
+  red3smallX=Pic3WidthMinimizedAdjusted*86/100;
+  red3smallY=appHeight*90/100;
+  red3LARGEX=Pic3WidthEnlargedAdjusted*171/200;
+  red3LARGEY=appHeight*94/100;
   //Red Circle Border Weight
   LARGEredCircleBorderWeight=appHeight*1/100;
   smallredCircleBorderWeight=appHeight*1/150;
@@ -316,6 +330,14 @@ void draw () {
 
   if (enlargePic3==true && minimizePic3==false) {
     image(Pic3, ptX3Enlarged, ptY3Enlarged, Pic3WidthEnlargedAdjusted, Pic3HeightEnlargedAdjusted);
+    if (Pic3redCircleLarge==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red3LARGEX, red3LARGEY, redPic3LARGECircleDiameter, redPic3LARGECircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
     MinimizeButtonBottomLeftCorner ();
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true) backToGameGallery ();
@@ -392,6 +414,15 @@ void mousePressed () {
   if (mouseX>=red2LARGEX-redPic2LARGECircleRadius && mouseX<=red2LARGEX+redPic2LARGECircleRadius&& mouseY>=red2LARGEY-redPic2LARGECircleRadius && mouseY<=red2LARGEY+redPic2LARGECircleRadius) {
     Pic2redCircleLarge=true;
     Pic2redCircleSmall=true;
+  }
+  
+  if (mouseX>=red3smallX-redPic3smallCircleRadius && mouseX<=red3smallX+redPic3smallCircleRadius && mouseY>=red3smallY-redPic3smallCircleRadius && mouseY<=red3smallY+redPic3smallCircleRadius) { 
+    Pic3redCircleLarge=true; 
+    Pic3redCircleSmall=true;
+  }
+  if (mouseX>=red3LARGEX-redPic3LARGECircleRadius && mouseX<=red3LARGEX+redPic3LARGECircleRadius&& mouseY>=red3LARGEY-redPic3LARGECircleRadius && mouseY<=red3LARGEY+redPic3LARGECircleRadius) {
+    Pic3redCircleLarge=true;
+    Pic3redCircleSmall=true;
   }
 }//End mousePressed
 //

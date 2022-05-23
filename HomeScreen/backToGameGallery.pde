@@ -35,6 +35,35 @@ void  backToGameGallery () {
   ellipse(ptX[15], ptY[15], ptDiameter, ptDiameter);
   ellipse(ptX[16], ptY[16], ptDiameter, ptDiameter);
   fill(whiteReset);
+  
+   //Small Red Circle Code
+  if (Pic1redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(smallredCircleBorderWeight);
+      noFill();
+      ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+    
+     if (Pic2redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red2smallX, red2smallY, redPic2smallCircleDiameter, redPic2smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+     if (Pic3redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(smallredCircleBorderWeight);
+      noFill();
+      ellipse(red3smallX, red3smallY, redPic3smallCircleDiameter, redPic3smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
 
 
   //Enlarge Button 1 hover over
@@ -167,23 +196,4 @@ void  backToGameGallery () {
   textFont(buttonEnlargeFont, 16);
   text(buttonEnlargeText, button9EX, button9EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  //Small Red Circle Code
-  if (Pic1redCircleSmall==true) {
-      stroke(red);
-      strokeWeight(smallredCircleBorderWeight);
-      noFill();
-      ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
-      stroke(black);
-      strokeWeight(reset);
-    }
-    
-    
-     if (Pic2redCircleSmall==true) {
-      stroke(yellow);
-      strokeWeight(smallredCircleBorderWeight);
-      noFill();
-      ellipse(red2smallX, red2smallY, redPic2smallCircleDiameter, redPic2smallCircleDiameter);
-      stroke(black);
-      strokeWeight(reset);
-    }
 }//End back to game gallery
