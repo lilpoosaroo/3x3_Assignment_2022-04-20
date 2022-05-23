@@ -4,6 +4,8 @@
  
  
  For Minimize Button
+ - Want one minimize button that resets the game for all pictures
+ 1) Problems I have run into, 
  - Color for rectangle = blue= fill(blue);
  - Color for text = black = fill(black);
  - Varibles: 

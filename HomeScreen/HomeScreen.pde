@@ -49,7 +49,7 @@ PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 float button1EX, button1EY, button2EX, button2EY, button3EX, button3EY; 
 float button4EX, button4EY, button5EX, button5EY, button6EX, button6EY;
 float button7EX, button7EY, button8EX, button8EY, button9EX, button9EY;
-float button1MX, button1MY, button2MX, button2MY, button3MX, button3MY;
+float MinimizeButtonBottomLeftCornerX, MinimizeButtonBottomLeftCornerY, button2MX, button2MY, button3MX, button3MY;
 float button4MX, button4MY, button5MX, button5MY, button6MX, button6MY;
 float button7MX, button7MY, button8MX, button8MY, button9MX, button9MY;
 float buttonWidth, buttonHeight;
@@ -221,8 +221,8 @@ void setup ()
 
 
   //Buttons for Pic 1 Population
-  button1MX=button1EX;
-  button1MY=rectHeight*1/2;
+  MinimizeButtonBottomLeftCornerX=button1EX;
+  MinimizeButtonBottomLeftCornerX=rectHeight*1/2;
 
   //Buttons for Pic 2 Population
   // button2MX=button2EX;
@@ -260,14 +260,6 @@ void draw () {
 
   if (enlargePic1==false && minimizePic1==true) { 
     backToGameGallery ();
-    if (Pic1redCircleSmall==true) {
-      stroke(red);
-      strokeWeight(smallredCircleBorderWeight);
-      noFill();
-      ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
-      stroke(black);
-      strokeWeight(reset);
-    }
   } else {
     image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, Pic1HeightEnlargedAdjusted);
     if (Pic1redCircleLarge==true) {
@@ -278,14 +270,15 @@ void draw () {
       stroke(black);
       strokeWeight(reset);
     }
-    MinimizeButton ();
+    MinimizeButtonBottomLeftCorner ();
   }
 
   //
   if (enlargePic2==true && minimizePic2==false) {
     image(Pic2, ptX2Enlarged, ptY2Enlarged, Pic2WidthEnlargedAdjusted, Pic2HeightEnlargedAdjusted);
-    MinimizeButton ();
+    MinimizeButtonBottomLeftCorner ();
   } else {
+    if (enlargePic1==false && minimizePic1==true) backToGameGallery ();
   }
 }//End draw
 //
@@ -299,31 +292,34 @@ void mousePressed () {
 
 
 
-  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight || mouseX>=button1MX && mouseX<=button1MX+buttonWidth && mouseY>=button1MY && mouseY<=button1MY+buttonHeight ) {
-    if ((enlargePic1==true  && minimizePic1==false) || (enlargePic1==false && minimizePic1==false)) {
-      enlargePic1=false;
-      minimizePic1=true;
-      println("Enlarge Pic 1 Off");
-    } else {
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
+    if (enlargePic1==false  && minimizePic1==true/* || (enlargePic1==false && minimizePic1==false)*/) {
       enlargePic1=true;
       minimizePic1=false;
       println("Enlarge Pic 1 On");
     }
   }
+
+  if (mouseX>=MinimizeButtonBottomLeftCornerX && mouseX<=MinimizeButtonBottomLeftCornerX+buttonWidth && mouseY>=MinimizeButtonBottomLeftCornerY && mouseY<=MinimizeButtonBottomLeftCornerY+buttonHeight ) {
+    if (enlargePic1==true  && minimizePic1==false || enlargePic2==true && minimizePic2==false) {
+      enlargePic1=false;
+      minimizePic1=true;
+      enlargePic2=false;
+      minimizePic2=true;
+      println("Enlarge Pic 1&2 Off");
+    }
+  }
   //
   if (mouseX>=button2EX && mouseX<= button2EX+buttonWidth && mouseY>=button2EY && mouseY<=button2EY+buttonHeight) {
 
-
-    if (enlargePic1==true  && minimizePic1==false) {
-      enlargePic2=false;
-      minimizePic2=true;
-      println("Enlarge Pic 2 Off");
-    } else {
+    if (enlargePic2==false  && minimizePic2==true) {
       enlargePic2=true;
       minimizePic2=false;
       println("Enlarge Pic 2 On");
     }
   }
+
+
   //
   if (mouseX>=red1smallX-redPic1smallCircleRadius && mouseX<=red1smallX+redPic1smallCircleRadius && mouseY>=red1smallY-redPic1smallCircleRadius && mouseY<=red1smallY+redPic1smallCircleRadius) { 
     Pic1redCircleLarge=true; 

@@ -167,4 +167,13 @@ void  backToGameGallery () {
   textFont(buttonEnlargeFont, 16);
   text(buttonEnlargeText, button9EX, button9EY, buttonWidth, buttonHeight);
   fill(whiteReset);
+  //Small Red Circle Code
+  if (Pic1redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(smallredCircleBorderWeight);
+      noFill();
+      ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
 }//End back to game gallery
