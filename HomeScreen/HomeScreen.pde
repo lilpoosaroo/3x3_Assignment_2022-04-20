@@ -15,6 +15,9 @@ float ptX1Enlarged;
 float ptX2Enlarged, ptY2Enlarged;
 float ptX3Enlarged, ptY3Enlarged;
 float ptX4Enlarged, ptY4Enlarged;
+float ptX5Enlarged, ptY5Enlarged;
+float ptX6Enlarged, ptY6Enlarged;
+float ptX7Enlarged, ptY7Enlarged;
 /*
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
  float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
@@ -26,28 +29,37 @@ float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
  float rectXPic8, rectYPic8, rectWidthPic8, rectHeightPic8;
  float rectXPic9, rectYPic9, rectWidthPic9, rectHeightPic9;
  */
+//Heights and Widths
 int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Width, Pic4Height;
 int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
 int Pic9Width, Pic9Height;
-//float Pic1WidthAdjusted
+
 float  Pic1WidthEnlargedAdjusted, Pic1WidthMinimizedAdjusted, Pic1HeightEnlargedAdjusted, Pic1HeightMinimizedAdjusted;
 float  Pic2WidthEnlargedAdjusted, Pic2WidthMinimizedAdjusted, Pic2HeightEnlargedAdjusted, Pic2HeightMinimizedAdjusted; 
 float Pic3WidthEnlargedAdjusted, Pic3WidthMinimizedAdjusted, Pic3HeightEnlargedAdjusted, Pic3HeightMinimizedAdjusted;
 float Pic4WidthEnlargedAdjusted, Pic4WidthMinimizedAdjusted, Pic4HeightEnlargedAdjusted, Pic4HeightMinimizedAdjusted;
+float Pic5WidthEnlargedAdjusted, Pic5WidthMinimizedAdjusted, Pic5HeightEnlargedAdjusted, Pic5HeightMinimizedAdjusted;
+float Pic6WidthEnlargedAdjusted, Pic6WidthMinimizedAdjusted, Pic6HeightEnlargedAdjusted, Pic6HeightMinimizedAdjusted;
+float Pic7WidthEnlargedAdjusted, Pic7WidthMinimizedAdjusted, Pic7HeightEnlargedAdjusted, Pic7HeightMinimizedAdjusted;
+
 float Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
 float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjusted, Pic7WidthAdjusted, Pic7HeightAdjusted, Pic8WidthAdjusted, Pic8HeightAdjusted;
 float Pic9WidthAdjusted, Pic9HeightAdjusted;
+
 Boolean widthPic1Larger= false, heightPic1Larger = false, widthPic2Larger = false, heightPic2Larger = false;
 Boolean widthPic3Larger= false, heightPic3Larger = false, widthPic4Larger = false, heightPic4Larger = false;
 Boolean widthPic5Larger= false, heightPic5Larger = false, widthPic6Larger = false, heightPic6Larger = false;
 Boolean widthPic7Larger= false, heightPic7Larger = false, widthPic8Larger = false, heightPic8Larger = false;
 Boolean widthPic9Larger= true, heightPic9Larger = false;
+
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension, largerPic3Dimension, smallerPic3Dimension, largerPic4Dimension, smallerPic4Dimension;
 int largerPic5Dimension, smallerPic5Dimension, largerPic6Dimension, smallerPic6Dimension, largerPic7Dimension, smallerPic7Dimension, largerPic8Dimension, smallerPic8Dimension;
 int largerPic9Dimension, smallerPic9Dimension;
+
 float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0, imageWidthRatioPic3=0.0, imageHeightRatioPic3=0.0, imageWidthRatioPic4=0.0, imageHeightRatioPic4=0.0;
 float imageWidthRatioPic5=0.0, imageHeightRatioPic5=0.0, imageWidthRatioPic6=0.0, imageHeightRatioPic6=0.0; //must include decimals.
 float imageWidthRatioPic7=0.0, imageHeightRatioPic7=0.0, imageWidthRatioPic8=0.0, imageHeightRatioPic8=0.0, imageWidthRatioPic9, imageHeightRatioPic9;
+//Images
 PImage Pic1, Pic2, Pic3, Pic4, Pic5, Pic6, Pic7, Pic8, Pic9;
 //Button Code For Pic 1 - Pic 2 - Pic 3 - Pic 4 - Pic 5 - Pic 6 - Pic 7 - Pic 8 - Pic 9
 float button1EX, button1EY, button2EX, button2EY, button3EX, button3EY; 
@@ -61,6 +73,7 @@ float button2MX, button2MY, button3MX, button3MY;
  */
 float buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true, enlargePic2=false, minimizePic2=true, enlargePic3=false, minimizePic3=true, enlargePic4=false, minimizePic4=true;
+Boolean enlargePic5=false, minimizePic5=true, enlargePic6=false, minimizePic6=true, enlargePic7=false, minimizePic7=true;
 String buttonEnlargeText="Enlarge Pic";
 String buttonMinimizeText="Minimize Pic";
 color Pic1buttonEnlargeColor, Pic2buttonEnlargeColor, Pic3buttonEnlargeColor, Pic4buttonEnlargeColor, Pic5buttonEnlargeColor, Pic6buttonEnlargeColor, Pic7buttonEnlargeColor;
@@ -71,7 +84,7 @@ color blue=#A7DFEE;
 PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
-//Red circle code for pic 1, transparent circle with red outline
+//Red circle code for pic 1,2,3 transparent circle with red outline
 float red1smallX, red1smallY, red1LARGEX, red1LARGEY;
 float red2smallX, red2smallY, red2LARGEX, red2LARGEY;
 float red3smallX, red3smallY, red3LARGEX, red3LARGEY;
@@ -138,7 +151,7 @@ void setup ()
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
   Pic3= loadImage("1920x1217-Where's-Waldo-Image#3.jpg");
-  Pic4= loadImage("3000x1975-Where's-Waldo-Image#4.jpg");
+  Pic4= loadImage("3000x1975-Where's-Waldo-Image#4a.jpg");
   Pic5= loadImage("2040x1260-Where's-Waldo-Image#5.jpg");
   Pic6= loadImage("3000x1899-Where's-Waldo-Image#6.jpg");
   Pic7= loadImage("564x564-Where's-Waldo-Image#7.jpg");
@@ -172,8 +185,8 @@ void setup ()
   //Pic2WidthAdjusted = rectWidth * imageWidthRatioPic2;
   //Pic2HeightAdjusted = rectHeight * imageHeightRatioPic2;
   //
- // Pic3WidthAdjusted = rectWidth * imageWidthRatioPic3;
- // Pic3HeightAdjusted = rectHeight * imageHeightRatioPic3;
+  // Pic3WidthAdjusted = rectWidth * imageWidthRatioPic3;
+  // Pic3HeightAdjusted = rectHeight * imageHeightRatioPic3;
   //
   //Pic4WidthAdjusted = rectWidth * imageWidthRatioPic4;
   //Pic4HeightAdjusted = rectHeight * imageHeightRatioPic4;
@@ -226,12 +239,33 @@ void setup ()
   ptX3Enlarged=((appWidth*1/2)-(Pic3WidthEnlargedAdjusted*1/2));
   ptY3Enlarged=appHeight*0;
 
-  Pic4WidthEnlargedAdjusted =appWidth*imageWidthRatioPic4;
+  Pic4WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic4)*60/50;
   Pic4WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic4;
   Pic4HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic4)*2;
   Pic4HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic4;
   ptX4Enlarged=((appWidth*1/2)-(Pic4WidthEnlargedAdjusted*1/2));
   ptY4Enlarged=appHeight*0;
+
+  Pic5WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic5);
+  Pic5WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic5;
+  Pic5HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic5)*2;
+  Pic5HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic5;
+  ptX5Enlarged=((appWidth*1/2)-(Pic5WidthEnlargedAdjusted*1/2));
+  ptY5Enlarged=appHeight*0;
+
+  Pic6WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic6)*85/50;
+  Pic6WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic6;
+  Pic6HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic6)*3;
+  Pic6HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic6;
+  ptX6Enlarged=((appWidth*1/2)-(Pic6WidthEnlargedAdjusted*1/2));
+  ptY6Enlarged=appHeight*0;
+
+  Pic7WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic7);
+  Pic7WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic7;
+  Pic7HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic7)*2;
+  Pic7HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic7;
+  ptX7Enlarged=((appWidth*1/2)-(Pic7WidthEnlargedAdjusted*1/2));
+  ptY7Enlarged=appHeight*0;
 
 
   //Buttons Population
@@ -275,7 +309,7 @@ void setup ()
   redPic2smallCircleRadius=redPic2smallCircleDiameter*1/2;
   redPic2LARGECircleDiameter=redPic2smallCircleDiameter*3;
   redPic2LARGECircleRadius=redPic2LARGECircleDiameter*1/2;
-   //Red Circle population Diameter and radius for Pic 3
+  //Red Circle population Diameter and radius for Pic 3
   redPic3smallCircleDiameter=Pic3WidthMinimizedAdjusted*1/20; 
   redPic3smallCircleRadius=redPic3smallCircleDiameter*1/2;
   redPic3LARGECircleDiameter=redPic3smallCircleDiameter*5/2;
@@ -285,12 +319,12 @@ void setup ()
   red1smallY=rectHeight*44/100;
   red1LARGEX=(Pic1WidthEnlargedAdjusted*1/2)+(redPic1LARGECircleRadius*6/4);
   red1LARGEY=(appHeight*1/2)-redPic1LARGECircleRadius;
-   //X and Y red circle population For Pic 2
+  //X and Y red circle population For Pic 2
   red2smallX=Pic2WidthMinimizedAdjusted*86/100;
   red2smallY=rectHeight*56/50;
   red2LARGEX=Pic2WidthEnlargedAdjusted*86/100;
   red2LARGEY=appHeight*15/100;
-    //X and Y red circle population For Pic 3
+  //X and Y red circle population For Pic 3
   red3smallX=Pic3WidthMinimizedAdjusted*86/100;
   red3smallY=appHeight*90/100;
   red3LARGEX=Pic3WidthEnlargedAdjusted*171/200;
@@ -306,7 +340,8 @@ void setup ()
 void draw () {
 
   if (enlargePic1==false && minimizePic1==true) { 
-    if (enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true) backToGameGallery ();
+    if (enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true 
+      && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
   } else {
     image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, Pic1HeightEnlargedAdjusted);
     if (Pic1redCircleLarge==true) {
@@ -333,7 +368,8 @@ void draw () {
     }
     MinimizeButtonBottomLeftCorner ();
   } else {
-    if (enlargePic1==false && minimizePic1==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true) backToGameGallery ();
+    if (enlargePic1==false && minimizePic1==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true 
+      && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
   }
 
   if (enlargePic3==true && minimizePic3==false) {
@@ -348,19 +384,44 @@ void draw () {
     }
     MinimizeButtonBottomLeftCorner ();
   } else {
-    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic4==false && minimizePic4==true) backToGameGallery ();
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic4==false && minimizePic4==true 
+      && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
   }
-  
-  
-  
+
+
+
   if (enlargePic4==true && minimizePic4==false) {
-  image(Pic4, ptX4Enlarged, ptY4Enlarged, Pic4WidthEnlargedAdjusted, Pic4HeightEnlargedAdjusted);
-   MinimizeButtonBottomLeftCorner ();
+    image(Pic4, ptX4Enlarged, ptY4Enlarged, Pic4WidthEnlargedAdjusted, Pic4HeightEnlargedAdjusted);
+    MinimizeButtonBottomLeftCorner ();
   } else {
-  if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true) backToGameGallery ();
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
+      && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
   }
-  
+
+  if (enlargePic5==true && minimizePic5==false) {
+    image(Pic5, ptX5Enlarged, ptY5Enlarged, Pic5WidthEnlargedAdjusted, Pic5HeightEnlargedAdjusted);
+    MinimizeButtonBottomLeftCorner ();
+  } else {
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true
+      && enlargePic4==false && minimizePic4==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
   }
+
+  if (enlargePic6==true && minimizePic6==false) {
+    image(Pic6, ptX6Enlarged, ptY6Enlarged, Pic6WidthEnlargedAdjusted, Pic6HeightEnlargedAdjusted);
+    MinimizeButtonBottomLeftCorner ();
+  } else {
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
+      && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic7==false && minimizePic7==true) backToGameGallery ();
+  }
+
+  if (enlargePic7==true && minimizePic7==false) {
+    image(Pic7, ptX7Enlarged, ptY7Enlarged, Pic7WidthEnlargedAdjusted, Pic7HeightEnlargedAdjusted);
+    MinimizeButtonBottomLeftCorner ();
+  } else {
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
+      && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true) backToGameGallery ();
+  }
+}
 //End draw
 //
 void keyPressed ()
@@ -380,8 +441,8 @@ void mousePressed () {
       println("Enlarge Pic 1 On");
     }
   }
-  
-  
+
+
   if (mouseX>=button2EX && mouseX<= button2EX+buttonWidth && mouseY>=button2EY && mouseY<=button2EY+buttonHeight) {
 
     if (enlargePic2==false  && minimizePic2==true) {
@@ -390,29 +451,57 @@ void mousePressed () {
       println("Enlarge Pic 2 On");
     }
   }
-  
-  
+
+
   if (mouseX>=button3EX && mouseX<= button3EX+buttonWidth && mouseY>=button3EY && mouseY<=button3EY+buttonHeight) {
-  
-   if (enlargePic3==false  && minimizePic3==true) {
+
+    if (enlargePic3==false  && minimizePic3==true) {
       enlargePic3=true;
       minimizePic3=false;
       println("Enlarge Pic 3 On");
     }
   }
-  
+
   if (mouseX>=button4EX && mouseX<=button4EX+buttonWidth && mouseY>=button4EY && mouseY<=button4EY+buttonHeight) {
-  
+
     if (enlargePic4==false && minimizePic4==true) {
-     enlargePic4=true;
-     minimizePic4=false;
-     println("Enlarge Pic 4 On");
+      enlargePic4=true;
+      minimizePic4=false;
+      println("Enlarge Pic 4 On");
     }
   }
-  
+
+  if (mouseX>=button5EX && mouseX<=button5EX+buttonWidth && mouseY>=button5EY && mouseY<=button5EY+buttonHeight) {
+
+    if (enlargePic5==false && minimizePic5==true) {
+      enlargePic5=true;
+      minimizePic5=false;
+      println("Enlarge Pic 5 On");
+    }
+  }
+
+  if (mouseX>=button6EX && mouseX<=button6EX+buttonWidth && mouseY>=button6EY && mouseY<=button6EY+buttonHeight) {
+
+    if (enlargePic6==false && minimizePic6==true) {
+      enlargePic6=true;
+      minimizePic6=false;
+      println("Enlarge Pic 6 On");
+    }
+  }
+
+  if (mouseX>=button7EX && mouseX<=button7EX+buttonWidth && mouseY>=button7EY && mouseY<=button7EY+buttonHeight) {
+
+    if (enlargePic7==false && minimizePic7==true) {
+      enlargePic7=true;
+      minimizePic7=false;
+      println("Enlarge Pic 7 On");
+    }
+  }
 
   if (mouseX>=MinimizeButtonBottomLeftCornerX && mouseX<=MinimizeButtonBottomLeftCornerX+buttonWidth && mouseY>=MinimizeButtonBottomLeftCornerY && mouseY<=MinimizeButtonBottomLeftCornerY+buttonHeight ) {
-    if (enlargePic1==true  && minimizePic1==false || enlargePic2==true && minimizePic2==false || enlargePic3==true && minimizePic3==false || enlargePic4==true && minimizePic4==false) {
+    if (enlargePic1==true  && minimizePic1==false || enlargePic2==true && minimizePic2==false || enlargePic3==true && minimizePic3==false || 
+      enlargePic4==true && minimizePic4==false || enlargePic5==true && minimizePic5==false || enlargePic6==true && minimizePic6==false ||
+      enlargePic7==true && minimizePic7==false ) {
       enlargePic1=false;
       minimizePic1=true;
       enlargePic2=false;
@@ -421,10 +510,16 @@ void mousePressed () {
       minimizePic3=true;
       enlargePic4=false;
       minimizePic4=true;
-      println("Minimizing Pic 1&2&3&4");
+      enlargePic5=false;
+      minimizePic5=true;
+      enlargePic6=false;
+      minimizePic6=true;
+      enlargePic7=false;
+      minimizePic7=true;
+      println("Minimizing Pic 1&2&3&4&5&6&7");
     }
   }
- 
+
   //
 
 
@@ -437,7 +532,7 @@ void mousePressed () {
     Pic1redCircleLarge=true;
     Pic1redCircleSmall=true;
   }
-   if (mouseX>=red2smallX-redPic2smallCircleRadius && mouseX<=red2smallX+redPic2smallCircleRadius && mouseY>=red2smallY-redPic2smallCircleRadius && mouseY<=red2smallY+redPic2smallCircleRadius) { 
+  if (mouseX>=red2smallX-redPic2smallCircleRadius && mouseX<=red2smallX+redPic2smallCircleRadius && mouseY>=red2smallY-redPic2smallCircleRadius && mouseY<=red2smallY+redPic2smallCircleRadius) { 
     Pic2redCircleLarge=true; 
     Pic2redCircleSmall=true;
   }
@@ -445,7 +540,7 @@ void mousePressed () {
     Pic2redCircleLarge=true;
     Pic2redCircleSmall=true;
   }
-  
+
   if (mouseX>=red3smallX-redPic3smallCircleRadius && mouseX<=red3smallX+redPic3smallCircleRadius && mouseY>=red3smallY-redPic3smallCircleRadius && mouseY<=red3smallY+redPic3smallCircleRadius) { 
     Pic3redCircleLarge=true; 
     Pic3redCircleSmall=true;
