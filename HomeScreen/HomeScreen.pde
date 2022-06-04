@@ -112,6 +112,7 @@ int smallredCircleBorderWeight;
 Boolean Pic1redCircleSmall=false, Pic1redCircleLarge=false;
 Boolean Pic2redCircleSmall=false, Pic2redCircleLarge=false;
 Boolean Pic3redCircleSmall=false, Pic3redCircleLarge=false;
+Boolean Pic4redCircleSmall=false, Pic4redCircleLarge=false;
 //
 
 
@@ -306,58 +307,58 @@ void setup ()
   button2EY = button5EY = button8EY = rectHeight*7/4;
   button3EY = button6EY = button9EY = appHeight-buttonHeight;
 
-
+/*
   //Buttons for Pic 1 Population
   MinimizeButtonBottomLeftCornerX=button1EX;
   MinimizeButtonBottomLeftCornerX=rectHeight*1/2;
+*/
 
-  //Buttons for Pic 2 Population
-  // button2MX=button2EX;
-  //  button2MY=rectHeight*1/2;
-
-  //Buttons for Pic 3 Populatio
-  //  button3MX=button3EX;
-  // button3MY=;
-
-  //Buttons for Pic 4 Population
-
-  //Buttons for Pic 5 Population
-
-  //Buttons for Pic 6 Population
-
+  //Red Circle Border Weight
+  LARGEredCircleBorderWeight=appHeight*1/100;
+  smallredCircleBorderWeight=appHeight*1/150;
   //Red Circle population Diameter and radius for Pic 1
-  redPic1smallCircleDiameter=Pic1WidthMinimizedAdjusted*1/20; 
+  redPic1smallCircleDiameter=Pic1WidthMinimizedAdjusted*1/10; 
   redPic1smallCircleRadius=redPic1smallCircleDiameter*1/2;
-  redPic1LARGECircleDiameter=redPic1smallCircleDiameter*3;
+  redPic1LARGECircleDiameter=redPic1smallCircleDiameter*2;
   redPic1LARGECircleRadius=redPic1LARGECircleDiameter*1/2;
+   //X and Y red circle population For Pic 1
+  red1smallX=rectWidth*54/100;
+  red1smallY=rectHeight*44/100;
+  red1LARGEX=(Pic1WidthEnlargedAdjusted*1/2)+(redPic1LARGECircleRadius*5/4);
+  red1LARGEY=(appHeight*1/2)-redPic1LARGECircleRadius;
   //Red Circle population Diameter and radius for Pic 2
-  redPic2smallCircleDiameter=Pic2WidthMinimizedAdjusted*1/20; 
+  redPic2smallCircleDiameter=Pic2WidthMinimizedAdjusted*1/10; 
   redPic2smallCircleRadius=redPic2smallCircleDiameter*1/2;
-  redPic2LARGECircleDiameter=redPic2smallCircleDiameter*3;
+  redPic2LARGECircleDiameter=redPic2smallCircleDiameter*2;
   redPic2LARGECircleRadius=redPic2LARGECircleDiameter*1/2;
+  //X and Y red circle population For Pic 2
+  red2smallX=rectWidth*86/100;
+  red2smallY=rectHeight*56/50;
+  red2LARGEX=Pic2WidthEnlargedAdjusted*86/100;
+  red2LARGEY=appHeight*15/100;
   //Red Circle population Diameter and radius for Pic 3
   redPic3smallCircleDiameter=Pic3WidthMinimizedAdjusted*1/20; 
   redPic3smallCircleRadius=redPic3smallCircleDiameter*1/2;
   redPic3LARGECircleDiameter=redPic3smallCircleDiameter*5/2;
   redPic3LARGECircleRadius=redPic3LARGECircleDiameter*1/2;
-  //X and Y red circle population For Pic 1
-  red1smallX=Pic1WidthMinimizedAdjusted*54/100;
-  red1smallY=rectHeight*44/100;
-  red1LARGEX=(Pic1WidthEnlargedAdjusted*1/2)+(redPic1LARGECircleRadius*6/4);
-  red1LARGEY=(appHeight*1/2)-redPic1LARGECircleRadius;
-  //X and Y red circle population For Pic 2
-  red2smallX=Pic2WidthMinimizedAdjusted*86/100;
-  red2smallY=rectHeight*56/50;
-  red2LARGEX=Pic2WidthEnlargedAdjusted*86/100;
-  red2LARGEY=appHeight*15/100;
   //X and Y red circle population For Pic 3
-  red3smallX=Pic3WidthMinimizedAdjusted*86/100;
+  red3smallX=rectWidth*86/100;
   red3smallY=appHeight*90/100;
   red3LARGEX=Pic3WidthEnlargedAdjusted*171/200;
   red3LARGEY=appHeight*94/100;
-  //Red Circle Border Weight
-  LARGEredCircleBorderWeight=appHeight*1/100;
-  smallredCircleBorderWeight=appHeight*1/150;
+  //Red Circle population Diameter and radius for Pic 4
+   redPic4smallCircleDiameter=Pic4WidthMinimizedAdjusted*1/15;
+   redPic4smallCircleRadius=redPic4smallCircleDiameter*1/2;
+   redPic4LARGECircleDiameter=Pic4WidthEnlargedAdjusted*1/20;
+   redPic4LARGECircleRadius=redPic4LARGECircleDiameter*1/2;
+  //X and Y red circle population For Pic 4
+   red4smallX=(rectWidth*2)*72/100;
+   red4smallY=Pic4HeightMinimizedAdjusted*38/100;
+   red4LARGEX=Pic4WidthEnlargedAdjusted*36/100;
+   red4LARGEY=Pic4HeightEnlargedAdjusted*25/100;
+  
+  
+ 
 }
 
 
@@ -421,6 +422,14 @@ void draw () {
 
   if (enlargePic4==true && minimizePic4==false) {
     image(Pic4, ptX4Enlarged, ptY4Enlarged, Pic4WidthEnlargedAdjusted, Pic4HeightEnlargedAdjusted);
+    if (Pic4redCircleLarge==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red4LARGEX, red4LARGEY, redPic4LARGECircleDiameter, redPic4LARGECircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
     MinimizeButtonBottomLeftCorner ();
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
@@ -622,6 +631,15 @@ void mousePressed () {
   if (mouseX>=red3LARGEX-redPic3LARGECircleRadius && mouseX<=red3LARGEX+redPic3LARGECircleRadius&& mouseY>=red3LARGEY-redPic3LARGECircleRadius && mouseY<=red3LARGEY+redPic3LARGECircleRadius) {
     Pic3redCircleLarge=true;
     Pic3redCircleSmall=true;
+  }
+  
+  if (mouseX>=red4smallX-redPic4smallCircleRadius && mouseX<=red4smallX+redPic4smallCircleRadius && mouseY>=red4smallY-redPic4smallCircleRadius && mouseY<=red4smallY+redPic4smallCircleRadius) { 
+    Pic4redCircleLarge=true; 
+    Pic4redCircleSmall=true;
+  }
+  if (mouseX>=red4LARGEX-redPic4LARGECircleRadius && mouseX<=red4LARGEX+redPic4LARGECircleRadius&& mouseY>=red4LARGEY-redPic4LARGECircleRadius && mouseY<=red4LARGEY+redPic4LARGECircleRadius) {
+    Pic4redCircleLarge=true;
+    Pic4redCircleSmall=true;
   }
 }//End mousePressed
 //

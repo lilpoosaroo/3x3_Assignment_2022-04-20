@@ -64,6 +64,15 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
+    
+    if (Pic4redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red4smallX, red4smallY, redPic4smallCircleDiameter, redPic4smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
 
 
   //Enlarge Button 1 hover over
