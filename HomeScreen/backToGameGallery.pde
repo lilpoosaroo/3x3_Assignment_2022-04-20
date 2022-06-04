@@ -73,6 +73,56 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
+    
+    /*
+    if (Pic5redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red5smallX, red5smallY, redPic5smallCircleDiameter, redPic5smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+    
+     if (Pic6redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red6smallX, red6smallY, redPic6smallCircleDiameter, redPic6smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+     if (Pic7redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red7smallX, red7smallY, redPic7smallCircleDiameter, redPic7smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+    if (Pic8redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red8smallX, red8smallY, redPic8smallCircleDiameter, redPic8smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+    if (Pic9redCircleSmall==true) {
+      stroke(red);
+      strokeWeight(LARGEredCircleBorderWeight);
+      noFill();
+      ellipse(red9smallX, red9smallY, redPic9smallCircleDiameter, redPic9smallCircleDiameter);
+      stroke(black);
+      strokeWeight(reset);
+    }
+    
+    
+    */
 
 
   //Enlarge Button 1 hover over
