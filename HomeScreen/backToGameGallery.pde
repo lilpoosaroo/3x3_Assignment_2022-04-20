@@ -39,7 +39,7 @@ void  backToGameGallery () {
    //Small Red Circle Code
   if (Pic1redCircleSmall==true) {
       stroke(red);
-      strokeWeight(smallredCircleBorderWeight);
+      strokeWeight(LARGEredCircleBorderWeight);
       noFill();
       ellipse(red1smallX, red1smallY, redPic1smallCircleDiameter, redPic1smallCircleDiameter);
       stroke(black);
@@ -58,7 +58,7 @@ void  backToGameGallery () {
     
      if (Pic3redCircleSmall==true) {
       stroke(red);
-      strokeWeight(smallredCircleBorderWeight);
+      strokeWeight(LARGEredCircleBorderWeight);
       noFill();
       ellipse(red3smallX, red3smallY, redPic3smallCircleDiameter, redPic3smallCircleDiameter);
       stroke(black);

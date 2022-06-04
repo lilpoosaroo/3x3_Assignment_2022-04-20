@@ -20,6 +20,10 @@ float ptX5Enlarged, ptY5Enlarged;
 float ptX6Enlarged, ptY6Enlarged;
 float ptX7Enlarged, ptY7Enlarged;
 float ptX8Enlarged, ptY8Enlarged;
+float ptX9Enlarged, ptY9Enlarged;
+
+
+
 /*
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
  float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
@@ -44,6 +48,7 @@ float Pic5WidthEnlargedAdjusted, Pic5WidthMinimizedAdjusted, Pic5HeightEnlargedA
 float Pic6WidthEnlargedAdjusted, Pic6WidthMinimizedAdjusted, Pic6HeightEnlargedAdjusted, Pic6HeightMinimizedAdjusted;
 float Pic7WidthEnlargedAdjusted, Pic7WidthMinimizedAdjusted, Pic7HeightEnlargedAdjusted, Pic7HeightMinimizedAdjusted;
 float Pic8WidthEnlargedAdjusted, Pic8WidthMinimizedAdjusted, Pic8HeightEnlargedAdjusted, Pic8HeightMinimizedAdjusted;
+ float Pic9WidthEnlargedAdjusted, Pic9WidthMinimizedAdjusted, Pic9HeightEnlargedAdjusted, Pic9HeightMinimizedAdjusted;
 
 float Pic2WidthAdjusted, Pic2HeightAdjusted, Pic3WidthAdjusted, Pic3HeightAdjusted, Pic4WidthAdjusted, Pic4HeightAdjusted;
 float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjusted, Pic7WidthAdjusted, Pic7HeightAdjusted, Pic8WidthAdjusted, Pic8HeightAdjusted;
@@ -77,6 +82,7 @@ float button2MX, button2MY, button3MX, button3MY;
 float buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true, enlargePic2=false, minimizePic2=true, enlargePic3=false, minimizePic3=true, enlargePic4=false, minimizePic4=true;
 Boolean enlargePic5=false, minimizePic5=true, enlargePic6=false, minimizePic6=true, enlargePic7=false, minimizePic7=true, enlargePic8=false, minimizePic8=true;
+Boolean enlargePic9=false, minimizePic9=true;
 String buttonEnlargeText="Enlarge Pic";
 String buttonMinimizeText="Minimize Pic";
 color Pic1buttonEnlargeColor, Pic2buttonEnlargeColor, Pic3buttonEnlargeColor, Pic4buttonEnlargeColor, Pic5buttonEnlargeColor, Pic6buttonEnlargeColor, Pic7buttonEnlargeColor;
@@ -359,7 +365,7 @@ void draw () {
   if (enlargePic1==false && minimizePic1==true) { 
     if (enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true 
       && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   } else {
     image(Pic1, ptX1Enlarged, ptY[1], Pic1WidthEnlargedAdjusted, Pic1HeightEnlargedAdjusted);
     if (Pic1redCircleLarge==true) {
@@ -388,7 +394,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic3==false && minimizePic3==true && enlargePic4==false && minimizePic4==true 
       && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
   if (enlargePic3==true && minimizePic3==false) {
@@ -405,7 +411,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic4==false && minimizePic4==true 
       && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
 
@@ -416,7 +422,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
       && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
   if (enlargePic5==true && minimizePic5==false) {
@@ -425,7 +431,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true
       && enlargePic4==false && minimizePic4==true && enlargePic6==false && minimizePic6==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
   if (enlargePic6==true && minimizePic6==false) {
@@ -434,7 +440,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
       && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic7==false && minimizePic7==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
   if (enlargePic7==true && minimizePic7==false) {
@@ -443,7 +449,7 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
       && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true
-      && enlargePic8==false && minimizePic8==true) backToGameGallery ();
+      && enlargePic8==false && minimizePic8==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
   }
 
   if (enlargePic8==true && minimizePic8==false) {
@@ -452,7 +458,16 @@ void draw () {
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
       && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true 
-      && enlargePic7==false && minimizePic7==true
+      && enlargePic7==false && minimizePic7==true && enlargePic9==false && minimizePic9==true ) backToGameGallery ();
+  }
+  
+  if (enlargePic9==true && minimizePic9==false) {
+    image(Pic9, ptX9Enlarged, ptY9Enlarged, Pic9WidthEnlargedAdjusted, Pic9HeightEnlargedAdjusted);
+    MinimizeButtonBottomLeftCorner ();
+  } else {
+    if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
+      && enlargePic4==false && minimizePic4==true && enlargePic5==false && minimizePic5==true && enlargePic6==false && minimizePic6==true 
+      && enlargePic7==false && minimizePic7==true  && enlargePic8==false && minimizePic8==true 
       ) backToGameGallery ();
   }
 }
@@ -540,11 +555,20 @@ void mousePressed () {
       println("Enlarge Pic 8 On");
     }
   }
+  
+  if (mouseX>=button9EX && mouseX<=button9EX+buttonWidth && mouseY>=button9EY && mouseY<=button9EY+buttonHeight) {
+
+    if (enlargePic9==false && minimizePic9==true) {
+      enlargePic9=true;
+      minimizePic9=false;
+      println("Enlarge Pic 9 On");
+    }
+  }
 
   if (mouseX>=MinimizeButtonBottomLeftCornerX && mouseX<=MinimizeButtonBottomLeftCornerX+buttonWidth && mouseY>=MinimizeButtonBottomLeftCornerY && mouseY<=MinimizeButtonBottomLeftCornerY+buttonHeight ) {
     if (enlargePic1==true  && minimizePic1==false || enlargePic2==true && minimizePic2==false || enlargePic3==true && minimizePic3==false || 
       enlargePic4==true && minimizePic4==false || enlargePic5==true && minimizePic5==false || enlargePic6==true && minimizePic6==false ||
-      enlargePic7==true && minimizePic7==false || enlargePic8==true && minimizePic8==false) {
+      enlargePic7==true && minimizePic7==false || enlargePic8==true && minimizePic8==false || enlargePic9==true && minimizePic9==false) {
       enlargePic1=false;
       minimizePic1=true;
       enlargePic2=false;
@@ -561,6 +585,8 @@ void mousePressed () {
       minimizePic7=true;
       enlargePic8=false;
       minimizePic8=true;
+      enlargePic9=false;
+      minimizePic9=true;
       println("Minimizing Pic 1&2&3&4&5&6&7&8");
     }
   }
