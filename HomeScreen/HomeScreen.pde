@@ -8,6 +8,7 @@ color black=#000000, whiteReset=#FFFFFF;
 //color buttonColor1, buttonColor2, buttonColor3, buttonColor4;
 //boolean turnOnPink=false, turnOnBlue=false, turnOnGreen=false;
 float rectWidth, rectHeight, ptDiameter; 
+//Ellipse Points
 int numberOfPoints = 17;
 float [] ptX = new float[numberOfPoints]; 
 float [] ptY = new float[numberOfPoints];
