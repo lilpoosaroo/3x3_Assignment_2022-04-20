@@ -356,8 +356,59 @@ void setup ()
    red4smallY=Pic4HeightMinimizedAdjusted*38/100;
    red4LARGEX=Pic4WidthEnlargedAdjusted*36/100;
    red4LARGEY=Pic4HeightEnlargedAdjusted*25/100;
+   /*
+   //Red Circle population Diameter and radius for Pic 5
+   redPic5smallCircleDiameter=Pic5WidthMinimizedAdjusted*;
+   redPic5smallCircleRadius=redPic5smallCircleDiameter*;
+   redPic5LARGECircleDiameter=Pic5WidthEnlargedAdjusted*;
+   redPic5LARGECircleRadius=redPic5LARGECircleDiameter*;
+  //X and Y red circle population For Pic 5
+   red5smallX=(rectWidth*2)*;
+   red5smallY=Pic5HeightMinimizedAdjusted*;
+   red5LARGEX=Pic5WidthEnlargedAdjusted*;
+   red5LARGEY=Pic5HeightEnlargedAdjusted*;
+   //Red Circle population Diameter and radius for Pic 6
+  redPic6smallCircleDiameter=Pic6WidthMinimizedAdjusted*; 
+  redPic6smallCircleRadius=redPic6smallCircleDiameter*;
+  redPic6LARGECircleDiameter=redPic6smallCircleDiameter*;
+  redPic6LARGECircleRadius=redPic6LARGECircleDiameter*;
+   //X and Y red circle population For Pic 6
+  red6smallX=(rectWidth*2)*;
+  red6smallY=rectHeight*;
+  red6LARGEX=(Pic6WidthEnlargedAdjusted*1/2)+(redPic6LARGECircleRadius*5/4);
+  red6LARGEY=(appHeight*1/2)-redPic6LARGECircleRadius;
+  //Red Circle population Diameter and radius for Pic 7
+  redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*; 
+  redPic7smallCircleRadius=redPic7smallCircleDiameter*;
+  redPic7LARGECircleDiameter=redPic7smallCircleDiameter*;
+  redPic7LARGECircleRadius=redPic7LARGECircleDiameter*;
+  //X and Y red circle population For Pic 7
+  red2smallX=(rectWidth*3)*;
+  red2smallY=rectHeight*;
+  red2LARGEX=Pic7WidthEnlargedAdjusted*;
+  red2LARGEY=appHeight*15/100;
+  //Red Circle population Diameter and radius for Pic 8
+  redPic8smallCircleDiameter=Pic8WidthMinimizedAdjusted*; 
+  redPic8smallCircleRadius=redPic8smallCircleDiameter*;
+  redPic8LARGECircleDiameter=redPic8smallCircleDiameter*;
+  redPic8LARGECircleRadius=redPic8LARGECircleDiameter*;
+  //X and Y red circle population For Pic 8
+  red8smallX=(rectWidth*3);
+  red8smallY=appHeight*;
+  red8LARGEX=Pic8WidthEnlargedAdjusted*;
+  red8LARGEY=appHeight*;
+  //Red Circle population Diameter and radius for Pic 9
+   redPic9smallCircleDiameter=Pic9WidthMinimizedAdjusted*;
+   redPic9smallCircleRadius=redPic9smallCircleDiameter*;
+   redPic9LARGECircleDiameter=Pic9WidthEnlargedAdjusted*;
+   redPic9LARGECircleRadius=redPic9LARGECircleDiameter*;
+  //X and Y red circle population For Pic 9
+   red9smallX=(rectWidth*3)*;
+   red9smallY=Pic9HeightMinimizedAdjusted*;
+   red9LARGEX=Pic9WidthEnlargedAdjusted*;
+   red9LARGEY=Pic9HeightEnlargedAdjusted*;
   
-  
+  */
  
 }
 
