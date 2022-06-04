@@ -74,7 +74,7 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-    /*
+   
     if (Pic5redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
@@ -84,7 +84,7 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-    
+   
      if (Pic6redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
@@ -102,7 +102,7 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
-    
+    /*
     if (Pic8redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
