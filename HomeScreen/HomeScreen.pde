@@ -93,16 +93,19 @@ color blue=#A7DFEE;
 PFont buttonEnlargeFont;
 String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
-//Red circle code for pic 1,2,3 transparent circle with red outline
+//Red circle code for pic 1,2,3,4 transparent circle with red outline
 float red1smallX, red1smallY, red1LARGEX, red1LARGEY;
 float red2smallX, red2smallY, red2LARGEX, red2LARGEY;
 float red3smallX, red3smallY, red3LARGEX, red3LARGEY;
+float red4smallX, red4smallY, red4LARGEX, red4LARGEY;
 float redPic1smallCircleDiameter, redPic1LARGECircleDiameter;
 float redPic1smallCircleRadius, redPic1LARGECircleRadius;
 float redPic2smallCircleDiameter, redPic2LARGECircleDiameter;
 float redPic2smallCircleRadius, redPic2LARGECircleRadius;
 float redPic3smallCircleDiameter, redPic3LARGECircleDiameter;
 float redPic3smallCircleRadius, redPic3LARGECircleRadius;
+float redPic4smallCircleDiameter, redPic4LARGECircleDiameter;
+float redPic4smallCircleRadius, redPic4LARGECircleRadius;
 color red=#D10808;
 int LARGEredCircleBorderWeight;
 int smallredCircleBorderWeight;
