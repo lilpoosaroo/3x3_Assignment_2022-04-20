@@ -187,7 +187,7 @@ void setup ()
   Pic4= loadImage("3000x1975-Where's-Waldo-Image#4a.jpg");
   Pic5= loadImage("2040x1260-Where's-Waldo-Image#5.jpg");
   Pic6= loadImage("3000x1899-Where's-Waldo-Image#6.jpg");
-  Pic7= loadImage("564x564-Where's-Waldo-Image#7.jpg");
+  Pic7= loadImage("564x564-Where's-Waldo-Image#7b.jpg");
   Pic8= loadImage("564x631-Where's-Waldo-Image#8a2.jpg");
   Pic9= loadImage("950x713-Where's-Waldo-Image#9.jpg");
   Pic1Width=1920;
@@ -294,11 +294,13 @@ void setup ()
   ptY6Enlarged=appHeight*0;
 
   Pic7WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic7);
-  Pic7WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic7;
+  Pic7WidthMinimizedAdjusted= rectWidth*50;//*imageWidthRatioPic7*50;
   Pic7HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic7)*2;
   Pic7HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic7;
   ptX7Enlarged=((appWidth*1/2)-(Pic7WidthEnlargedAdjusted*1/2));
   ptY7Enlarged=appHeight*0;
+  
+ 
 
   Pic8WidthEnlargedAdjusted =appWidth;
   Pic8WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic8;
@@ -313,6 +315,7 @@ void setup ()
   Pic9HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic9;
   ptX9Enlarged=((appWidth*1/2)-(Pic9WidthEnlargedAdjusted*1/2));
   ptY9Enlarged=appHeight*0;
+ 
 
 
   //Buttons Population
@@ -400,15 +403,15 @@ void setup ()
    red6LARGEY=appHeight*2/3;
     
    //Red Circle population Diameter and radius for Pic 7
-   redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/10; 
+   redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/2; 
    redPic7smallCircleRadius=redPic7smallCircleDiameter*1/2;
-   redPic7LARGECircleDiameter=redPic7smallCircleDiameter*5;
+   redPic7LARGECircleDiameter=redPic7smallCircleDiameter;
    redPic7LARGECircleRadius=redPic7LARGECircleDiameter*1/2;
    //X and Y red circle population For Pic 7
-  // red2smallX=(rectWidth*3)*;
-   //red2smallY=rectHeight*;
-   red2LARGEX=Pic7WidthEnlargedAdjusted*50/100;
-   red2LARGEY=appHeight*50/100;
+   red2smallX=appWidth*161/200;
+   red2smallY=rectHeight*52/100;
+   red2LARGEX=appWidth*40/100;
+   red2LARGEY=appHeight*60/100;
    /*
    //Red Circle population Diameter and radius for Pic 8
    redPic8smallCircleDiameter=Pic8WidthMinimizedAdjusted*; 
@@ -545,7 +548,7 @@ void draw () {
   }
 
   if (enlargePic7==true && minimizePic7==false) {
-    image(Pic7, ptX7Enlarged, ptY7Enlarged, Pic7WidthEnlargedAdjusted, Pic7HeightEnlargedAdjusted);
+    image(Pic7, ptX7Enlarged, ptY7Enlarged, appWidth, appHeight);
     
     if (Pic7redCircleLarge==true) {
      stroke(red);
