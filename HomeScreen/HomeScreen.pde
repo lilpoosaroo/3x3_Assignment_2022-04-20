@@ -294,7 +294,7 @@ void setup ()
   ptY6Enlarged=appHeight*0;
 
   Pic7WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic7);
-  Pic7WidthMinimizedAdjusted= rectWidth*50;//*imageWidthRatioPic7*50;
+  Pic7WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic7*50;
   Pic7HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic7)*2;
   Pic7HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic7;
   ptX7Enlarged=((appWidth*1/2)-(Pic7WidthEnlargedAdjusted*1/2));
@@ -405,7 +405,7 @@ void setup ()
    //Red Circle population Diameter and radius for Pic 7
    redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/2; 
    redPic7smallCircleRadius=redPic7smallCircleDiameter*1/2;
-   redPic7LARGECircleDiameter=redPic7smallCircleDiameter;
+   redPic7LARGECircleDiameter=redPic7smallCircleDiameter*2;
    redPic7LARGECircleRadius=redPic7LARGECircleDiameter*1/2;
    //X and Y red circle population For Pic 7
    red2smallX=appWidth*161/200;
@@ -721,7 +721,7 @@ void mousePressed () {
       minimizePic8=true;
       enlargePic9=false;
       minimizePic9=true;
-      println("Minimizing Pic 1&2&3&4&5&6&7&8&9");
+      println("Back to game gallery");
     }
   }
 
@@ -790,7 +790,7 @@ void mousePressed () {
    Pic7redCircleLarge=true; 
    Pic7redCircleSmall=true;
    }
-   if (mouseX>=red7LARGEX-redPic7LARGECircleRadius && mouseX<=red7LARGEX+redPic7LARGECircleRadius&& mouseY>=red7LARGEY-redPic7LARGECircleRadius && mouseY<=red7LARGEY+redPic7LARGECircleRadius) {
+   if (mouseX>=red7LARGEX-redPic7LARGECircleRadius && mouseX<=red7LARGEX+redPic7LARGECircleRadius && mouseY>=red7LARGEY-redPic7LARGECircleRadius && mouseY<=red7LARGEY+redPic7LARGECircleRadius) {
    Pic7redCircleLarge=true;
    Pic7redCircleSmall=true;
    }
