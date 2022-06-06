@@ -55,10 +55,11 @@ float Pic5WidthAdjusted, Pic5HeightAdjusted, Pic6WidthAdjusted, Pic6HeightAdjust
 float Pic9WidthAdjusted, Pic9HeightAdjusted;
 
 Boolean widthPic1Larger= false, heightPic1Larger = false, widthPic2Larger = false, heightPic2Larger = false;
-Boolean widthPic3Larger= false, heightPic3Larger = false, widthPic4Larger = false, heightPic4Larger = false;
+Boolean widthPic3Larger= false, heightPic3Larger = false, widthPic4Larger = true, heightPic4Larger = false;
 Boolean widthPic5Larger= false, heightPic5Larger = false, widthPic6Larger = false, heightPic6Larger = false;
-Boolean widthPic7Larger= false, heightPic7Larger = false, widthPic8Larger = false, heightPic8Larger = false;
+Boolean widthPic7Larger= true, heightPic7Larger = false, widthPic8Larger = false, heightPic8Larger = false;
 Boolean widthPic9Larger= true, heightPic9Larger = false;
+
 
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension, largerPic3Dimension, smallerPic3Dimension, largerPic4Dimension, smallerPic4Dimension;
 int largerPic5Dimension, smallerPic5Dimension, largerPic6Dimension, smallerPic6Dimension, largerPic7Dimension, smallerPic7Dimension, largerPic8Dimension, smallerPic8Dimension;
@@ -184,10 +185,10 @@ void setup ()
   Pic1= loadImage("1920x1080-Where's-Waldo-Image#1.jpg");
   Pic2= loadImage("1200x650-Where's-Waldo-Image#2.jpg");
   Pic3= loadImage("1920x1217-Where's-Waldo-Image#3.jpg");
-  Pic4= loadImage("3000x1975-Where's-Waldo-Image#4a.jpg");
+  Pic4= loadImage("2095x668-Where's-Waldo-Image#4a.jpg");
   Pic5= loadImage("2040x1260-Where's-Waldo-Image#5.jpg");
   Pic6= loadImage("3000x1899-Where's-Waldo-Image#6.jpg");
-  Pic7= loadImage("564x564-Where's-Waldo-Image#7b.jpg");
+  Pic7= loadImage("564x256-Where's-Waldo-Image#7b.jpg");
   Pic8= loadImage("564x631-Where's-Waldo-Image#8a2.jpg");
   Pic9= loadImage("950x713-Where's-Waldo-Image#9.jpg");
   Pic1Width=1920;
@@ -203,7 +204,7 @@ void setup ()
   Pic6Width=3000;
   Pic6Height=1899;
   Pic7Width=564;
-  Pic7Height=564;
+  Pic7Height=256;
   Pic8Width=564; 
   Pic8Height=631;
   Pic9Width=950;

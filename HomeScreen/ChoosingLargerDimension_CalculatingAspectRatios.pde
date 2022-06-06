@@ -1,5 +1,5 @@
 void ChoosingLargerDimensionCalculatingAspectRatios() {
-  
+  //PIC 1 LARGER DIMENSION VERIFICATION
    if (Pic1Width >= Pic1Height) { //Identify Larger Dimension, if 1920 is larger than 1080
     largerPic1Dimension = Pic1Width; 
     smallerPic1Dimension = Pic1Height;
@@ -9,7 +9,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic1Dimension = Pic1Width;
     heightPic1Larger = true;
   }  
-  // End Pic 1 larger dimension verification
+  //PIC 2 LARGER DIMENSION VERIFICATION
   if (Pic2Width >= Pic2Height) { //Identify Larger Dimension, if 1200 is larger than 650
     largerPic2Dimension = Pic2Width; 
     smallerPic2Dimension = Pic2Height;
@@ -19,7 +19,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic2Dimension = Pic2Width;
     heightPic2Larger = true;
   } 
-  //END PIC 2 LARGER DIMENSION VERIFICATION
+  //PIC 3 LARGER DIMENSION VERIFICATION
   if (Pic3Width >= Pic3Height) { //Identify Larger Dimension, if 1920 is larger than 1217
     largerPic3Dimension = Pic3Width; 
     smallerPic3Dimension = Pic3Height;
@@ -29,8 +29,8 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic3Dimension = Pic3Width;
     heightPic3Larger = true ;
   } 
-  //END PIC 3 LARGER DIMENSION VERIFICATION
-  if (Pic4Width >= Pic4Height) { //Identify Larger Dimension, if 3000x1975 is larger than 1975
+  //PIC 4 LARGER DIMENSION VERIFICATION
+  if (Pic4Width >= Pic4Height) { //Identify Larger Dimension, 2095 if is larger than 668
     largerPic4Dimension = Pic4Width; 
     smallerPic4Dimension = Pic4Height;
     widthPic4Larger = true;
@@ -39,7 +39,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic4Dimension = Pic4Width;
     heightPic4Larger = true;
   } 
-  //END PIC 4 LARGER DIMENSION VERIFICATION
+  //PIC 5 LARGER DIMENSION VERIFICATION
    if (Pic5Width >= Pic5Height) { //Identify Larger Dimension, if 2040 is larger than 1260
     largerPic5Dimension = Pic5Width; 
     smallerPic5Dimension = Pic5Height;
@@ -49,7 +49,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic5Dimension = Pic5Width;
     heightPic5Larger = true;
   }  
-  // End Pic 5 larger dimension verification
+  //PIC 6 LARGER DIMENSION VERIFICATION
   if (Pic6Width >= Pic6Height) { //Identify Larger Dimension, if 3000 is larger than 1899
     largerPic6Dimension = Pic6Width; 
     smallerPic6Dimension = Pic6Height;
@@ -59,8 +59,8 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic6Dimension = Pic6Width;
     heightPic6Larger = true;
   } 
-  //END PIC 6 LARGER DIMENSION VERIFICATION
-  if (Pic7Width >= Pic7Height || Pic7Width == Pic7Height) { //Identify Larger Dimension, if 564 is larger than 564
+  //PIC 7 LARGER DIMENSION VERIFICATION
+  if (Pic7Width >= Pic7Height || Pic7Width == Pic7Height) { // if 564 is larger than 256
     largerPic7Dimension = Pic7Width; 
     smallerPic7Dimension = Pic7Height;
     widthPic7Larger = true;
@@ -69,7 +69,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic7Dimension = Pic7Width;
     heightPic7Larger = true ;
   } 
-  //END PIC 7 LARGER DIMENSION VERIFICATION
+  //PIC 8 LARGER DIMENSION VERIFICATION
   if (Pic8Width >= Pic8Height) { //Identify Larger Dimension, if 564 is larger than 631
     largerPic8Dimension = Pic8Width; 
     smallerPic8Dimension = Pic8Height;
@@ -79,7 +79,7 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic8Dimension = Pic8Width;
     heightPic8Larger = true;
   } 
-  //END PIC 8 LARGER DIMENSION VERIFICATION
+  //PIC 9 LARGER DIMENSION VERIFICATION
   if (Pic9Width >= Pic9Height) { //Identify Larger Dimension, if 950 is larger than 713
     largerPic9Dimension = Pic9Width; 
     smallerPic9Dimension = Pic9Height;
@@ -89,7 +89,9 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
     smallerPic9Dimension = Pic9Width;
     heightPic9Larger = true;
   } 
-  //END PIC 9 LARGER DIMENSION VERIFICATION
+ //
+ //
+ //Calculating aspect ratios
   /*
     int Pic1Width = 1920;
     int Pic1Height = 1080;
@@ -121,13 +123,13 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
   if ( heightPic3Larger == true )imageHeightRatioPic3 = float (largerPic3Dimension) / float (largerPic3Dimension);//= 1
 
   /*
-   int Pic4Width= 3000;
-   int Pic4Height = 1975;
+   int Pic4Width= 2095;
+   int Pic4Height = 668; 
   */
 
   if ( widthPic4Larger == true ) imageWidthRatioPic4= float (largerPic4Dimension) / float (largerPic4Dimension); //=1
-  if ( widthPic4Larger == true ) imageHeightRatioPic4= float (smallerPic4Dimension) /float (largerPic4Dimension); //=0.6583333333
-  if ( heightPic4Larger == true ) imageWidthRatioPic4= float (smallerPic4Dimension) /float (largerPic4Dimension); //=1.518987342
+  if ( widthPic4Larger == true ) imageHeightRatioPic4= float (smallerPic4Dimension) /float (largerPic4Dimension); //=0.3188544153
+  if ( heightPic4Larger == true ) imageWidthRatioPic4= float (smallerPic4Dimension) /float (largerPic4Dimension); //=3.136227545
   if ( heightPic4Larger == true ) imageHeightRatioPic4= float (largerPic4Dimension) / float (largerPic4Dimension); //=1
   
     /*
@@ -152,12 +154,12 @@ void ChoosingLargerDimensionCalculatingAspectRatios() {
 
   /*
    int Pic7Width = 564;
-   int Pic7Height = 564;
+   int Pic7Height = 256;
   */
 
   if ( widthPic7Larger == true ) imageWidthRatioPic7 = float (largerPic7Dimension) / float (largerPic7Dimension);//= 1
-  if ( widthPic7Larger == true ) imageHeightRatioPic7= float (smallerPic7Dimension) /float (largerPic7Dimension);//= 1
-  if ( heightPic7Larger == true ) imageWidthRatioPic7= float (smallerPic7Dimension) /float (largerPic7Dimension);//= 1
+  if ( widthPic7Larger == true ) imageHeightRatioPic7= float (smallerPic7Dimension) /float (largerPic7Dimension);//= 0.4539007092
+  if ( heightPic7Larger == true ) imageWidthRatioPic7= float (smallerPic7Dimension) /float (largerPic7Dimension);//= 2.203125
   if ( heightPic7Larger == true )imageHeightRatioPic7 = float (largerPic7Dimension) / float (largerPic7Dimension);//= 1
 
   /*
