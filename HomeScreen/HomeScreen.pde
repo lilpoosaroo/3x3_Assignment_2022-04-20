@@ -295,7 +295,7 @@ void setup ()
   ptY6Enlarged=appHeight*0;
 
   Pic7WidthEnlargedAdjusted =(appWidth*imageWidthRatioPic7);
-  Pic7WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic7*50;
+  Pic7WidthMinimizedAdjusted= rectWidth*imageWidthRatioPic7*1/2;
   Pic7HeightEnlargedAdjusted=(appHeight*imageHeightRatioPic7)*2;
   Pic7HeightMinimizedAdjusted = rectHeight * imageHeightRatioPic7;
   ptX7Enlarged=((appWidth*1/2)-(Pic7WidthEnlargedAdjusted*1/2));
@@ -404,15 +404,15 @@ void setup ()
    red6LARGEY=appHeight*2/3;
     
    //Red Circle population Diameter and radius for Pic 7
-   redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/2; 
-   redPic7smallCircleDiameter=redPic7smallCircleDiameter*1/2;
+   redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/4; 
+   redPic7smallCircleRadius=redPic7smallCircleDiameter*1/2;
    redPic7LARGECircleDiameter=redPic7smallCircleDiameter*2;
    redPic7LARGECircleRadius=redPic7LARGECircleDiameter*1/2;
    //X and Y red circle population For Pic 7
    red7smallX=appWidth*161/200;
    red7smallY=rectHeight*52/100;
-   red7LARGEX=appWidth*40/100;
-   red7LARGEY=appHeight*60/100;
+   red7LARGEX=appWidth*42/100;
+   red7LARGEY=appHeight*54/100;
   
    /*
    //Red Circle population Diameter and radius for Pic 8
@@ -557,7 +557,7 @@ void draw () {
      strokeWeight(LARGEredCircleBorderWeight);
      noFill();
      ellipse(red7LARGEX, red7LARGEY, redPic7LARGECircleDiameter, redPic7LARGECircleDiameter);
-     stroke(black);
+      stroke(black);
      strokeWeight(reset);
      }
     
