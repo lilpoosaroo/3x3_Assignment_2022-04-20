@@ -101,7 +101,7 @@ float red3smallX, red3smallY, red3LARGEX, red3LARGEY;
 float red4smallX, red4smallY, red4LARGEX, red4LARGEY;
 float red5smallX, red5smallY, red5LARGEX, red5LARGEY;
 float red6smallX, red6smallY, red6LARGEX, red6LARGEY;
-float red7smallX, red7smallY, red7LARGEX, red7LARGEY;
+float  red7smallX, red7smallY, red7LARGEX, red7LARGEY;
 float red8smallX, red8smallY, red8LARGEX, red8LARGEY;
 float red9smallX, red9smallY, red9LARGEX, red9LARGEY;
 float redPic1smallCircleDiameter, redPic1LARGECircleDiameter;
@@ -116,7 +116,7 @@ float redPic5smallCircleDiameter, redPic5LARGECircleDiameter;
 float redPic5smallCircleRadius, redPic5LARGECircleRadius;
 float redPic6smallCircleDiameter, redPic6LARGECircleDiameter;
 float redPic6smallCircleRadius, redPic6LARGECircleRadius;
-float redPic7smallCircleDiameter, redPic7LARGECircleDiameter;
+float   redPic7smallCircleDiameter, redPic7LARGECircleDiameter;
 float redPic7smallCircleRadius, redPic7LARGECircleRadius;
 float redPic8smallCircleDiameter, redPic8LARGECircleDiameter;
 float redPic8smallCircleRadius, redPic8LARGECircleRadius;
@@ -405,14 +405,15 @@ void setup ()
     
    //Red Circle population Diameter and radius for Pic 7
    redPic7smallCircleDiameter=Pic7WidthMinimizedAdjusted*1/2; 
-   redPic7smallCircleRadius=redPic7smallCircleDiameter*1/2;
+   redPic7smallCircleDiameter=redPic7smallCircleDiameter*1/2;
    redPic7LARGECircleDiameter=redPic7smallCircleDiameter*2;
    redPic7LARGECircleRadius=redPic7LARGECircleDiameter*1/2;
    //X and Y red circle population For Pic 7
-   red2smallX=appWidth*161/200;
-   red2smallY=rectHeight*52/100;
-   red2LARGEX=appWidth*40/100;
-   red2LARGEY=appHeight*60/100;
+   red7smallX=appWidth*161/200;
+   red7smallY=rectHeight*52/100;
+   red7LARGEX=appWidth*40/100;
+   red7LARGEY=appHeight*60/100;
+  
    /*
    //Red Circle population Diameter and radius for Pic 8
    redPic8smallCircleDiameter=Pic8WidthMinimizedAdjusted*; 
