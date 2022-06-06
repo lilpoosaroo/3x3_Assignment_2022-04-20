@@ -10,8 +10,8 @@ void  backToGameGallery () {
   image(Pic5, ptX[6], ptY[6], Pic5WidthAdjusted, rectHeight);
   image(Pic6, ptX[7], ptY[7], Pic6WidthAdjusted, rectHeight);
   image(Pic7, ptX[9], ptY[9], Pic7WidthAdjusted, rectHeight);
-  image(Pic8, ptX[10], ptY[10], rectWidth, Pic8HeightAdjusted);
-  image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, Pic9HeightAdjusted);
+  image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
+  image(Pic9, ptX[11], ptY[11], Pic9WidthAdjusted, rectHeight);
   fill(black);
   ellipse(ptX[1], ptY[1], ptDiameter, ptDiameter);
   ellipse(ptX[2], ptY[2], ptDiameter, ptDiameter);
@@ -102,7 +102,7 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
-    /*
+    
     if (Pic8redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
@@ -111,7 +111,7 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
-    
+    /*
     if (Pic9redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
