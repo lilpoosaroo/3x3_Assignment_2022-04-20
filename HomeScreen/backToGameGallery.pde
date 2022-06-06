@@ -47,7 +47,7 @@ void  backToGameGallery () {
     }
     
     
-     if (Pic2redCircleSmall==true) {
+     if (Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -56,7 +56,7 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-     if (Pic3redCircleSmall==true) {
+     if (Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -65,7 +65,8 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-    if (Pic4redCircleSmall==true) {
+    if (Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
+    && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -75,7 +76,8 @@ void  backToGameGallery () {
     }
     
    
-    if (Pic5redCircleSmall==true) {
+    if (Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true 
+    && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -85,7 +87,8 @@ void  backToGameGallery () {
     }
     
    
-     if (Pic6redCircleSmall==true) {
+     if (Pic6redCircleSmall==true && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
+     && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -94,7 +97,9 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-     if (Pic7redCircleSmall==true) {
+     if (Pic7redCircleSmall==true && Pic6redCircleSmall==true && Pic5redCircleSmall==true 
+     && Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
+     && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -103,7 +108,9 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-    if (Pic8redCircleSmall==true) {
+    if (Pic8redCircleSmall==true && Pic7redCircleSmall==true && Pic6redCircleSmall==true
+    && Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true
+    && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
@@ -112,7 +119,9 @@ void  backToGameGallery () {
       strokeWeight(reset);
     }
     
-    if (Pic9redCircleSmall==true) {
+    if (Pic9redCircleSmall==true && Pic8redCircleSmall==true && Pic7redCircleSmall==true 
+    && Pic6redCircleSmall==true  && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
+    && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
       noFill();
