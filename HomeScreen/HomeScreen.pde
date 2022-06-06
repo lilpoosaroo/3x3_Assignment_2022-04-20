@@ -423,19 +423,19 @@ void setup ()
    red8smallY=(rectHeight*2)*63/100;
    red8LARGEX=appWidth*84/100;
    red8LARGEY=appHeight*45/100;
-  /*
+  
    //Red Circle population Diameter and radius for Pic 9
-   redPic9smallCircleDiameter=Pic9WidthMinimizedAdjusted*;
-   redPic9smallCircleRadius=redPic9smallCircleDiameter*;
-   redPic9LARGECircleDiameter=Pic9WidthEnlargedAdjusted*;
-   redPic9LARGECircleRadius=redPic9LARGECircleDiameter*;
+   redPic9smallCircleDiameter=Pic9WidthMinimizedAdjusted*1/8;
+   redPic9smallCircleRadius=redPic9smallCircleDiameter*1/2;
+   redPic9LARGECircleDiameter=redPic9smallCircleDiameter*3/2;
+   redPic9LARGECircleRadius=redPic9LARGECircleDiameter*1/2;
    //X and Y red circle population For Pic 9
-   red9smallX=(rectWidth*3)*;
-   red9smallY=Pic9HeightMinimizedAdjusted*;
-   red9LARGEX=Pic9WidthEnlargedAdjusted*;
-   red9LARGEY=Pic9HeightEnlargedAdjusted*;
+   red9smallX=appWidth*11/15;
+   red9smallY=appHeight*11/15;
+   red9LARGEX=appWidth*17/100;
+   red9LARGEY=appHeight*1/3;
    
-   */
+   
 }
 
 
@@ -590,7 +590,7 @@ void draw () {
 
   if (enlargePic9==true && minimizePic9==false) {
     image(Pic9, ptX9Enlarged, ptY9Enlarged, Pic9WidthEnlargedAdjusted, Pic9HeightEnlargedAdjusted);
-    /*
+    
     if (Pic9redCircleLarge==true) {
      stroke(red);
      strokeWeight(LARGEredCircleBorderWeight);
@@ -599,7 +599,7 @@ void draw () {
      stroke(black);
      strokeWeight(reset);
      }
-     */
+    
     MinimizeButtonBottomLeftCorner ();
   } else {
     if (enlargePic1==false && minimizePic1==true && enlargePic2==false && minimizePic2==true && enlargePic3==false && minimizePic3==true 
@@ -807,7 +807,7 @@ void mousePressed () {
     Pic8redCircleLarge=true;
     Pic8redCircleSmall=true;
   }
-  /*
+ 
    //Pic 9 red circles
    if (mouseX>=red9smallX-redPic9smallCircleRadius && mouseX<=red9smallX+redPic9smallCircleRadius && mouseY>=red9smallY-redPic9smallCircleRadius && mouseY<=red9smallY+redPic9smallCircleRadius) { 
    Pic9redCircleLarge=true; 
@@ -820,7 +820,7 @@ void mousePressed () {
    
    
    
-   */
+  
 }//End mousePressed
 //
 //End MAIN program 

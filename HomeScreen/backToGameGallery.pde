@@ -111,7 +111,7 @@ void  backToGameGallery () {
       stroke(black);
       strokeWeight(reset);
     }
-    /*
+    
     if (Pic9redCircleSmall==true) {
       stroke(red);
       strokeWeight(LARGEredCircleBorderWeight);
@@ -122,7 +122,7 @@ void  backToGameGallery () {
     }
     
     
-    */
+    
 
 
   //Enlarge Button 1 hover over
