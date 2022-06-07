@@ -130,6 +130,8 @@ Boolean Pic6redCircleSmall=false, Pic6redCircleLarge=false;
 Boolean Pic7redCircleSmall=false, Pic7redCircleLarge=false;
 Boolean Pic8redCircleSmall=false, Pic8redCircleLarge=false;
 Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
+//Start game variables
+
 //Hiding the levels variables
 float redwhiteRectWidth, redwhiteRectHeight;
 float redwhiteRect123X, redwhiteRect456X, redwhiteRect789;
@@ -227,11 +229,22 @@ void setup ()
   image(Pic4, ptX[5], ptY[5], Pic4WidthMinimizedAdjusted, rectHeight);
   image(Pic5, ptX[6], ptY[6], Pic5WidthMinimizedAdjusted, rectHeight);
   image(Pic6, ptX[7], ptY[7], Pic6WidthMinimizedAdjusted, rectHeight);
-  image(Pic7, ptX[9], ptY[9], Pic7WidthMinimizedAdjusted, rectHeight);
+  image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight);
   image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
   image(Pic9, ptX[11], ptY[11], Pic9WidthMinimizedAdjusted, rectHeight);
   //  String [] fontList=PFont.list();
   //  printArray(fontList);
+  //Enlarged Button Population
+  buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
+  buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
+  buttonWidth=rectWidth*1/3;
+  buttonHeight=rectHeight*1/4;
+  button1EX = button2EX = button3EX = rectWidth*2/3;
+  button4EX = button5EX = button6EX = appWidth*5/9;
+  button7EX = button8EX = button9EX = appWidth*8/9;
+  button1EY =  button4EY = button7EY = rectHeight*3/4;
+  button2EY = button5EY = button8EY = rectHeight*7/4;
+  button3EY = button6EY = button9EY = appHeight-buttonHeight;
   //Red Circle Border Weight
   LARGEredCircleBorderWeight=appHeight*1/100;
   smallredCircleBorderWeight=appHeight*1/150;
@@ -405,19 +418,6 @@ void setup ()
   red9LARGEX=appWidth*17/100;
   red9LARGEY=appHeight*1/3;
 
-
-
-  //Enlarged Button Population
-  buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
-  buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
-  buttonWidth=rectWidth*1/3;
-  buttonHeight=rectHeight*1/4;
-  button1EX = button2EX = button3EX = rectWidth*2/3;
-  button4EX = button5EX = button6EX = appWidth*5/9;
-  button7EX = button8EX = button9EX = appWidth*8/9;
-  button1EY =  button4EY = button7EY = rectHeight*3/4;
-  button2EY = button5EY = button8EY = rectHeight*7/4;
-  button3EY = button6EY = button9EY = appHeight-buttonHeight;
 }
 
 

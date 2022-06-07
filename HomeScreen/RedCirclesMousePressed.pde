@@ -1,3 +1,7 @@
+//Global Variables
+
+//
+
 void RedCirclesMousePressed () {
   if (mouseX>=red1smallX-redPic1smallCircleRadius && mouseX<=red1smallX+redPic1smallCircleRadius && mouseY>=red1smallY-redPic1smallCircleRadius && mouseY<=red1smallY+redPic1smallCircleRadius) { 
     Pic1redCircleLarge=true; 

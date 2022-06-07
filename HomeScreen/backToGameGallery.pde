@@ -9,7 +9,7 @@ void  backToGameGallery () {
   image(Pic4, ptX[5], ptY[5], Pic4WidthMinimizedAdjusted, rectHeight);
   image(Pic5, ptX[6], ptY[6], Pic5WidthMinimizedAdjusted, rectHeight);
   image(Pic6, ptX[7], ptY[7], Pic6WidthMinimizedAdjusted, rectHeight);
-  image(Pic7, ptX[9], ptY[9], Pic7WidthMinimizedAdjusted, rectHeight);
+  image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight);
   image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
   image(Pic9, ptX[11], ptY[11], Pic9WidthMinimizedAdjusted, rectHeight);
   fill(black);
