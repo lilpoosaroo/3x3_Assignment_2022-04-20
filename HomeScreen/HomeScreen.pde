@@ -133,22 +133,24 @@ Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
 //Start game variables
 
 //Hiding the levels variables
-float redwhiteRectWidth, redwhiteRectHeight;
-float redwhiteRect123X, redwhiteRect456X, redwhiteRect789;
-float redwhiteRect147Y, redwhiteRect258Y, redwhiteRect369Y;
-PImage redwhiteRectImage;
+float coverRectWidth, coverRectHeight;
+float coverRect123X, coverRect456X, coverRect789X;
+float coverRect147Y, coverRect258Y, coverRect369Y;
+PImage coverRectImage;
 //Hiding the Levels button
-Boolean redwhiteRect1=true, redwhiteRect2=true, redwhiteRect3=true, redwhiteRect4=true;
-Boolean redwhiteRect5=true, redwhiteRect6=true, redwhiteRect7=true, redwhiteRect8=true;
-Boolean  redwhiteRect9=true;
+Boolean coverRect1=true, coverRect2=true, coverRect3=true, coverRect4=true;
+Boolean coverRect5=true, coverRect6=true, coverRect7=true, coverRect8=true;
+Boolean  coverRect9=true;
 //Next Level buttons 
+float gotToNextLevelWidth, goToNextLevelHeight;
+float goToLevel258Y,goToLevel369Y, goToLevel47Y,  goToLevel234X,  goToLevel567X, goToLevel89X;
 Boolean goToLevel2ON=false, goToLevel3ON=false, goToLevel4ON=false, goToLevel5ON=false;
 Boolean goToLevel6ON=false, goToLevel7ON=false, goToLevel8ON=false, goToLevel9ON=false;
 
 
 void setup ()
 {
-  size(900, 400); //CANT PUT IN A TAB 
+ fullScreen(); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
   /* 
@@ -221,7 +223,7 @@ void setup ()
 
 
   ChoosingLargerDimensionCalculatingAspectRatios();
- 
+
 
   image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
   image(Pic2, ptX[2], ptY[2], Pic2WidthMinimizedAdjusted, rectHeight);
@@ -418,6 +420,26 @@ void setup ()
   red9LARGEX=appWidth*17/100;
   red9LARGEY=appHeight*1/3;
 
+  //
+  
+  //Hiding the levels variables
+  coverRectWidth=rectWidth;
+  coverRectHeight=rectHeight;
+  coverRect123X=appWidth*0;
+  coverRect456X=rectWidth;
+  coverRect789X=rectWidth*2;
+  coverRect147Y=appHeight*0;
+  coverRect258Y=appHeight*1/3;
+ coverRect369Y=appHeight*2/3;
+  coverRectImage=loadImage("redWhiteCoverImage.jpg");
+  //Next Level variables
+ goToLevel258Y=rectHeight*1/2; 
+ goToLevel369Y=rectHeight*3/2;
+ goToLevel47Y=rectHeight*5/2;
+ goToLevel234X=rectWidth*1/3;
+ goToLevel567X=rectWidth*4/3;
+ goToLevel89X=rectWidth*7/3;;
+  
 }
 
 
@@ -426,6 +448,17 @@ void setup ()
 void draw () {
 
   EnlargedPicsCode();
+  
+  rect(goToLevel234X, goToLevel258Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel234X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel234X, goToLevel47Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel567X, goToLevel258Y ,gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel567X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel567X, goToLevel47Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel89X, goToLevel258Y, gotToNextLevelWidth, goToNextLevelHeight);
+  rect(goToLevel89X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
+  
+  
 }
 //End draw
 //

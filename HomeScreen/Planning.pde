@@ -1,6 +1,15 @@
 /*
 
- Mistakes we have mde
+What we want to do: 
+Make it so that all the waldo levels are covered until you get to that level. Possibilities of how to do it:
+1) Have photo to cover all of the levels individually, and for them to be taken off once you have completed the level,
+In order to make this work:
+- will need an image=redWhiteCoverImage=loadImage("redWhiteCoverImage.jpg");, shouldn't be on all of the squares because it might be overpowering. 
+- will need a button to to make the each cover disappear: Start game button, next level button
+- An exit game button after finished
+If it was just one big image, then all the levels would be revealed if you took it off
+
+
  
  
  For Minimize Button
