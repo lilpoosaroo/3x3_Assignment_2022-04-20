@@ -497,8 +497,8 @@ if (BUTTONstartGameON==true) {
 // rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  //rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  //rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  fill(black);
  textFont(BUTTONnextLevelTextFont, 20);
@@ -508,8 +508,8 @@ if (BUTTONstartGameON==true) {
  //text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
 // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
 // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+// text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
  */
 
@@ -561,6 +561,14 @@ void mousePressed () {
     //To go to level 6 mousePressed Code
    if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
    if (Pic5redCircleSmall==true) coverRect6=false;
+   }
+   //To go level 7 mousePressed Code 
+   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic6redCircleSmall==true) coverRect7=false;
+   }
+    //To go level 8 mousePressed Code 
+   if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic7redCircleSmall==true) coverRect8=false;
    }
   //
 }//End mousePressed

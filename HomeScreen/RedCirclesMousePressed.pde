@@ -60,13 +60,13 @@ void RedCirclesMousePressed () {
 
 
   //Pic 7 red circles
+ 
   if (mouseX>=red7smallX-redPic7smallCircleRadius && mouseX<=red7smallX+redPic7smallCircleRadius && mouseY>=red7smallY-redPic7smallCircleRadius && mouseY<=red7smallY+redPic7smallCircleRadius) { 
-    Pic7redCircleLarge=true; 
-    Pic7redCircleSmall=true;
+   Pic7redCircleSmall=true;
   }
+ 
   if (mouseX>=red7LARGEX-redPic7LARGECircleRadius && mouseX<=red7LARGEX+redPic7LARGECircleRadius && mouseY>=red7LARGEY-redPic7LARGECircleRadius && mouseY<=red7LARGEY+redPic7LARGECircleRadius) {
     Pic7redCircleLarge=true;
-    Pic7redCircleSmall=true;
   }
 
   //Pic 8 red circles

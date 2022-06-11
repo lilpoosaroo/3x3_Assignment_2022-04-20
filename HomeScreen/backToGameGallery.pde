@@ -143,7 +143,7 @@ void  backToGameGallery () {
       fill(black);
       textFont(BUTTONnextLevelTextFont, 20);
       textAlign(CENTER, CENTER);
-     text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
     } else {
     }
   }
@@ -159,7 +159,15 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next level Code
-    if () {} else {}
+    if (enlargePic6==false && minimizePic6==true && coverRect7==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+      text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+    } else {
+    }
   }
   //Smal Pic 7 circle
   if (Pic7redCircleSmall==true && Pic6redCircleSmall==true && Pic5redCircleSmall==true 
@@ -172,6 +180,16 @@ void  backToGameGallery () {
     fill(whiteReset);
     stroke(black);
     strokeWeight(reset);
+    //Next level code
+    if (enlargePic7==false && minimizePic7==true && coverRect8==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel89X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight) ;
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+      ;
+    } else {
+    }
   }
   //Smal Pic 8 circle
   if (Pic8redCircleSmall==true && Pic7redCircleSmall==true && Pic6redCircleSmall==true
@@ -184,6 +202,7 @@ void  backToGameGallery () {
     fill(whiteReset);
     stroke(black);
     strokeWeight(reset);
+    //Next Level Code
   }
   //Smal Pic 9 circle
   if (Pic9redCircleSmall==true && Pic8redCircleSmall==true && Pic7redCircleSmall==true 
@@ -340,5 +359,6 @@ void  backToGameGallery () {
   if (coverRect5==true) image(coverRectImage, coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
   if (coverRect6==true) image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
   if (coverRect7==true) image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
+   if (coverRect8==true) image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
   //Next level Code
 }//End back to game gallery
