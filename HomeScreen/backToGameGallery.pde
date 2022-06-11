@@ -43,6 +43,7 @@ void  backToGameGallery () {
 
 
   //Small Red Circle Code
+  //Smal Pic 1 circle
   if (Pic1redCircleSmall==true) {
     stroke(red);
     strokeWeight(LARGEredCircleBorderWeight);
@@ -63,7 +64,7 @@ void  backToGameGallery () {
     }
   }
 
-
+  //Smal Pic 2 circle
   if (Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
     stroke(red);
     strokeWeight(LARGEredCircleBorderWeight);
@@ -75,233 +76,269 @@ void  backToGameGallery () {
     //Next Level Code
     if (enlargePic2==false && minimizePic2==true && coverRect3==true) {
       fill(BUTTONnextLevelColor);
-    rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-    fill(black);
-    textFont(BUTTONnextLevelTextFont, 20);
-    textAlign(CENTER, CENTER);
-    text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-  } else {
+      rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+      text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+    } else {
+    }
   }
-}
+  //Smal Pic 3 circle
+  if (Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red3smallX, red3smallY, redPic3smallCircleDiameter, redPic3smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+    //Next Level Code 
+    if (enlargePic3==false && minimizePic3==true && coverRect4==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+      text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+    } else {
+    }
+  }
+  //Smal Pic 4 circle
+  if (Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
+    && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red4smallX, red4smallY, redPic4smallCircleDiameter, redPic4smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+    //Next Level Code
+    if (enlargePic4==false && minimizePic4==true && coverRect5==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel567X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+      text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+    } else {
+    }
+  }
 
-if (Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red3smallX, red3smallY, redPic3smallCircleDiameter, redPic3smallCircleDiameter);
+  //Smal Pic 5 circle
+  if (Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true 
+    && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red5smallX, red5smallY, redPic5smallCircleDiameter, redPic5smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+    //Next Level Code
+    if (enlargePic5==false && minimizePic5==true && coverRect6==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+     text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+    } else {
+    }
+  }
+
+  //Smal Pic 6 circle
+  if (Pic6redCircleSmall==true && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
+    && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red6smallX, red6smallY, redPic6smallCircleDiameter, redPic6smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+    //Next level Code
+    if () {} else {}
+  }
+  //Smal Pic 7 circle
+  if (Pic7redCircleSmall==true && Pic6redCircleSmall==true && Pic5redCircleSmall==true 
+    && Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
+    && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red7smallX, red7smallY, redPic7smallCircleDiameter, redPic7smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+  }
+  //Smal Pic 8 circle
+  if (Pic8redCircleSmall==true && Pic7redCircleSmall==true && Pic6redCircleSmall==true
+    && Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true
+    && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red8smallX, red8smallY, redPic8smallCircleDiameter, redPic8smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+  }
+  //Smal Pic 9 circle
+  if (Pic9redCircleSmall==true && Pic8redCircleSmall==true && Pic7redCircleSmall==true 
+    && Pic6redCircleSmall==true  && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
+    && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
+    stroke(red);
+    strokeWeight(LARGEredCircleBorderWeight);
+    noFill();
+    ellipse(red9smallX, red9smallY, redPic9smallCircleDiameter, redPic9smallCircleDiameter);
+    fill(whiteReset);
+    stroke(black);
+    strokeWeight(reset);
+  }
+
+
+
+
+
+  //Enlarge Button 1 hover over
+  if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
+    Pic1buttonEnlargeColor= yellow;
+  } else {
+    Pic1buttonEnlargeColor = blue;
+  }
+  //Enlarge Button 2 hover over
+  if (mouseX>=button2EX && mouseX<= button2EX+buttonWidth && mouseY>=button2EY && mouseY<=button2EY+buttonHeight) {
+    Pic2buttonEnlargeColor=yellow;
+  } else {
+    Pic2buttonEnlargeColor=blue;
+  }
+  //Enlarge Button 3 hover over
+  if (mouseX>=button3EX && mouseX<= button3EX+buttonWidth && mouseY>=button3EY && mouseY<=button3EY+buttonHeight)
+  {
+    Pic3buttonEnlargeColor=yellow;
+  } else {
+    Pic3buttonEnlargeColor=blue;
+  }
+  //Enlarge Button 4 hover over
+  if (mouseX>=button4EX && mouseX<= button4EX+buttonWidth && mouseY>=button4EY && mouseY<=button4EY+buttonHeight) {
+    Pic4buttonEnlargeColor=yellow;
+  } else {
+    Pic4buttonEnlargeColor=blue;
+  }
+  // Enlarge Button 5 hover over
+  if ( mouseX>=button5EX && mouseX<= button5EX+buttonWidth && mouseY>=button5EY && mouseY<=button5EY+buttonHeight) {
+    Pic5buttonEnlargeColor=yellow;
+  } else {
+    Pic5buttonEnlargeColor=blue;
+  }
+  // Enlarge Button 6 hover over
+  if (mouseX>=button6EX && mouseX<= button6EX+buttonWidth && mouseY>=button6EY && mouseY<=button6EY+buttonHeight) {
+    Pic6buttonEnlargeColor=yellow;
+  } else {
+    Pic6buttonEnlargeColor=blue;
+  }
+  // Enlarge Button 7 hover over
+  if ( mouseX>=button7EX && mouseX<= button7EX+buttonWidth && mouseY>=button7EY && mouseY<=button7EY+buttonHeight)
+  {
+    Pic7buttonEnlargeColor=yellow;
+  } else {
+    Pic7buttonEnlargeColor=blue;
+  }
+  //Enlarge Button 8 hover over
+  if ( mouseX>=button8EX && mouseX<= button8EX+buttonWidth && mouseY>=button8EY && mouseY<=button8EY+buttonHeight) {
+    Pic8buttonEnlargeColor=yellow;
+  } else {
+    Pic8buttonEnlargeColor=blue;
+  }
+  //Enlarge Button 9 hover over
+  if (mouseX>=button9EX && mouseX<= button9EX+buttonWidth && mouseY>=button9EY && mouseY<=button9EY+buttonHeight) {
+    Pic9buttonEnlargeColor=yellow;
+  } else {
+    Pic9buttonEnlargeColor=blue;
+  }
+
+
+  //Enlarge Button For Pic 1
+  fill(Pic1buttonEnlargeColor );
+  rect(button1EX, button1EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button1EX, button1EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-if (Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
-  && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red4smallX, red4smallY, redPic4smallCircleDiameter, redPic4smallCircleDiameter);
+  //Enlarge button for Pic 2
+  fill(Pic2buttonEnlargeColor);
+  rect(button2EX, button2EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button2EX, button2EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-
-if (Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true 
-  && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red5smallX, red5smallY, redPic5smallCircleDiameter, redPic5smallCircleDiameter);
+  //Enlarge button for Pic 3
+  fill(Pic3buttonEnlargeColor);
+  rect(button3EX, button3EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button3EX, button3EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-
-if (Pic6redCircleSmall==true && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
-  && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red6smallX, red6smallY, redPic6smallCircleDiameter, redPic6smallCircleDiameter);
+  //Enlarge button for Pic 4
+  fill(Pic4buttonEnlargeColor);
+  rect(button4EX, button4EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button4EX, button4EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-if (Pic7redCircleSmall==true && Pic6redCircleSmall==true && Pic5redCircleSmall==true 
-  && Pic4redCircleSmall==true && Pic3redCircleSmall==true && Pic2redCircleSmall==true 
-  && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red7smallX, red7smallY, redPic7smallCircleDiameter, redPic7smallCircleDiameter);
+  //Enlarge button for Pic 5
+  fill(Pic5buttonEnlargeColor);
+  rect(button5EX, button5EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button5EX, button5EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-if (Pic8redCircleSmall==true && Pic7redCircleSmall==true && Pic6redCircleSmall==true
-  && Pic5redCircleSmall==true && Pic4redCircleSmall==true && Pic3redCircleSmall==true
-  && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red8smallX, red8smallY, redPic8smallCircleDiameter, redPic8smallCircleDiameter);
+  //Enlarge button for Pic 6
+  fill(Pic6buttonEnlargeColor);
+  rect(button6EX, button6EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button6EX, button6EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-if (Pic9redCircleSmall==true && Pic8redCircleSmall==true && Pic7redCircleSmall==true 
-  && Pic6redCircleSmall==true  && Pic5redCircleSmall==true && Pic4redCircleSmall==true 
-  && Pic3redCircleSmall==true && Pic2redCircleSmall==true && Pic1redCircleSmall==true) {
-  stroke(red);
-  strokeWeight(LARGEredCircleBorderWeight);
-  noFill();
-  ellipse(red9smallX, red9smallY, redPic9smallCircleDiameter, redPic9smallCircleDiameter);
+  //Enlarge button for Pic 7
+  fill(Pic7buttonEnlargeColor);
+  rect(button7EX, button7EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button7EX, button7EY, buttonWidth, buttonHeight);
   fill(whiteReset);
-  stroke(black);
-  strokeWeight(reset);
-}
-
-
-
-
-
-//Enlarge Button 1 hover over
-if (mouseX>=button1EX && mouseX<= button1EX+buttonWidth && mouseY>=button1EY && mouseY<=button1EY+buttonHeight) {
-  Pic1buttonEnlargeColor= yellow;
-} else {
-  Pic1buttonEnlargeColor = blue;
-}
-//Enlarge Button 2 hover over
-if (mouseX>=button2EX && mouseX<= button2EX+buttonWidth && mouseY>=button2EY && mouseY<=button2EY+buttonHeight) {
-  Pic2buttonEnlargeColor=yellow;
-} else {
-  Pic2buttonEnlargeColor=blue;
-}
-//Enlarge Button 3 hover over
-if (mouseX>=button3EX && mouseX<= button3EX+buttonWidth && mouseY>=button3EY && mouseY<=button3EY+buttonHeight)
-{
-  Pic3buttonEnlargeColor=yellow;
-} else {
-  Pic3buttonEnlargeColor=blue;
-}
-//Enlarge Button 4 hover over
-if (mouseX>=button4EX && mouseX<= button4EX+buttonWidth && mouseY>=button4EY && mouseY<=button4EY+buttonHeight) {
-  Pic4buttonEnlargeColor=yellow;
-} else {
-  Pic4buttonEnlargeColor=blue;
-}
-// Enlarge Button 5 hover over
-if ( mouseX>=button5EX && mouseX<= button5EX+buttonWidth && mouseY>=button5EY && mouseY<=button5EY+buttonHeight) {
-  Pic5buttonEnlargeColor=yellow;
-} else {
-  Pic5buttonEnlargeColor=blue;
-}
-// Enlarge Button 6 hover over
-if (mouseX>=button6EX && mouseX<= button6EX+buttonWidth && mouseY>=button6EY && mouseY<=button6EY+buttonHeight) {
-  Pic6buttonEnlargeColor=yellow;
-} else {
-  Pic6buttonEnlargeColor=blue;
-}
-// Enlarge Button 7 hover over
-if ( mouseX>=button7EX && mouseX<= button7EX+buttonWidth && mouseY>=button7EY && mouseY<=button7EY+buttonHeight)
-{
-  Pic7buttonEnlargeColor=yellow;
-} else {
-  Pic7buttonEnlargeColor=blue;
-}
-//Enlarge Button 8 hover over
-if ( mouseX>=button8EX && mouseX<= button8EX+buttonWidth && mouseY>=button8EY && mouseY<=button8EY+buttonHeight) {
-  Pic8buttonEnlargeColor=yellow;
-} else {
-  Pic8buttonEnlargeColor=blue;
-}
-//Enlarge Button 9 hover over
-if (mouseX>=button9EX && mouseX<= button9EX+buttonWidth && mouseY>=button9EY && mouseY<=button9EY+buttonHeight) {
-  Pic9buttonEnlargeColor=yellow;
-} else {
-  Pic9buttonEnlargeColor=blue;
-}
-
-
-//Enlarge Button For Pic 1
-fill(Pic1buttonEnlargeColor );
-rect(button1EX, button1EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button1EX, button1EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 2
-fill(Pic2buttonEnlargeColor);
-rect(button2EX, button2EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button2EX, button2EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 3
-fill(Pic3buttonEnlargeColor);
-rect(button3EX, button3EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button3EX, button3EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 4
-fill(Pic4buttonEnlargeColor);
-rect(button4EX, button4EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button4EX, button4EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 5
-fill(Pic5buttonEnlargeColor);
-rect(button5EX, button5EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button5EX, button5EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 6
-fill(Pic6buttonEnlargeColor);
-rect(button6EX, button6EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button6EX, button6EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 7
-fill(Pic7buttonEnlargeColor);
-rect(button7EX, button7EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button7EX, button7EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 8
-fill( Pic8buttonEnlargeColor);
-rect(button8EX, button8EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button8EX, button8EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Enlarge button for Pic 9
-fill(Pic9buttonEnlargeColor);
-rect(button9EX, button9EY, buttonWidth, buttonHeight);
-fill(black);
-textAlign(CENTER, CENTER);
-textFont(buttonEnlargeFont, 25);
-text(buttonEnlargeText, button9EX, button9EY, buttonWidth, buttonHeight);
-fill(whiteReset);
-//Cover Image Code
-if (coverRect1==true) image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
-if (coverRect2==true) image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
-if (coverRect3==true) image(coverRectImage, coverRect123X, coverRect369Y, coverRectWidth, coverRectHeight);
-//Next level Code
+  //Enlarge button for Pic 8
+  fill( Pic8buttonEnlargeColor);
+  rect(button8EX, button8EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button8EX, button8EY, buttonWidth, buttonHeight);
+  fill(whiteReset);
+  //Enlarge button for Pic 9
+  fill(Pic9buttonEnlargeColor);
+  rect(button9EX, button9EY, buttonWidth, buttonHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonEnlargeFont, 25);
+  text(buttonEnlargeText, button9EX, button9EY, buttonWidth, buttonHeight);
+  fill(whiteReset);
+  //Cover Image Code
+  if (coverRect1==true) image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
+  if (coverRect2==true) image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
+  if (coverRect3==true) image(coverRectImage, coverRect123X, coverRect369Y, coverRectWidth, coverRectHeight);
+  if (coverRect4==true) image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
+  if (coverRect5==true) image(coverRectImage, coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
+  if (coverRect6==true) image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
+  if (coverRect7==true) image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
+  //Next level Code
 }//End back to game gallery

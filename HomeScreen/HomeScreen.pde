@@ -479,13 +479,13 @@ if (BUTTONstartGameON==true) {
 }
 /*
    //Cover Image Code
- image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
- image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
- image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
+ //image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
+ //image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
+ //image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
+ //image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
+// image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
+ //image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
+ //image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
  image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
  image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
  */
@@ -494,9 +494,9 @@ if (BUTTONstartGameON==true) {
  fill(BUTTONnextLevelColor);
 // rect(BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  //rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+// rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -505,9 +505,9 @@ if (BUTTONstartGameON==true) {
  textAlign(CENTER, CENTER);
 // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
 // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+// text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+// text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
  text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
@@ -549,6 +549,18 @@ void mousePressed () {
    //To go to level 3 mousePressed code
    if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
    if (Pic2redCircleSmall==true) coverRect3=false;
+   }
+   //To go to level 4 mousePressed Code
+   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic3redCircleSmall==true) coverRect4=false;
+   }
+   //To go to level 5 mousePressed Code
+   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic4redCircleSmall==true) coverRect5=false;
+   }
+    //To go to level 6 mousePressed Code
+   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic5redCircleSmall==true) coverRect6=false;
    }
   //
 }//End mousePressed
