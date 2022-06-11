@@ -80,15 +80,15 @@ float buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true, enlargePic2=false, minimizePic2=true, enlargePic3=false, minimizePic3=true, enlargePic4=false, minimizePic4=true;
 Boolean enlargePic5=false, minimizePic5=true, enlargePic6=false, minimizePic6=true, enlargePic7=false, minimizePic7=true, enlargePic8=false, minimizePic8=true;
 Boolean enlargePic9=false, minimizePic9=true;
-String buttonEnlargeText="Enlarge Pic";
-String buttonMinimizeText="Minimize Pic";
+String buttonEnlargeText="Enlarge";
+String buttonMinimizeText="Minimize";
 color Pic1buttonEnlargeColor, Pic2buttonEnlargeColor, Pic3buttonEnlargeColor, Pic4buttonEnlargeColor, Pic5buttonEnlargeColor, Pic6buttonEnlargeColor, Pic7buttonEnlargeColor;
 color Pic8buttonEnlargeColor, Pic9buttonEnlargeColor;
 color Pic1buttonMinimizeColor;
 color yellow=#FAF99C;
 color blue=#A7DFEE;
 PFont buttonEnlargeFont;
-String buttonText= "Enlarge Pic";
+//String buttonText= "Enlarge Pic";
 PFont buttonMinimizeFont;
 //Red circle code for pic 1,2,3,4,5,6,7,8,9 transparent circle with red outline
 float red1smallX, red1smallY, red1LARGEX, red1LARGEY;
@@ -131,6 +131,10 @@ Boolean Pic7redCircleSmall=false, Pic7redCircleLarge=false;
 Boolean Pic8redCircleSmall=false, Pic8redCircleLarge=false;
 Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
 //Start game variables
+float BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight;
+String BUTTONstartGameText="Start Game!!!";
+PFont BUTTONstartGameTextFont;
+Boolean BUTTONstartGameON=true;
 
 //Hiding the levels variables
 float coverRectWidth, coverRectHeight;
@@ -142,15 +146,19 @@ Boolean coverRect1=true, coverRect2=true, coverRect3=true, coverRect4=true;
 Boolean coverRect5=true, coverRect6=true, coverRect7=true, coverRect8=true;
 Boolean  coverRect9=true;
 //Next Level buttons 
-float gotToNextLevelWidth, goToNextLevelHeight;
-float goToLevel258Y,goToLevel369Y, goToLevel47Y,  goToLevel234X,  goToLevel567X, goToLevel89X;
+float BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight;
+float BUTTONgoToLevel2Y, BUTTONgoToLevel58Y, BUTTONgoToLevel369Y, BUTTONgoToLevel47Y, BUTTONgoToLevel234X, BUTTONgoToLevel567X, BUTTONgoToLevel89X;
+String BUTTONnextLevelText="Next Level";
+color BUTTONnextLevelColor=whiteReset;
+PFont BUTTONnextLevelTextFont;
+/*
 Boolean goToLevel2ON=false, goToLevel3ON=false, goToLevel4ON=false, goToLevel5ON=false;
-Boolean goToLevel6ON=false, goToLevel7ON=false, goToLevel8ON=false, goToLevel9ON=false;
-
+ Boolean goToLevel6ON=false, goToLevel7ON=false, goToLevel8ON=false, goToLevel9ON=false;
+ */
 
 void setup ()
 {
- fullScreen(); //CANT PUT IN A TAB 
+  fullScreen(); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
   /* 
@@ -224,23 +232,24 @@ void setup ()
 
   ChoosingLargerDimensionCalculatingAspectRatios();
 
-
+  /*
   image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
-  image(Pic2, ptX[2], ptY[2], Pic2WidthMinimizedAdjusted, rectHeight);
-  image(Pic3, ptX[3], ptY[3], Pic3WidthMinimizedAdjusted, rectHeight);
-  image(Pic4, ptX[5], ptY[5], Pic4WidthMinimizedAdjusted, rectHeight);
-  image(Pic5, ptX[6], ptY[6], Pic5WidthMinimizedAdjusted, rectHeight);
-  image(Pic6, ptX[7], ptY[7], Pic6WidthMinimizedAdjusted, rectHeight);
-  image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight);
-  image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
-  image(Pic9, ptX[11], ptY[11], Pic9WidthMinimizedAdjusted, rectHeight);
+   image(Pic2, ptX[2], ptY[2], Pic2WidthMinimizedAdjusted, rectHeight);
+   image(Pic3, ptX[3], ptY[3], Pic3WidthMinimizedAdjusted, rectHeight);
+   image(Pic4, ptX[5], ptY[5], Pic4WidthMinimizedAdjusted, rectHeight);
+   image(Pic5, ptX[6], ptY[6], Pic5WidthMinimizedAdjusted, rectHeight);
+   image(Pic6, ptX[7], ptY[7], Pic6WidthMinimizedAdjusted, rectHeight);
+   image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight);
+   image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
+   image(Pic9, ptX[11], ptY[11], Pic9WidthMinimizedAdjusted, rectHeight);
+   */
   //  String [] fontList=PFont.list();
   //  printArray(fontList);
   //Enlarged Button Population
   buttonEnlargeFont = createFont("Cambria Bold Italic", 25);//initial size, change it until it fits
   buttonMinimizeFont = createFont ("Corbel Light Italic", 25);
-  buttonWidth=rectWidth*1/3;
-  buttonHeight=rectHeight*1/4;
+  buttonWidth=(rectWidth*1/3)*3/4;
+  buttonHeight=(rectHeight*1/4)*3/4;
   button1EX = button2EX = button3EX = rectWidth*2/3;
   button4EX = button5EX = button6EX = appWidth*5/9;
   button7EX = button8EX = button9EX = appWidth*8/9;
@@ -420,8 +429,13 @@ void setup ()
   red9LARGEX=appWidth*17/100;
   red9LARGEY=appHeight*1/3;
 
-  //
-  
+  //Start Game Variables;
+  BUTTONstartGameWidth=rectWidth*1/3;
+  BUTTONstartGameHeight=rectHeight*1/3;
+  BUTTONstartGameX=(appWidth*1/2)-(BUTTONstartGameWidth*1/2);
+  BUTTONstartGameY=(appHeight*1/2)-(BUTTONstartGameHeight*1/2);
+  BUTTONstartGameTextFont=createFont("Malgun Gothic Bold", 13 );
+
   //Hiding the levels variables
   coverRectWidth=rectWidth;
   coverRectHeight=rectHeight;
@@ -430,35 +444,79 @@ void setup ()
   coverRect789X=rectWidth*2;
   coverRect147Y=appHeight*0;
   coverRect258Y=appHeight*1/3;
- coverRect369Y=appHeight*2/3;
+  coverRect369Y=appHeight*2/3;
   coverRectImage=loadImage("redWhiteCoverImage.jpg");
   //Next Level variables
- goToLevel258Y=rectHeight*1/2; 
- goToLevel369Y=rectHeight*3/2;
- goToLevel47Y=rectHeight*5/2;
- goToLevel234X=rectWidth*1/3;
- goToLevel567X=rectWidth*4/3;
- goToLevel89X=rectWidth*7/3;;
-  
+  BUTTONgotToNextLevelWidth=buttonWidth;
+  BUTTONgoToNextLevelHeight=buttonHeight;
+  BUTTONgoToLevel2Y=rectHeight*3/4; 
+  BUTTONgoToLevel58Y=rectHeight*1/2-buttonHeight*1/2; 
+  BUTTONgoToLevel369Y=rectHeight*3/2-buttonHeight*1/2;
+  BUTTONgoToLevel47Y=rectHeight*5/2-buttonHeight*1/2;
+  BUTTONgoToLevel234X=rectWidth*1/3;
+  BUTTONgoToLevel567X=rectWidth*4/3;
+  BUTTONgoToLevel89X=rectWidth*7/3;
+  BUTTONnextLevelTextFont= createFont("Dialog.bolditalic", 15);
 }
 
 
 //End setup
 //
 void draw () {
-
+  backToGameGallery ();
   EnlargedPicsCode();
-  
-  rect(goToLevel234X, goToLevel258Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel234X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel234X, goToLevel47Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel567X, goToLevel258Y ,gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel567X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel567X, goToLevel47Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel89X, goToLevel258Y, gotToNextLevelWidth, goToNextLevelHeight);
-  rect(goToLevel89X, goToLevel369Y, gotToNextLevelWidth, goToNextLevelHeight);
-  
-  
+ 
+
+
+//Start Button 
+if (BUTTONstartGameON==true) { 
+  rect(BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(BUTTONstartGameTextFont, 22);
+  text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
+  fill(whiteReset);
+}
+/*
+   //Cover Image Code
+ image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
+ image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
+ image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
+ image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
+ */
+/*
+  //Next Button Code
+ fill(BUTTONnextLevelColor);
+// rect(BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ //rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ fill(black);
+ textFont(BUTTONnextLevelTextFont, 20);
+ textAlign(CENTER, CENTER);
+// text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+// text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+ text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
+ */
+
+
+
+String [] fontList=PFont.list();
+printArray(fontList);
 }
 //End draw
 //
@@ -471,6 +529,28 @@ void mousePressed () {
 
   ENLARGEandMinimizeButtonMousePressedandIFstatements ();
   RedCirclesMousePressed ();
+  //Start Button MousePressed
+  if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
+
+    if (BUTTONstartGameON==true) {
+      BUTTONstartGameON=false;
+      coverRect1=false;
+      println("Start Game");
+    }
+  }
+  //Next level mousePressed
+  
+  //To go to level 2 mousePressed code
+   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel2Y && mouseY<=BUTTONgoToLevel2Y+ BUTTONgoToNextLevelHeight ) {
+    if (Pic1redCircleSmall==true) coverRect2=false;
+   }
+   
+ 
+   //To go to level 3 mousePressed code
+   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic2redCircleSmall==true) coverRect3=false;
+   }
+  //
 }//End mousePressed
 //
 //End MAIN program 

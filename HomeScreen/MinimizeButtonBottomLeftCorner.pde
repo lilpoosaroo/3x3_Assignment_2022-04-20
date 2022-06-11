@@ -15,7 +15,7 @@ void MinimizeButtonBottomLeftCorner () {
   rect(MinimizeButtonBottomLeftCornerX, MinimizeButtonBottomLeftCornerY, buttonWidth, buttonHeight);
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(buttonMinimizeFont, 13);
+  textFont(buttonMinimizeFont, 35);
   text (buttonMinimizeText, MinimizeButtonBottomLeftCornerX, MinimizeButtonBottomLeftCornerY, buttonWidth, buttonHeight);
   fill(whiteReset);
 }
