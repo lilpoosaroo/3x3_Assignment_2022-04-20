@@ -21,20 +21,6 @@ float ptX6Enlarged, ptY6Enlarged;
 float ptX7Enlarged, ptY7Enlarged;
 float ptX8Enlarged, ptY8Enlarged;
 float ptX9Enlarged, ptY9Enlarged;
-
-
-
-/*
-float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
- float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
- float rectXPic3, rectYPic3, rectWidthPic3, rectHeightPic3;
- float rectXPic4, rectYPic4, rectWidthPic4, rectHeightPic4;
- float rectXPic5, rectYPic5, rectWidthPic5, rectHeightPic5;
- float rectXPic6, rectYPic6, rectWidthPic6, rectHeightPic6;
- float rectXPic7, rectYPic7, rectWidthPic7, rectHeightPic7;
- float rectXPic8, rectYPic8, rectWidthPic8, rectHeightPic8;
- float rectXPic9, rectYPic9, rectWidthPic9, rectHeightPic9;
- */
 //Heights and Widths for Pic 1 - Pic 2 - Pic 3 - Pic 4 - Pic 5 - Pic 6 - Pic 7 - Pic 8 - Pic 9
 int Pic1Width, Pic1Height, Pic2Width, Pic2Height, Pic3Width, Pic3Height, Pic4Width, Pic4Height;
 int Pic5Width, Pic5Height, Pic6Width, Pic6Height, Pic7Width, Pic7Height, Pic8Width, Pic8Height;
@@ -71,11 +57,6 @@ float button1EX, button1EY, button2EX, button2EY, button3EX, button3EY;
 float button4EX, button4EY, button5EX, button5EY, button6EX, button6EY;
 float button7EX, button7EY, button8EX, button8EY, button9EX, button9EY;
 float MinimizeButtonBottomLeftCornerX, MinimizeButtonBottomLeftCornerY;
-/*
-float button2MX, button2MY, button3MX, button3MY;
- float button4MX, button4MY, button5MX, button5MY, button6MX, button6MY;
- float button7MX, button7MY, button8MX, button8MY, button9MX, button9MY;
- */
 float buttonWidth, buttonHeight;
 Boolean enlargePic1=false, minimizePic1=true, enlargePic2=false, minimizePic2=true, enlargePic3=false, minimizePic3=true, enlargePic4=false, minimizePic4=true;
 Boolean enlargePic5=false, minimizePic5=true, enlargePic6=false, minimizePic6=true, enlargePic7=false, minimizePic7=true, enlargePic8=false, minimizePic8=true;
@@ -152,10 +133,6 @@ float BUTTONgoToLevel2Y, BUTTONgoToLevel58Y, BUTTONgoToLevel369Y, BUTTONgoToLeve
 String BUTTONnextLevelText="Next Level";
 color BUTTONnextLevelColor=whiteReset;
 PFont BUTTONnextLevelTextFont;
-/*
-Boolean goToLevel2ON=false, goToLevel3ON=false, goToLevel4ON=false, goToLevel5ON=false;
- Boolean goToLevel6ON=false, goToLevel7ON=false, goToLevel8ON=false, goToLevel9ON=false;
- */
 //End Game Button variables
 float BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight;
 String BUTTONendGameText="Close Game";
@@ -168,10 +145,6 @@ void setup ()
   fullScreen(); //CANT PUT IN A TAB 
   appWidth=width;
   appHeight=height;
-  /* 
-   Xorigin=appWidth*0;
-   Yorigin=appHeight*0;
-   */
   //Display Orientation: Landscape (displayWidth>displayHeight), not portrait or square
   //If our width is larger than our height we are in landscape mode
   //if  ( displayWidth .+ displayHeight) {println("landscape or Square");} else {println("Portrait");}
@@ -223,8 +196,8 @@ void setup ()
   Pic2Height=650;
   Pic3Width=1920;
   Pic3Height=1217;
-  Pic4Width=3000;
-  Pic4Height=1975;
+  Pic4Width=2095;
+  Pic4Height=668;
   Pic5Width=2040;
   Pic5Height=1260;
   Pic6Width=3000;
@@ -236,20 +209,7 @@ void setup ()
   Pic9Width=950;
   Pic9Height=713;
 
-
   ChoosingLargerDimensionCalculatingAspectRatios();
-
-  /*
-  image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
-   image(Pic2, ptX[2], ptY[2], Pic2WidthMinimizedAdjusted, rectHeight);
-   image(Pic3, ptX[3], ptY[3], Pic3WidthMinimizedAdjusted, rectHeight);
-   image(Pic4, ptX[5], ptY[5], Pic4WidthMinimizedAdjusted, rectHeight);
-   image(Pic5, ptX[6], ptY[6], Pic5WidthMinimizedAdjusted, rectHeight);
-   image(Pic6, ptX[7], ptY[7], Pic6WidthMinimizedAdjusted, rectHeight);
-   image(Pic7, ptX[9], ptY[9], rectWidth, rectHeight);
-   image(Pic8, ptX[10], ptY[10], rectWidth, rectHeight);
-   image(Pic9, ptX[11], ptY[11], Pic9WidthMinimizedAdjusted, rectHeight);
-   */
   //  String [] fontList=PFont.list();
   //  printArray(fontList);
   //Enlarged Button Population
@@ -479,13 +439,7 @@ void setup ()
 void draw () {
   backToGameGallery ();
   EnlargedPicsCode();
-  
-  
-
-
-
   //Start Button 
-
   //Start Button  hover over
   if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
     BUTTONstartGameColor = red1;
@@ -502,13 +456,7 @@ void draw () {
     text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
     fill(whiteReset);
   }//End of Start Button
- 
-
-
-  String [] fontList=PFont.list();
-  printArray(fontList);
-}
-//End draw
+}//End draw
 //
 void keyPressed ()
 {
@@ -534,9 +482,6 @@ void mousePressed () {
   if ( Pic9redCircleLarge==true && Pic9redCircleSmall==true) exit();
   
  }
- 
- 
- 
   //Next level mousePressed
 
   //To go to level 2 mousePressed code

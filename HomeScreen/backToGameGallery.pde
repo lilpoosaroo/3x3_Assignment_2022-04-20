@@ -1,13 +1,7 @@
-//Global Variables
-
-//
 
 void  backToGameGallery () {
   buttonWidth=(rectWidth*1/3)*3/4;
   buttonHeight=(rectHeight*1/4)*3/4;
-
-
-
   image(Pic1, ptX[1], ptY[1], Pic1WidthMinimizedAdjusted, rectHeight);
   image(Pic2, ptX[2], ptY[2], Pic2WidthMinimizedAdjusted, rectHeight);
   image(Pic3, ptX[3], ptY[3], Pic3WidthMinimizedAdjusted, rectHeight);

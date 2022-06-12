@@ -18,4 +18,4 @@ void MinimizeButtonBottomLeftCorner () {
   textFont(buttonMinimizeFont, 35);
   text (buttonMinimizeText, MinimizeButtonBottomLeftCornerX, MinimizeButtonBottomLeftCornerY, buttonWidth, buttonHeight);
   fill(whiteReset);
-}
+}//End Minimize Button Code
