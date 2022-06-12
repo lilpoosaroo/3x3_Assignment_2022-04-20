@@ -428,6 +428,4 @@ void  backToGameGallery () {
   if (coverRect7==true) image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
   if (coverRect8==true) image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
   if (coverRect9==true) image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
-
-  //Next level Code
 }//End back to game gallery
