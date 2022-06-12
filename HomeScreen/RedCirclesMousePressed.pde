@@ -59,14 +59,30 @@ void RedCirclesMousePressed () {
   }
 
 
-  //Pic 7 red circles
- 
+  //Pic 7 red circles, problem was that another one of the red circles in the previous puzzle would get touched which would activate the solution of this puzzle
+  //Which evolved into the following solution, would set Pic7redCircleSmall=true; and Pic7redCircleLarge=true;, so that when it was touched it would be turned off
+  //However we did not want the solution to be able to disappear after you start level 8, so when coverRect8=false; the circles cannot become false
   if (mouseX>=red7smallX-redPic7smallCircleRadius && mouseX<=red7smallX+redPic7smallCircleRadius && mouseY>=red7smallY-redPic7smallCircleRadius && mouseY<=red7smallY+redPic7smallCircleRadius) { 
-   Pic7redCircleSmall=true;
+  if (Pic7redCircleSmall==false || Pic7redCircleLarge==false) {
+    Pic7redCircleSmall=true;
+    Pic7redCircleLarge=true;
+  } else {
+   if (coverRect8==true) { Pic7redCircleSmall=false;
+    Pic7redCircleLarge=false;
+   }
+  }
+  
   }
  
   if (mouseX>=red7LARGEX-redPic7LARGECircleRadius && mouseX<=red7LARGEX+redPic7LARGECircleRadius && mouseY>=red7LARGEY-redPic7LARGECircleRadius && mouseY<=red7LARGEY+redPic7LARGECircleRadius) {
+   if (Pic7redCircleSmall==false || Pic7redCircleLarge==false) {
+    Pic7redCircleSmall=true;
     Pic7redCircleLarge=true;
+  } else {
+   if (coverRect8==true) { Pic7redCircleSmall=false;
+    Pic7redCircleLarge=false;
+   }
+  }
   }
 
   //Pic 8 red circles

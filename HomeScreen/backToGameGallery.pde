@@ -187,7 +187,7 @@ void  backToGameGallery () {
       fill(black);
       textFont(BUTTONnextLevelTextFont, 20);
       textAlign(CENTER, CENTER);
-      ;
+      text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
     } else {
     }
   }
@@ -202,7 +202,16 @@ void  backToGameGallery () {
     fill(whiteReset);
     stroke(black);
     strokeWeight(reset);
-    //Next Level Code
+    //Next level code
+    if (enlargePic7==false && minimizePic7==true && coverRect8==true) {
+      fill(BUTTONnextLevelColor);
+      rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      fill(black);
+      textFont(BUTTONnextLevelTextFont, 20);
+      textAlign(CENTER, CENTER);
+       text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
+    } else {
+    }
   }
   //Smal Pic 9 circle
   if (Pic9redCircleSmall==true && Pic8redCircleSmall==true && Pic7redCircleSmall==true 
@@ -359,6 +368,7 @@ void  backToGameGallery () {
   if (coverRect5==true) image(coverRectImage, coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
   if (coverRect6==true) image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
   if (coverRect7==true) image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
-   if (coverRect8==true) image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
+  if (coverRect8==true) image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
+  if (coverRect9==true) image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
   //Next level Code
 }//End back to game gallery

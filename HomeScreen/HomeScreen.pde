@@ -127,7 +127,7 @@ Boolean Pic3redCircleSmall=false, Pic3redCircleLarge=false;
 Boolean Pic4redCircleSmall=false, Pic4redCircleLarge=false;
 Boolean Pic5redCircleSmall=false, Pic5redCircleLarge=false;
 Boolean Pic6redCircleSmall=false, Pic6redCircleLarge=false;
-Boolean Pic7redCircleSmall=false, Pic7redCircleLarge=false;
+Boolean Pic7redCircleSmall=true, Pic7redCircleLarge=true;
 Boolean Pic8redCircleSmall=false, Pic8redCircleLarge=false;
 Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
 //Start game variables
@@ -135,7 +135,8 @@ float BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameH
 String BUTTONstartGameText="Start Game!!!";
 PFont BUTTONstartGameTextFont;
 Boolean BUTTONstartGameON=true;
-
+color BUTTONstartGameColor;
+color red1=#FA2B32;
 //Hiding the levels variables
 float coverRectWidth, coverRectHeight;
 float coverRect123X, coverRect456X, coverRect789X;
@@ -469,14 +470,23 @@ void draw () {
 
 
 //Start Button 
+
+ //Start Button  hover over
+  if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
+    BUTTONstartGameColor = red1;
+  } else {
+    BUTTONstartGameColor = whiteReset;
+  }
+  
 if (BUTTONstartGameON==true) { 
+  fill(BUTTONstartGameColor);
   rect(BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(BUTTONstartGameTextFont, 22);
   text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
   fill(whiteReset);
-}
+}//End of Start Button
 /*
    //Cover Image Code
  //image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
@@ -569,6 +579,10 @@ void mousePressed () {
     //To go level 8 mousePressed Code 
    if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
    if (Pic7redCircleSmall==true) coverRect8=false;
+   }
+    //To go level 9 mousePressed Code
+   if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
+   if (Pic8redCircleSmall==true) coverRect9=false;
    }
   //
 }//End mousePressed
