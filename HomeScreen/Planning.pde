@@ -9,6 +9,13 @@ In order to make this work:
 - An exit game button after finished
 If it was just one big image, then all the levels would be revealed if you took it off
 
+Make an End Game Button: 
+In order to make this work:
+- Button can only be on after the 9th where's waldo game has been solved
+- will need a PFont= BUTTONendGameFont; BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight;
+- need a hover over, color BUTTONendGameColor;
+- possibly a Boolean that will need to be activated
+
 
  
  

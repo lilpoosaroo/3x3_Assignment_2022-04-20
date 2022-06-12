@@ -156,6 +156,12 @@ PFont BUTTONnextLevelTextFont;
 Boolean goToLevel2ON=false, goToLevel3ON=false, goToLevel4ON=false, goToLevel5ON=false;
  Boolean goToLevel6ON=false, goToLevel7ON=false, goToLevel8ON=false, goToLevel9ON=false;
  */
+//End Game Button variables
+float BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight;
+String BUTTONendGameText="Close Game";
+color BUTTONendGameColor;
+PFont BUTTONendGameFont; 
+
 
 void setup ()
 {
@@ -458,7 +464,14 @@ void setup ()
   BUTTONgoToLevel567X=rectWidth*4/3;
   BUTTONgoToLevel89X=rectWidth*7/3;
   BUTTONnextLevelTextFont= createFont("Dialog.bolditalic", 15);
+  //End Game Variables
+  BUTTONendGameWidth=buttonWidth;
+  BUTTONendGameHeight=buttonHeight;
+  BUTTONendGameX=(rectWidth*5/2)-(BUTTONendGameWidth*1/2);
+  BUTTONendGameY=(rectHeight*5/2)-(BUTTONendGameHeight*1/2);
+  BUTTONendGameFont=createFont("Verdana Bold Italic", 13);
 }
+
 
 
 //End setup
@@ -466,67 +479,82 @@ void setup ()
 void draw () {
   backToGameGallery ();
   EnlargedPicsCode();
- 
+  
+  //End Game button COde
+   //End Game Button  hover over
+  if (mouseX>=BUTTONendGameX && mouseX<=BUTTONendGameX+BUTTONendGameWidth && mouseY>=BUTTONendGameY && mouseY<=BUTTONendGameY+BUTTONendGameHeight) {
+    BUTTONendGameColor = red1;
+  } else {
+    BUTTONendGameColor = whiteReset;
+  }
+  fill(BUTTONendGameColor);
+  rect(BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
+  fill(black);
+  textFont(BUTTONendGameFont, 15);
+  textAlign(CENTER, CENTER);
+  text(BUTTONendGameText, BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
+  fill(whiteReset);
 
 
-//Start Button 
 
- //Start Button  hover over
+  //Start Button 
+
+  //Start Button  hover over
   if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
     BUTTONstartGameColor = red1;
   } else {
     BUTTONstartGameColor = whiteReset;
   }
-  
-if (BUTTONstartGameON==true) { 
-  fill(BUTTONstartGameColor);
-  rect(BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
-  fill(black);
-  textAlign(CENTER, CENTER);
-  textFont(BUTTONstartGameTextFont, 22);
-  text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
-  fill(whiteReset);
-}//End of Start Button
-/*
+
+  if (BUTTONstartGameON==true) { 
+    fill(BUTTONstartGameColor);
+    rect(BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
+    fill(black);
+    textAlign(CENTER, CENTER);
+    textFont(BUTTONstartGameTextFont, 22);
+    text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
+    fill(whiteReset);
+  }//End of Start Button
+  /*
    //Cover Image Code
- //image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
- //image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
- //image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
- //image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
-// image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
- //image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
- //image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
- image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
- */
-/*
+   //image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
+   //image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
+   //image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
+   //image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
+   // image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
+   //image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
+   //image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
+   image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
+   image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
+   */
+  /*
   //Next Button Code
- fill(BUTTONnextLevelColor);
-// rect(BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-// rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- fill(black);
- textFont(BUTTONnextLevelTextFont, 20);
- textAlign(CENTER, CENTER);
-// text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-// text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-// text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-// text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- //text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-// text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
- text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
- */
+   fill(BUTTONnextLevelColor);
+   // rect(BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   // rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   fill(black);
+   textFont(BUTTONnextLevelTextFont, 20);
+   textAlign(CENTER, CENTER);
+   // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   //text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   // text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+   text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
+   */
 
 
 
-String [] fontList=PFont.list();
-printArray(fontList);
+  String [] fontList=PFont.list();
+  printArray(fontList);
 }
 //End draw
 //
@@ -545,45 +573,50 @@ void mousePressed () {
     if (BUTTONstartGameON==true) {
       BUTTONstartGameON=false;
       coverRect1=false;
-      println("Start Game");
     }
   }
-  //Next level mousePressed
-  
-  //To go to level 2 mousePressed code
-   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel2Y && mouseY<=BUTTONgoToLevel2Y+ BUTTONgoToNextLevelHeight ) {
-    if (Pic1redCircleSmall==true) coverRect2=false;
-   }
+ //End Game mousePressed
+ if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
    
+  /*if ( Pic9redCircleLarge==true && Pic9redCircleSmall=true && covercoverRect9==true)*/ exit();
+   
+ }
  
-   //To go to level 3 mousePressed code
-   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic2redCircleSmall==true) coverRect3=false;
-   }
-   //To go to level 4 mousePressed Code
-   if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic3redCircleSmall==true) coverRect4=false;
-   }
-   //To go to level 5 mousePressed Code
-   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic4redCircleSmall==true) coverRect5=false;
-   }
-    //To go to level 6 mousePressed Code
-   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic5redCircleSmall==true) coverRect6=false;
-   }
-   //To go level 7 mousePressed Code 
-   if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic6redCircleSmall==true) coverRect7=false;
-   }
-    //To go level 8 mousePressed Code 
-   if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic7redCircleSmall==true) coverRect8=false;
-   }
-    //To go level 9 mousePressed Code
-   if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
-   if (Pic8redCircleSmall==true) coverRect9=false;
-   }
+ 
+  //Next level mousePressed
+
+  //To go to level 2 mousePressed code
+  if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel2Y && mouseY<=BUTTONgoToLevel2Y+ BUTTONgoToNextLevelHeight ) {
+    if (Pic1redCircleSmall==true) coverRect2=false;
+  }
+  //To go to level 3 mousePressed code
+  if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
+    if (Pic2redCircleSmall==true) coverRect3=false;
+  }
+  //To go to level 4 mousePressed Code
+  if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
+    if (Pic3redCircleSmall==true) coverRect4=false;
+  }
+  //To go to level 5 mousePressed Code
+  if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONgoToNextLevelHeight ) {
+    if (Pic4redCircleSmall==true) coverRect5=false;
+  }
+  //To go to level 6 mousePressed Code
+  if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONgoToNextLevelHeight ) {
+    if (Pic5redCircleSmall==true) coverRect6=false;
+  }
+  //To go level 7 mousePressed Code 
+  if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONgotToNextLevelWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONgoToNextLevelHeight ) {
+    if (Pic6redCircleSmall==true) coverRect7=false;
+  }
+  //To go level 8 mousePressed Code 
+  if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=button7EY && mouseY<=button7EY+BUTTONgoToNextLevelHeight ) {
+    if (Pic7redCircleSmall==true) coverRect8=false;
+  }
+  //To go level 9 mousePressed Code
+  if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONgotToNextLevelWidth && mouseY>=button8EY && mouseY<=button8EY+BUTTONgoToNextLevelHeight ) {
+    if (Pic8redCircleSmall==true) coverRect9=false;
+  }
   //
 }//End mousePressed
 //

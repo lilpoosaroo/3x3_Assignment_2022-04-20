@@ -53,6 +53,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next Level Code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel2Y && mouseY<=BUTTONgoToLevel2Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic1==false && minimizePic1==true && coverRect2==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel234X, BUTTONgoToLevel2Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -74,6 +80,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next Level Code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic2==false && minimizePic2==true && coverRect3==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -94,6 +106,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next Level Code 
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel234X && mouseX<=BUTTONgoToLevel234X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic3==false && minimizePic3==true && coverRect4==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -115,6 +133,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next Level Code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel58Y && mouseY<=BUTTONgoToLevel58Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic4==false && minimizePic4==true && coverRect5==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel567X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -137,6 +161,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next Level Code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel369Y && mouseY<=BUTTONgoToLevel369Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic5==false && minimizePic5==true && coverRect6==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -159,6 +189,12 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next level Code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel567X && mouseX<=BUTTONgoToLevel567X+BUTTONstartGameWidth && mouseY>=BUTTONgoToLevel47Y && mouseY<=BUTTONgoToLevel47Y+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic6==false && minimizePic6==true && coverRect7==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
@@ -181,13 +217,19 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next level code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONstartGameWidth && mouseY>=button7EY && mouseY<=button7EY+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic7==false && minimizePic7==true && coverRect8==true) {
       fill(BUTTONnextLevelColor);
-      rect(BUTTONgoToLevel89X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight) ;
+      rect(BUTTONgoToLevel89X, button7EY, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight) ;
       fill(black);
       textFont(BUTTONnextLevelTextFont, 20);
       textAlign(CENTER, CENTER);
-      text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel58Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      text(BUTTONnextLevelText, BUTTONgoToLevel89X, button7EY, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
     } else {
     }
   }
@@ -203,13 +245,19 @@ void  backToGameGallery () {
     stroke(black);
     strokeWeight(reset);
     //Next level code
+    //Next level button hover over
+    if (mouseX>=BUTTONgoToLevel89X && mouseX<=BUTTONgoToLevel89X+BUTTONstartGameWidth && mouseY>=button8EY && mouseY<=button8EY+BUTTONstartGameHeight) {
+      BUTTONnextLevelColor = red1;
+    } else {
+      BUTTONnextLevelColor = whiteReset;
+    }
     if (enlargePic7==false && minimizePic7==true && coverRect8==true) {
       fill(BUTTONnextLevelColor);
-      rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
+      rect(BUTTONgoToLevel89X, button8EY, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
       fill(black);
       textFont(BUTTONnextLevelTextFont, 20);
       textAlign(CENTER, CENTER);
-       text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
+      text(BUTTONnextLevelText, BUTTONgoToLevel89X, button8EY, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
     } else {
     }
   }
@@ -370,5 +418,6 @@ void  backToGameGallery () {
   if (coverRect7==true) image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
   if (coverRect8==true) image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
   if (coverRect9==true) image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
+
   //Next level Code
 }//End back to game gallery
