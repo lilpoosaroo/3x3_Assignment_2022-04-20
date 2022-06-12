@@ -132,7 +132,7 @@ Boolean Pic8redCircleSmall=false, Pic8redCircleLarge=false;
 Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
 //Start game variables
 float BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight;
-String BUTTONstartGameText="Start Game!!!";
+String BUTTONstartGameText="Tap on Waldo to win the game!!! Press me to start!!!";
 PFont BUTTONstartGameTextFont;
 Boolean BUTTONstartGameON=true;
 color BUTTONstartGameColor;
@@ -437,8 +437,8 @@ void setup ()
   red9LARGEY=appHeight*1/3;
 
   //Start Game Variables;
-  BUTTONstartGameWidth=rectWidth*1/3;
-  BUTTONstartGameHeight=rectHeight*1/3;
+  BUTTONstartGameWidth=rectWidth*1/3*2;
+  BUTTONstartGameHeight=rectHeight*1/3*2;
   BUTTONstartGameX=(appWidth*1/2)-(BUTTONstartGameWidth*1/2);
   BUTTONstartGameY=(appHeight*1/2)-(BUTTONstartGameHeight*1/2);
   BUTTONstartGameTextFont=createFont("Malgun Gothic Bold", 13 );
@@ -498,46 +498,11 @@ void draw () {
     rect(BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
     fill(black);
     textAlign(CENTER, CENTER);
-    textFont(BUTTONstartGameTextFont, 22);
+    textFont(BUTTONstartGameTextFont, 20);
     text(BUTTONstartGameText, BUTTONstartGameX, BUTTONstartGameY, BUTTONstartGameWidth, BUTTONstartGameHeight);
     fill(whiteReset);
   }//End of Start Button
-  /*
-   //Cover Image Code
-   //image(coverRectImage, coverRect123X, coverRect147Y, coverRectWidth, coverRectHeight );
-   //image(coverRectImage, coverRect123X, coverRect258Y, coverRectWidth, coverRectHeight);
-   //image(coverRectImage, coverRect123X, coverRect369Y,coverRectWidth, coverRectHeight);
-   //image(coverRectImage, coverRect456X, coverRect147Y, coverRectWidth, coverRectHeight );
-   // image(coverRectImage,coverRect456X, coverRect258Y, coverRectWidth, coverRectHeight);
-   //image(coverRectImage, coverRect456X, coverRect369Y, coverRectWidth, coverRectHeight);
-   //image(coverRectImage, coverRect789X, coverRect147Y, coverRectWidth, coverRectHeight);
-   image(coverRectImage, coverRect789X, coverRect258Y, coverRectWidth, coverRectHeight);
-   image(coverRectImage, coverRect789X, coverRect369Y, coverRectWidth, coverRectHeight);
-   */
-  /*
-  //Next Button Code
-   fill(BUTTONnextLevelColor);
-   // rect(BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //rect(BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   // rect(BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //rect(BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //rect(BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   rect(BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   fill(black);
-   textFont(BUTTONnextLevelTextFont, 20);
-   textAlign(CENTER, CENTER);
-   // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   // text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //text(BUTTONnextLevelText, BUTTONgoToLevel234X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   // text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   //text(BUTTONnextLevelText, BUTTONgoToLevel567X, BUTTONgoToLevel47Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   // text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel258Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
-   text(BUTTONnextLevelText, BUTTONgoToLevel89X, BUTTONgoToLevel369Y, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight); 
-   */
-
+ 
 
 
   String [] fontList=PFont.list();
