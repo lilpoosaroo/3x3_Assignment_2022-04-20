@@ -127,7 +127,7 @@ Boolean Pic3redCircleSmall=false, Pic3redCircleLarge=false;
 Boolean Pic4redCircleSmall=false, Pic4redCircleLarge=false;
 Boolean Pic5redCircleSmall=false, Pic5redCircleLarge=false;
 Boolean Pic6redCircleSmall=false, Pic6redCircleLarge=false;
-Boolean Pic7redCircleSmall=true, Pic7redCircleLarge=true;
+Boolean Pic7redCircleSmall=false, Pic7redCircleLarge=false;
 Boolean Pic8redCircleSmall=false, Pic8redCircleLarge=false;
 Boolean Pic9redCircleSmall=false, Pic9redCircleLarge=false;
 //Start game variables
@@ -480,20 +480,7 @@ void draw () {
   backToGameGallery ();
   EnlargedPicsCode();
   
-  //End Game button COde
-   //End Game Button  hover over
-  if (mouseX>=BUTTONendGameX && mouseX<=BUTTONendGameX+BUTTONendGameWidth && mouseY>=BUTTONendGameY && mouseY<=BUTTONendGameY+BUTTONendGameHeight) {
-    BUTTONendGameColor = red1;
-  } else {
-    BUTTONendGameColor = whiteReset;
-  }
-  fill(BUTTONendGameColor);
-  rect(BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
-  fill(black);
-  textFont(BUTTONendGameFont, 15);
-  textAlign(CENTER, CENTER);
-  text(BUTTONendGameText, BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
-  fill(whiteReset);
+  
 
 
 
@@ -576,11 +563,13 @@ void mousePressed () {
     }
   }
  //End Game mousePressed
- if (mouseX>=BUTTONstartGameX && mouseX<=BUTTONstartGameX+BUTTONstartGameWidth && mouseY>=BUTTONstartGameY && mouseY<=BUTTONstartGameY+BUTTONstartGameHeight) {
+
+ if (mouseX>=BUTTONendGameX && mouseX<=BUTTONendGameX+BUTTONendGameWidth && mouseY>=BUTTONendGameY && mouseY<=BUTTONendGameY+BUTTONendGameHeight) {
    
-  /*if ( Pic9redCircleLarge==true && Pic9redCircleSmall=true && covercoverRect9==true)*/ exit();
-   
+  if ( Pic9redCircleLarge==true && Pic9redCircleSmall==true) exit();
+  
  }
+ 
  
  
   //Next level mousePressed

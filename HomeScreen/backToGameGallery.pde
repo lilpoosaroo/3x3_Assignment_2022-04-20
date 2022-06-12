@@ -251,7 +251,7 @@ void  backToGameGallery () {
     } else {
       BUTTONnextLevelColor = whiteReset;
     }
-    if (enlargePic7==false && minimizePic7==true && coverRect8==true) {
+    if (enlargePic8==false && minimizePic8==true && coverRect9==true) {
       fill(BUTTONnextLevelColor);
       rect(BUTTONgoToLevel89X, button8EY, BUTTONgotToNextLevelWidth, BUTTONgoToNextLevelHeight);
       fill(black);
@@ -272,6 +272,22 @@ void  backToGameGallery () {
     fill(whiteReset);
     stroke(black);
     strokeWeight(reset);
+    if (enlargePic9==false && minimizePic9==true) {
+    //End Game button Code
+   //End Game Button  hover over
+  if (mouseX>=BUTTONendGameX && mouseX<=BUTTONendGameX+BUTTONendGameWidth && mouseY>=BUTTONendGameY && mouseY<=BUTTONendGameY+BUTTONendGameHeight) {
+    BUTTONendGameColor = red1;
+  } else {
+    BUTTONendGameColor = whiteReset;
+  }
+  fill(BUTTONendGameColor);
+  rect(BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
+  fill(black);
+  textFont(BUTTONendGameFont, 15);
+  textAlign(CENTER, CENTER);
+  text(BUTTONendGameText, BUTTONendGameX, BUTTONendGameY, BUTTONendGameWidth, BUTTONendGameHeight);
+  fill(whiteReset);
+    }
   }
 
 
